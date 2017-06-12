@@ -1,10 +1,43 @@
 doctype html
-html(lang='ru')
+html(lang="ru")
 	include templates/_head
 	body
 		header
 			div.btn-authorization.btn Авторизация
 		main
-			div.intro
-				div.autor-foto
-					img(href='#' alt='')
+			.intro
+				.intro__autor.autor
+					.autor__foto
+						img(href="#" alt="Алексей Сойнов")
+					p.autor__name Алексей Сойнов
+					p.autor__site-info Личный сайт веб разработчика
+				.intro__social.social
+					a.social__link.social__link--vk(href="#") Вконтакте
+					a.social__link.social__link--gh(href="#") Гитхаб
+					a.social__link.social__link--in(href="#") Ин
+				nav.intro__nav.nav
+					ul.nav__items
+						li.nav__item
+							a(href="about.html") Мои работы
+						li.nav__item
+							a(href="#") Обо мне
+						li.nav__item
+							a(href="#") Блог
+			.authorization
+				form.authorization__form
+					h1 Авторизуйтесь
+					.authorization__login
+						input.authorization__username(type="text" placeholder="Логин" autofocus)
+						input.authorization__passwors(type="password" placeholder="Пароль")
+					.authorization__test
+						input(type="checkbox" id="human")
+						label(for="human") Я человек
+						p Вы точно не робот?
+						.authorization__radio
+							input(type="radio" id="authorization-yes")
+							label(for="authorization-yes") Да
+							input(type="radio" id="authorization-no")
+							label(for="authorization-no") Не уверен
+					.authorization__btn
+						button(type="button") На главную
+						button(type="submit") Войти
