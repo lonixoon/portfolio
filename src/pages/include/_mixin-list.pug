@@ -1,0 +1,11 @@
+mixin list(className, items, url, activeItem)
+	//- nav(class=`${className}`)
+	//- 	button(type="button" class=`${className}__toggle`) Открыть меню
+	//- 	div(class=`${className}__wrapper`)
+	ul(class=`${className}__list`)
+		each list, ndx in items
+			li(class=`${className}__item` + ((ndx == activeItem) ? ` ${className}--active` : '' ))
+				a(href=`#` class=`${className}__links`)= list
+
+//- Привер вызова миксина: ('Название класса', ['Первый пункт', 'Второй пункт'], № пункта для класса active)
+//- +navigation('main-nav', ['Мои работы', 'Блог', 'Обо мне', 'Авторизация', 'Корзина'], 2)

@@ -1,6 +1,30 @@
+include include/_mixin-title
+
 doctype html
 html(lang="ru")
-	include templates/_head
-	body
-		include templates/_header
-		main
+	include include/_head
+	body.page
+		header.page__header
+			include include/_social
+			include include/_main-nav
+			div.autor
+				include include/_autor__photo
+				include include/_autor__name
+		main.page__main
+			section.about
+				+title-h1('about', 'Обо мне')
+
+				article.who-am-i
+					div.who-am-i__autor-photo
+						img(src="#", alt="Сойнов Алексей")
+					+title-h3('who-am-i', 'Кто я')
+					p.who-am-i__body
+						| Я начинающуй веб разработчик из Новосибирска. Учусь разрабатывать современные и удобные сайты. Мне нравятся современные и интересны проекты.
+						br
+						| Этот сайт я сдела в рамках убебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
+				article.skills
+					
+
+
+
+
