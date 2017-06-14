@@ -1,5 +1,3 @@
-include include/_mixin-title
-
 doctype html
 html(lang="ru")
 	include include/_head
@@ -8,23 +6,47 @@ html(lang="ru")
 			include include/_social
 			include include/_main-nav
 			div.autor
-				include include/_autor__photo
-				include include/_autor__name
+				include include/_author__photo
+				include include/_author__name
 		main.page__main
 			section.about
-				+title-h1('about', 'Обо мне')
-
+				h1.about__title Обо мне
 				article.who-am-i
 					div.who-am-i__autor-photo
 						img(src="#", alt="Сойнов Алексей")
-					+title-h3('who-am-i', 'Кто я')
-					p.who-am-i__body
-						| Я начинающуй веб разработчик из Новосибирска. Учусь разрабатывать современные и удобные сайты. Мне нравятся современные и интересны проекты.
+					h3.who-am-i__title Кто я
+					p.who-am-i__text
+						| Я начинающий веб разработчик из Новосибирска. Учусь разрабатывать современные и удобные сайты. Мне нравятся современные и интересны проекты.
 						br
-						| Этот сайт я сдела в рамках убебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
+						| Этот сайт я сдела в рамках учебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
 				article.skills
-					
-
-
-
+					h3.skills__titile Чем я могу быть полезен
+					p.skill__text
+						| Больше меня привлекает Frontend, но я так же знаком и могу решать не сложные задачи по Backend.
+					div.skill__wrapper-list
+						ul.skill__list
+							li.skill__item Frontend
+								ul.skill__inner-list
+									li.skill__inner-item HTML5
+									li.skill__inner-item CSS3
+									li.skill__inner-item JavaScript &amp; jQuery
+							li.skill__item Backend
+								ul.skill__inner-list
+									li.skill__inner-item PHP
+									li.skill__inner-item myEQL
+									li.skill__inner-item Node.js &amp; npm
+									li.skill__inner-item Mongo.db
+							li.skill__item WorkFlow
+								ul.skill__inner-list
+									li.skill__inner-item Git
+									li.skill__inner-item Gulp
+									li.skill__inner-item Bower
+			section.contacts
+				h2.contacts__title Контакты
+				div.body
+					p.contacts__item.contacts__item--skype skype_test
+					p.contacts__item.contacts__item--email soinov.alexey@yandex.ru
+					p.contacts__item.contacts__item--tel +7&nbsp;999&nbsp;999&nbsp;99&nbsp;99
+					p.contacts__item.contacts__item--address г.&nbsp;Новосибирск, ул.&nbsp;Ватутина, д.107
+		include include/_footer
 

@@ -1,21 +1,4 @@
 //- Привер вызова миксина: ('Название БЭМ блока', 'Заголовок')
 
-mixin title-h1(className, title)
-	h1(class=`${className}__title`)= `${title}`
-
-mixin title-h2(className, title)
-	h2(class=`${className}__title`)= `${title}`
-
-mixin title-h3(className, title)
-	h3(class=`${className}__title`)= `${title}`
-
-
-
-mixin subtitle-h2(className, title)
-	h2(class=`${className}__subtitle`)= `${title}`
-
-mixin subtitle-h3(className, title)
-	h3(class=`${className}__subtitle`)= `${title}`
-
-mixin subtitle-h4(className, title)
-	h4(class=`${className}__subtitle`)= `${title}`	
+mixin title-line(title)
+	div.title-line

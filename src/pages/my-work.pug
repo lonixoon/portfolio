@@ -1,0 +1,26 @@
+doctype html
+html(lang="ru")
+	include include/_head
+	body.page
+		header.page__header
+			include include/_social
+			include include/_main-nav
+			div.author
+				include include/_author__photo
+				include include/_author__name
+		main
+			section.my-work
+				h1.my-work__title Мои работы
+				ul.my-work__list
+					li.my-work__item
+						div.my-work__img
+							img(src="#", alt="Седона")
+						h3.my-work__subtitle Заповедник Седона в Америке
+						p.my-work__technologies HTML, CSS, JavaScript
+						a.my-work__btn(href="#") Посмотреть сайт
+				div.my-work__slider.slider
+					div.slider__next
+					div.slider__back
+			section.feedback
+				h2.feedback__title Что обо мне говорят
+		include include/_footer
