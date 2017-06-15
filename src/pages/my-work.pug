@@ -23,4 +23,30 @@ html(lang="ru")
 					div.slider__back
 			section.feedback
 				h2.feedback__title Что обо мне говорят
+				ul.feedback__list
+					li.feedback__item
+						p.feedback__quote
+							| Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
+						div.feedback__user
+							div.feedback__avatar
+								img(src="#", alt="Роман")
+							p.feedback__user-name Роман
+							p.feedback__user крутой директор
+					li.feedback__item
+						p.feedback__quote
+							| Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
+						div.feedback__user
+							div.feedback__avatar
+								img(src="#", alt="Вован")
+							p.feedback__user-name Вован
+							p.feedback__user крутой менеджер
+				form(action="").feedback__form.form
+					h3.form__title Связаться со мной
+					div.form__body
+						input(type="text" placeholder="Имя")
+						input(type="email" placeholder="Email")
+						textarea(placeholder="Ваше сообщение")
+					div.form__bottom
+						button Отправить
+						button Очистить
 		include include/_footer
