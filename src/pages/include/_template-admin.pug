@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="ru")
+head
+	meta(charset="utf-8")
+	meta(name="viewport" content="width=device-width,initial-scale=1")
+	link(href="css/style.css" rel="stylesheet")
+	title Панель администрирования
+body
+	header
+		div.navbar
+			h1.navbar__ttile Панель администрирования
+			a(href="index.html").navbar__back-site Вернуться на сайт
+		nav.admin-nav
+			ul.admin-nav__list
+				li.admin-nav__item
+					a(href="tab1.html") Tab 1
+				li.admin-nav__item
+					a(href="tab2.html") Tab 2
+				li.admin-nav__item
+					a(href="tab3.html") Tab 3
+	main.admin-page
+		block content
