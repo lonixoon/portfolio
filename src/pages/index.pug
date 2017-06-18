@@ -3,15 +3,14 @@ html(lang="ru")
 	head
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
-		link(href="css/style.css" rel="stylesheet")
+		link(href="css/styles.min.css" rel="stylesheet")
 		title Портфолио
 	body
 		header
-			div.btn-authorization.btn Авторизация
+			div.btn Авторизация
 		main
-			div.autor
-				div.autor__foto
-					img(href="#" alt="Алексей Сойнов")
+			div.author
+				img.author__photo(src="img/my_photo.jpg" alt="Алексей Сойнов")
 				include include/_author__name
 				div.social
 				ul.social__list
@@ -24,11 +23,11 @@ html(lang="ru")
 				nav.main-nav
 					ul.main-nav__list
 						li.main-nav__item
-							a(href="my-work.html") Мои работы
+							a.btn.btn--green(href="my-work.html") Мои работы
 						li.main-nav__item
-							a(href="about.html") Обо мне
+							a.btn.btn--green(href="about.html") Обо мне
 						li.main-nav__item
-							a(href="blog.html") Блог
+							a.btn.btn--green(href="blog.html") Блог
 			div.authorization
 				form.authorization__form
 					h1 Авторизуйтесь
@@ -40,9 +39,9 @@ html(lang="ru")
 						label(for="human") Я человек
 						p Вы точно не робот?
 						div.authorization__radio
-							input(type="radio" id="authorization-yes")
-							label(for="authorization-yes") Да
-							input(type="radio" id="authorization-no")
+							input(type="radio" id="authorization-yes" name="authorization")
+							label(for="authorization-yes" name="authorization") Да
+							input(type="radio" id="authorization-no" name="authorization")
 							label(for="authorization-no") Не уверен
 					div.authorization__btn
 						button(type="button") На главную
