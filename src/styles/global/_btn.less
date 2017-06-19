@@ -1,12 +1,12 @@
 .btn {
-  display: inline-block;
+  display: inline-flex;
   
   padding: 7px 32px;
   margin: 0 auto;
-  text-align: center;
 
   border: 1px solid #FFF;
   border-radius: 5px;
+  outline: none;
   
   font-family: inherit;
   font-size: 15px;
@@ -14,12 +14,44 @@
 
   color: #FFF;
 
-  cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;  
+
+  &:hover {
+    text-decoration: underline;
+  }
 
 
   &--green {
-    background: #00bfa5;
-    padding: 10px 20px;
+    background: @green;
+
+    &:hover {
+      background: fade(@green, 80%);
+    }
+
+    &:active {
+      background: fade(@green, 60%);
+    }
+  }
+
+  &--main-nav {
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
     border: none;
+    border-radius: 0px;
+  }
+
+  &--login {
+    justify-content: center;
+    padding: 12px 0;
+    width: 50%;
+    border: none;
+    border-radius: 0px;
+    margin-right: 1px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
   }
 }

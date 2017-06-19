@@ -23,17 +23,18 @@ html(lang="ru")
 				nav.main-nav
 					ul.main-nav__list
 						li.main-nav__item
-							a.btn.btn--green(href="my-work.html") Мои работы
+							a.btn.btn--main-nav.btn--green(href="my-work.html") Мои работы
 						li.main-nav__item
-							a.btn.btn--green(href="about.html") Обо мне
+							a.btn.btn--main-nav.btn--green(href="about.html") Обо мне
 						li.main-nav__item
-							a.btn.btn--green(href="blog.html") Блог
+							a.btn.btn--main-nav.btn--green(href="blog.html") Блог
 			div.authorization
-				form.authorization__form
-					h1 Авторизуйтесь
+				form(action="").authorization__form
+					div.title-line
+						h1.authorization__title Авторизуйтесь
 					div.authorization__login
-						input.authorization__username(type="text" placeholder="Логин" autofocus)
-						input.authorization__passwors(type="password" placeholder="Пароль")
+						input.authorization__input-text(type="text" placeholder="Логин" autofocus)
+						input.authorization__input-text(type="password" placeholder="Пароль")
 					div.authorization__test
 						input(type="checkbox" id="human")
 						label(for="human") Я человек
@@ -44,5 +45,5 @@ html(lang="ru")
 							input(type="radio" id="authorization-no" name="authorization")
 							label(for="authorization-no") Не уверен
 					div.authorization__btn
-						button(type="button") На главную
-						button(type="submit") Войти
+						button.btn.btn--green.btn--login(type="button") На главную
+						button.btn.btn--green.btn--login(type="submit") Войти
