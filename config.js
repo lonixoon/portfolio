@@ -7,8 +7,8 @@ module.exports = {
 
 
     use: {  // Использование шаблонов и препроцессоров (По умолчанию LESS+HTML)
-        less: false,
-        sass: true,
+        less: true,
+        sass: false,
         pug: true
     },
 
