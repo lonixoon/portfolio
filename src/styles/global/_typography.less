@@ -1,10 +1,15 @@
 * {
   box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
 }
 
-body {
+html, body {
   font-family: "Roboto";
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   background: #C5CEC9;
 }
@@ -25,15 +30,29 @@ a {
   }
 }
 
-// @media @tabled-width {
 
-//   body {
-//     font-size: 14px;
-//     line-height: 1.7;
-//     text-transform: uppercase;
-//   }
+// Планшеты
+@media @tablet {
 
-//   h1, h2, h3 {
-//     font-size: 30px;
-//   }
-// }
+  html, body {
+    font-size: 15px;
+  }
+}
+
+
+// Ноуты
+@media @laptop {
+
+  html, body {
+    font-size: 16px;
+  }
+}
+
+
+// Дектропы
+@media @desktop {
+
+  html, body {
+    font-size: 17px;
+  }
+}

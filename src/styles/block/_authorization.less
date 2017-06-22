@@ -2,13 +2,18 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  background: rgba(255, 255, 255, 0.5);
+  width: @rem * 300;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   overflow: hidden;
 
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
   &__title {
-    font-size: 35px;
+    font-size: @rem * 30;
     color: @gray-dark;
   }
 
@@ -18,11 +23,11 @@
   }
 
   &__input-text {
-    width: 260px;
-    padding: 15px;
-    margin-bottom: 20px;
+    width: @rem * 260;
+    padding: @rem * 15;
+    margin-bottom: @rem * 20;
     border: none;
-    border-radius: 5px;    
+    border-radius: 5px;
   }
 
   &__btn {

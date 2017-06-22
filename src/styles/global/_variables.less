@@ -7,8 +7,17 @@
 @gray-lighter:           lighten(@gray-base, 93.5%);
 
 // Оттенки зелёного
-@green-darker:            darken(#00bfa5, 20%);
-@green-dark:              darken(#00bfa5, 10%);
+@green-darker:            darken(#009688, 10%);
+@green-dark:              #009688;
 @green:                   #00bfa5;
 @green-light:             lighten(#00bfa5, 10%);
 @green-lighter:           lighten(#00bfa5, 20%);
+
+// Разрешение экрана
+@mobile-only: ~"(max-width: 767px)";
+@tablet: ~"(min-width: 768px)";
+@laptop: ~"(min-width: 1200px)";
+@desktop: ~"(min-width: 1800px)";
+
+// Относительные едины
+@rem: 1rem / 14px;

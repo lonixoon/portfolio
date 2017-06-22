@@ -1,15 +1,16 @@
 .btn {
   display: inline-flex;
   
-  padding: 7px 32px;
+  padding: @rem * 10 @rem * 20;
   margin: 0 auto;
 
-  border: 1px solid #FFF;
+  border: none;
   border-radius: 5px;
   outline: none;
   
   font-family: inherit;
-  font-size: 15px;
+  line-height: 1.4;
+  font-size:  @rem * 14;
   font-weight: 500;
 
   color: #FFF;
@@ -23,35 +24,42 @@
 
 
   &--green {
-    background: @green;
+    background: fade(@green, 80%);
 
     &:hover {
-      background: fade(@green, 80%);
+      background: fade(@green-dark, 80%);
     }
 
     &:active {
-      background: fade(@green, 60%);
+      background: fade(@green-darker, 80%)
     }
   }
 
   &--main-nav {
     justify-content: center;
-    padding: 10px 0;
+    padding: @rem * 12.5 0;
     width: 100%;
-    border: none;
     border-radius: 0px;
   }
 
-  &--login {
+  &--authorization {
     justify-content: center;
-    padding: 12px 0;
+    padding: @rem * 12.5 0;
     width: 50%;
-    border: none;
     border-radius: 0px;
     margin-right: 1px;
 
     &:last-child {
       margin-right: 0px;
+    }
+  }
+
+  &--login {
+    border: 1px solid #fff;
+
+    &:hover {
+      color: @green;
+      background-color: #fff;
     }
   }
 }
