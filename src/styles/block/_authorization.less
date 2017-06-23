@@ -1,20 +1,22 @@
 .authorization {
-  display: inline-flex;
+  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   width: @rem * 300;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  
+  border-radius: @rem * 5;
   overflow: hidden;
 
+  background: rgba(255, 255, 255, 0.8);
 
-  input[type="checkbox"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     display: none;
   }
 
   &__title {
     font-size: @rem * 30;
-    color: @gray-dark;
   }
 
   &__form {
@@ -22,12 +24,34 @@
     font-weight: normal;
   }
 
+  &__test-robot {
+    font-size: @rem * 16;
+    font-weight: 700;
+  }
+
   &__input-text {
     width: @rem * 260;
     padding: @rem * 15;
     margin-bottom: @rem * 20;
+
     border: none;
-    border-radius: 5px;
+    border-radius: @rem * 5;
+  }
+
+  &__checkbox {
+    font-size: @rem * 15;
+    font-weight: 500;
+  }
+
+  &__radio {
+    display: flex;
+    margin-bottom: @rem * 40;
+  }
+
+  &__radio-btn {
+    margin-left: @rem * 85;
+    font-size: @rem * 15;
+    font-weight: 500;
   }
 
   &__btn {

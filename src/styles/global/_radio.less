@@ -1,0 +1,21 @@
+.radio {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: @rem * -1;
+    left: @rem * -30;
+    width: @rem * 20;
+    height: @rem * 20;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  input[type="radio"]:checked + &::before {
+    background-color: @green;
+    box-shadow: 0 0 0 @rem*5 #fff inset;
+  }
+}
