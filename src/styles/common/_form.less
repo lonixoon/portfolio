@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  width: @rem*300;
+  width: 90%;
+  margin: auto;
+  
+  border-radius: @rem*5;
+  overflow: hidden;
+
+  background-color:  fade(#fff, 50%);
+
+  &__title {
+    font-size: @rem*20;
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: @rem*20;
+  }
+
+  &__text {
+    width: @rem*260;
+    width: 100%;
+    padding: @rem*15;
+    margin-bottom: @rem*20;
+
+    border: none;
+    border-radius: @rem*5;
+
+    &--textarea {
+    height: @rem*150;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+  }
+}

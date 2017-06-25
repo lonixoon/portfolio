@@ -9,15 +9,19 @@ block content
 		ul.my-work__list
 			li.my-work__item
 				div.my-work__img
-					img(src="#", alt="Седона")
-				h3.my-work__subtitle Заповедник Седона в Америке
-				p.my-work__technologies HTML, CSS, JavaScript
-				a.my-work__btn(href="#") Посмотреть сайт
-		div.my-work__slider.slider
-			div.slider__next
-			div.slider__back
+					img(src="img/sedona.jpg" alt="Седона")
+				div.my-work__info
+					h3.my-work__subtitle Заповедник Седона в Америке
+					p.my-work__technologies HTML, CSS, JavaScript
+					a.my-work__btn.btn.btn--green(href="#") Посмотреть сайт
+				div.my-work__slider.slider
+					div.slider__next
+					div.slider__back
 	section.feedback
-		h2.feedback__title Что обо мне говорят
+		h2.feedback__title
+			|Что обо мне
+			br
+			|говорят
 		ul.feedback__list
 			li.feedback__item
 				p.feedback__quote.
@@ -36,11 +40,12 @@ block content
 					p.feedback__user-name Вован
 					p.feedback__user крутой менеджер
 		form(action="").feedback__form.form
-			h3.form__title Связаться со мной
-			div.form__body
-				input(type="text" placeholder="Имя")
-				input(type="email" placeholder="Email")
-				textarea(placeholder="Ваше сообщение")
-			div.form__bottom
-				button Отправить
-				button Очистить
+			div.feedback__wrap
+				h3.form__title Связаться со мной
+				div.form__body
+					input.form__text(type="text" placeholder="Имя")
+					input.form__text(type="email" placeholder="Email")
+					textarea.form__text.form__text--textarea(placeholder="Ваше сообщение")
+				div.form__bottom
+					button.btn.btn--authorization.btn--green Отправить
+					button.btn.btn--authorization.btn--green Очистить
