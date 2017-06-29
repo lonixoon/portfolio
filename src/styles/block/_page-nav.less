@@ -1,0 +1,40 @@
+.page-nav {
+  margin-left: -90%;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;  
+  color: #fff;
+  font-size: @rem*16;
+  background-color: @green;
+  z-index: 120;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 100%;
+    width: 10px;
+    height: 40px;
+
+    border-bottom-right-radius: 10px 20px;
+    border-top-right-radius: 10px 20px;
+
+    background-color: @green;
+
+
+  }
+  
+  &__list {
+    margin-top: @rem*70;
+    padding: 0 @rem*20;
+    list-style: none;
+    text-align: right;
+  }
+
+  &__item {
+    margin-bottom: @rem*35;
+  }
+}

@@ -1,0 +1,44 @@
+.skills {
+  padding: 0 @rem*10;
+  background-color: #eeebdf;
+
+  &__title {
+    text-align: center;
+    font-size: @rem*21;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    font-size: @rem*21;
+    text-align: center;
+  }
+
+  &__inner-list {
+    display: flex;
+    // justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 @rem*10;
+    list-style: none;
+  }
+
+  &__inner-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 @rem*10 @rem*20 @rem*10;
+    width: @rem*110;
+    height: @rem*110;
+
+    font-size: @rem*14;
+
+    color: @green;
+    border-radius: 50%;
+    background-color: @gray-lighter;
+  }
+}
