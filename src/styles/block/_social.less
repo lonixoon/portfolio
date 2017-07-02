@@ -3,14 +3,54 @@
   &__list {
     display: flex;
     padding: 0;
-    padding-top: @rem*30;
     margin-top: 0;
-    margin-bottom: @rem*30;
+    margin-bottom: @rem*40;
+
+    &--index {
+      padding-top: @rem*30;
+      padding-left: 0;
+    }
+    
 
     list-style: none;
   }
 
   &__item {
-    margin-right: @rem*10;
+    margin-right: @rem*5;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    width: @rem*50;
+    height: @rem*45;
+  }
+
+  &__icon {
+    opacity: 0.5;
+    fill: #fff;
+    width: @rem*25;
+    height: @rem*20;
+
+    &--green {
+      fill: @green;
+      width: @rem*30;
+      height: @rem*25;
+    }
+
+    &--round {
+      width: @rem*36;
+      height: @rem*36;
+    }
+  }
+  
+  &__link:hover &__icon {
+      opacity: 1;
   }
 }

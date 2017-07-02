@@ -1,6 +1,17 @@
 .blog {
+  position: relative;
   padding: 0 @rem*10;
   background-color: #fff;
+
+  &__icon-corner {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: @rem*40;
+    z-index: 30;
+    fill: #fff;
+  }
 
   &__item {
   	padding-bottom: @rem*20;

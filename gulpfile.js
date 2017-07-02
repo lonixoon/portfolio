@@ -1,14 +1,6 @@
 'use strict';
 
 /* ======== ПОДКЛЮЧЕНИЕ ПЛАГИНОВ ==================================================================================== */
-var svgSprite = require("gulp-svg-sprites");
- 
-gulp.task('sprites', function () {
-    return gulp.src('assets/svg/*.svg')
-        .pipe(svgSprite())
-        .pipe(gulp.dest("assets"));
-});
-
 
 var gulp         = require('gulp'),                         // gulp
 
@@ -304,17 +296,4 @@ gulp.task('ftp', function () {
 /* ============ ТАСК "DEFAULT" ====================================================================================== */
 
         gulp.task('default', ['build', 'server', 'watch']);
-/* ================================================================================================================== */
-
-
-/* ============ ТАСК "svgSprite" ====================================================================================== */
-
-var svgSprite = require("gulp-svg-sprites");
- 
-gulp.task('sprites', function () {
-    return gulp.src('assets/svg/*.svg')
-        .pipe(svgSprite())
-        .pipe(gulp.dest("assets"));
-});
-
 /* ================================================================================================================== */

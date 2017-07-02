@@ -1,40 +1,62 @@
+// localstorage для SVG
+var request = new XMLHttpRequest();
+
+request.open('GET', './symbol_sprite.html', true);
+
+request.onload = function() {
+
+    if (request.status >= 200 && request.status < 400 ) {
+        var node = document.createElement("div");
+
+        node.innerHTML = request.responseText;
+        document.body.insertBefore(node, document.body.firstChild);
+
+        localStorage.setItem( 'inlineSVGdata',  request.responseText );
+    }
+
+};
+
+request.send();
+
+// Открывашка для меню
 var menuToggle = document.querySelector(".main-nav__toggle");
-var menuClosed = document.querySelector(".main-nav");
-
-var loginFormOpened = document.querySelector(".main-nav__login");
-var loginForm = document.querySelector(".login-form");
-var loginFormClosed = document.querySelector(".login-form__closed");
-
-var formSubmit = document.querySelector(".form__submit");
-var formSubmitted = document.querySelector(".form__submitted");
-var formSubmittedClose = document.querySelector(".form__submitted-close");
-
+var menuClosed = document.querySelector(".main-nav__list");
 
 menuToggle.addEventListener("click", function (event) {
     event.preventDefault();
-    menuClosed.classList.toggle("main-nav--closed");
-    menuClosed.classList.toggle("main-nav--opened");
-})
+    // menuClosed.classList.toggle("main-nav__list--closed");
+    menuClosed.classList.toggle("main-nav__list--opened");
+});
+
+// var loginFormOpened = document.querySelector(".main-nav__login");
+// var loginForm = document.querySelector(".login-form");
+// var loginFormClosed = document.querySelector(".login-form__closed");
+
+// var formSubmit = document.querySelector(".form__submit");
+// var formSubmitted = document.querySelector(".form__submitted");
+// var formSubmittedClose = document.querySelector(".form__submitted-close");
 
 
-loginFormOpened.addEventListener("click", function (event) {
-    event.preventDefault();
-    loginForm.classList.add("login-form--opened");
-    menuClosed.classList.remove("main-nav--opened");
-    menuClosed.classList.add("main-nav--closed");
-})
-loginFormClosed.addEventListener("click", function (event) {
-    event.preventDefault();
-    loginForm.classList.toggle("login-form--opened");
-})
+// loginFormOpened.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     loginForm.classList.add("login-form--opened");
+//     menuClosed.classList.remove("main-nav--opened");
+//     menuClosed.classList.add("main-nav--closed");
+// });
+// loginFormClosed.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     loginForm.classList.toggle("login-form--opened");
+// });
 
 
-formSubmit.addEventListener("click", function (event) {
-    event.preventDefault();
-    formSubmitted.classList.add("form__submitted--open");
-})
+// formSubmit.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     formSubmitted.classList.add("form__submitted--open");
+// });
 
-formSubmittedClose.addEventListener("click", function (event) {
-    event.preventDefault();
-    formSubmitted.classList.remove("form__submitted--open");
-})
+// formSubmittedClose.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     formSubmitted.classList.remove("form__submitted--open");
+// });
+
+

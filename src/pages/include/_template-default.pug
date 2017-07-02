@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 html(lang="ru")
-	head
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width,initial-scale=1")
-		link(href="css/styles.min.css" rel="stylesheet")
-		title Портфолио
-	body.page
-		header.page__header.page__header--inner-page
-			div.social
-				ul.social__list
-					li.social__item
-						a(href="#").social__link.social__link--vk Вконтакте
-					li.social__item
-						a(href="#").social__link.social__link--gh Гитхаб
-					li.social__item
-						a(href="#").social__link.social__link--in Ин
-			nav.main-nav.main-nav--inner-page
-				button.main-nav__toggle.btn(type="button") Меню
-				ul.main-nav__list.main-nav__list--full-screen
-					li.main-nav__item.main-nav__item--inner-page
-						a(href="my-work.html") Мои работы
-					li.main-nav__item.main-nav__item--inner-page
-						a(href="blog.html") Блог
-					li.main-nav__item.main-nav__item--inner-page
-						a(href="about.html") Обо мне
-					li.main-nav__item.main-nav__item--inner-page
-						a(href="index.html") Авторизация
-			div.author.author--inner-page
-				div.author__inner-page-wrap
-					img.author__photo(src="img/my_photo.jpg", alt="Сойнво Алексей")
-					block title
-		main.page__main
-			block content
-		footer.page__footer
-			nav.main-nav
-				ul.main-nav__item
-					li.main-nav__item
-						a(href="my-work.html") Мои работы
-					li.main-nav__item
-						a(href="blog.html") Блог
-					li.main-nav__item
-						a(href="about.html") Обо мне
-					li.main-nav__item
-						a(href="index.html") Авторизация
-			div.social
-				ul.social__list
-					li.social__item
-						a(href="#").social__link.social__link--vk Вконтакте
-					li.social__item
-						a(href="#").social__link.social__link--gh Гитхаб
-					li.social__item
-						a(href="#").social__link.social__link--in Ин
-			div.about-footer
-				p.about-footer__text Я начинающий веб разработчик из Новосибирска. Этот сайт делал в рамках учебного проекта.
-			div.copyright
-				p.copyright__text Свёрстано мной.
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    link(href="css/styles.min.css" rel="stylesheet")
+    title Портфолио
+  body.page
+    header.page__header.page__header--inner-page
+      div.social
+        ul.social__list
+          li.social__item
+            a(href="#").social__link.social__link--vk Вконтакте
+              svg.social__icon
+                use(xlink:href="#icon-vk")
+          li.social__item
+            a(href="#").social__link.social__link--gh Гитхаб
+              svg.social__icon
+                use(xlink:href="#icon-github")
+          li.social__item
+            a(href="#").social__link.social__link--in Ин
+              svg.social__icon
+                use(xlink:href="#icon-in")
+      nav.main-nav.main-nav--inner-page
+        button.main-nav__toggle(type="button") Меню
+          svg.main-nav__icon
+            use(xlink:href="#icon-hamburger")
+        ul.main-nav__list.main-nav__list--full-screen
+          li.main-nav__item.main-nav__item--inner-page
+            a(href="my-work.html") Мои работы
+          li.main-nav__item.main-nav__item--inner-page
+            a(href="blog.html") Блог
+          li.main-nav__item.main-nav__item--inner-page
+            a(href="about.html") Обо мне
+          li.main-nav__item.main-nav__item--inner-page
+            a(href="index.html") На главную
+      div.author.author--inner-page
+        div.author__inner-page-wrap
+          img.author__photo(src="img/my_photo.jpg", alt="Сойнво Алексей")
+          block title
+      div.arrow-down
+        svg.arrow-down__icon
+                use(xlink:href="#icon-arrow_down")
+    main.page__main
+      block content
+    footer.page__footer
+      nav.main-nav
+        ul.main-nav__item
+          li.main-nav__item
+            a(href="my-work.html") Мои работы
+          li.main-nav__item
+            a(href="blog.html") Блог
+          li.main-nav__item
+            a(href="about.html") Обо мне
+          li.main-nav__item
+            a(href="index.html") Авторизация
+      div.social
+        ul.social__list
+          li.social__item
+            a(href="#").social__link.social__link--vk Вконтакте
+              svg.social__icon.social__icon--round
+                use(xlink:href="#icon-vk_round")
+          li.social__item
+            a(href="#").social__link.social__link--gh Гитхаб
+              svg.social__icon.social__icon--round
+                use(xlink:href="#icon-github_round")
+          li.social__item
+            a(href="#").social__link.social__link--in Ин
+              svg.social__icon.social__icon--round
+                use(xlink:href="#icon-in_round")
+      div.about-footer
+        p.about-footer__text Я начинающий веб разработчик из Новосибирска. Этот сайт делал в рамках учебного проекта.
+      div.copyright
+        p.copyright__text Свёрстано мной.
+    script(src="js/main.min.js")

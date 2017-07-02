@@ -1,18 +1,21 @@
 .authorization {
   display: flex;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  width: @rem*300;
-  
-  border-radius: @rem*5;
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.8);
-
+  justify-content: center;
+  margin-top: @rem*86;
   input[type="checkbox"],
   input[type="radio"] {
     display: none;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: @rem*300;
+
+    border-radius: @rem*5;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
   }
 
   &__title {
@@ -22,6 +25,7 @@
   &__form {
     text-align: center;
     font-weight: normal;
+    width: 100%;
   }
 
   &__test-robot {
@@ -29,13 +33,55 @@
     font-weight: 700;
   }
 
-  &__input-text {
-    width: @rem*260;
-    padding: @rem*15;
-    margin-bottom: @rem*20;
+  &__input-text-wrap {
+    display: flex;
+    height: @rem*46;
+    margin: 0 @rem*20 @rem*20 @rem*20;
+    cursor: text;
+  }
 
+  &__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: @rem*46;
+    height: 100%;
+    border-bottom-left-radius: @rem*5;
+    border-top-left-radius: @rem*5;
+    background-color: #f0efe9;
+    // cursor: default;
+  }
+
+  &__icon-login {
+    width: @rem*12;
+    height: @rem*12;
+    fill: #C4CBCD;
+  }
+
+  &__icon-password {
+    width: @rem*14;
+    height: @rem*13;
+    fill: #C4CBCD;
+  }
+
+  &__input-text {
+    // display: flex;
+    padding: 0 @rem*10;
+    width: @rem*215;
+    height: 100%;
+    border-top-right-radius: @rem*5;
+    border-bottom-right-radius: @rem*5;
     border: none;
-    border-radius: @rem*5;
+    outline: none;
+
+    &:focus {
+      border: 1px solid @green;
+    }
+  }
+
+  &__input-text-wrap:hover &__icon-login,
+  &__input-text-wrap:hover &__icon-password {
+    fill: @green;
   }
 
   &__checkbox {

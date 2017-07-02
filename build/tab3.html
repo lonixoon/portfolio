@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link href="css/styles.min.css" rel="stylesheet"/>
+    <title>Панель администрирования</title>
+  </head>
+  <body>
+    <header>
+      <div class="admin-navbar"><a class="admin-navbar__back-site" href="index.html">Вернуться на сайт</a>
+        <h1 class="admin-navbar__ttile">Панель администрирования</h1>
+      </div>
+      <nav class="admin-nav">
+        <ul class="admin-nav__list">
+          <li class="admin-nav__item"><a href="tab1.html">Tab 1</a></li>
+          <li class="admin-nav__item"><a href="tab2.html">Tab 2</a></li>
+          <li class="admin-nav__item"><a href="tab3.html">Tab 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="admin-page">
+      <h2 class="admin-page__title">Страница «Мои работы»</h2>
+      <div class="admin-my-work">
+        <h3 class="admin-my-work__titile">Добавить работу</h3>
+        <form class="admin-my-work__form form">
+          <input class="form__text" type="text" placeholder="Название проекта"/>
+          <input class="form__text" type="text" placeholder="Технологии"/>
+          <div class="form__attachment">Загрузить картинку</div>
+          <button type="submit">Добавить</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

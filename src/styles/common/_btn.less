@@ -24,14 +24,15 @@
 
 
   &--green {
-    background: fade(@green, 80%);
+    background: @green;
 
     &:hover {
-      background: fade(@green-dark, 80%);
+      background: @green-dark;
     }
 
     &:active {
-      background: fade(@green-darker, 80%)
+      background: fade(@green-darker, 80%);
+      background: @green-darker;
     }
   }
 

@@ -1,51 +1,62 @@
 extends include/_template-default
 
 block title
-	include include/_author__name
+  include include/_author__name
 
 block content
-	section.my-work
-		h1.my-work__title Мои работы
-		ul.my-work__list
-			li.my-work__item
-				div.my-work__img
-					img(src="img/sedona.jpg" alt="Седона")
-				div.my-work__info
-					h3.my-work__subtitle Заповедник Седона<br> в Америке
-					p.my-work__technologies HTML, CSS, JavaScript
-					a.my-work__btn.btn.btn--green(href="#") Посмотреть сайт
-				div.my-work__slider.slider
-					div.slider__next
-					div.slider__back
-	section.feedback
-		h2.feedback__title
-			|Что обо мне
-			br
-			|говорят
-		ul.feedback__list
-			li.feedback__item
-				p.feedback__quote.
-					Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
-				div.feedback__user-wrap
-					img.feedback__avatar(src="img/sedona.jpg", alt="Роман")
-					div.feedback__user-name-wrap
-						p.feedback__user-name Роман
-						p.feedback__user-position крутой директор
-			li.feedback__item
-				p.feedback__quote.
-					Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
-				div.feedback__user-wrap
-					img.feedback__avatar(src="img/sedona.jpg", alt="Роман")
-					div.feedback__user-name-wrap
-						p.feedback__user-name Роман
-						p.feedback__user-position крутой директор
-		form(action="").feedback__form.form
-			div.feedback__wrap
-				h3.form__title Связаться со мной
-				div.form__body
-					input.form__text(type="text" placeholder="Имя")
-					input.form__text(type="email" placeholder="Email")
-					textarea.form__text.form__text--textarea(placeholder="Ваше сообщение")
-				div.form__bottom
-					button.btn.btn--authorization.btn--green Отправить
-					button.btn.btn--authorization.btn--green Очистить
+  section.my-work
+    svg.my-work__icon-corner
+      use(xlink:href="#icon-corner")
+    div.my-work__title-wrap
+      svg.my-work__icon-works
+        use(xlink:href="#icon-works_header")
+      h1.my-work__title Мои работы
+    ul.my-work__list
+      li.my-work__item
+        div.my-work__img
+          img(src="img/sedona.jpg" alt="Седона")
+        div.my-work__info
+          h3.my-work__subtitle Заповедник Седона<br> в Америке
+          p.my-work__technologies HTML, CSS, JavaScript
+          a.my-work__btn.btn.btn--green(href="#") Посмотреть сайт
+            svg.my-work__icon-link
+              use(xlink:href="#icon-link")
+        div.my-work__slider.slider
+          div.slider__next
+            svg.slider__icon-portf_arrow_down
+              use(xlink:href="#icon-portf_arrow_down")
+          div.slider__back
+            svg.slider__icon-portf_arrow_up
+              use(xlink:href="#icon-portf_arrow_up")
+  section.feedback
+    h2.feedback__title
+      |Что обо мне
+      br
+      |говорят
+    ul.feedback__list
+      li.feedback__item
+        p.feedback__quote.
+          Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
+        div.feedback__user-wrap
+          img.feedback__avatar(src="img/sedona.jpg", alt="Роман")
+          div.feedback__user-name-wrap
+            p.feedback__user-name Роман
+            p.feedback__user-position крутой директор
+      li.feedback__item
+        p.feedback__quote.
+          Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
+        div.feedback__user-wrap
+          img.feedback__avatar(src="img/sedona.jpg", alt="Роман")
+          div.feedback__user-name-wrap
+            p.feedback__user-name Роман
+            p.feedback__user-position крутой директор
+    form(action="").feedback__form.form
+      div.feedback__wrap
+        h3.form__title Связаться со мной
+        div.form__body
+          input.form__text(type="text" placeholder="Имя")
+          input.form__text(type="email" placeholder="Email")
+          textarea.form__text.form__text--textarea(placeholder="Ваше сообщение")
+        div.form__bottom
+          button.btn.btn--authorization.btn--green(type="submit") Отправить
+          button.btn.btn--authorization.btn--green Очистить

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link href="css/styles.min.css" rel="stylesheet"/>
+    <title>Панель администрирования</title>
+  </head>
+  <body>
+    <header>
+      <div class="admin-navbar"><a class="admin-navbar__back-site" href="index.html">Вернуться на сайт</a>
+        <h1 class="admin-navbar__ttile">Панель администрирования</h1>
+      </div>
+      <nav class="admin-nav">
+        <ul class="admin-nav__list">
+          <li class="admin-nav__item"><a href="tab1.html">Tab 1</a></li>
+          <li class="admin-nav__item"><a href="tab2.html">Tab 2</a></li>
+          <li class="admin-nav__item"><a href="tab3.html">Tab 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="admin-page">
+      <h2 class="admin-page__title">Страница «Обо мне»</h2>
+      <div class="admin-skill">
+        <ul class="admin-skill__list">
+          <li class="admin-skill__item">Frontend
+            <ul class="admin-skill__inner-list">
+              <li class="admin-skill__inner-item">HTML5
+                <input class="admin-skill__data" type="number"/><span>%</span>
+              </li>
+              <li class="admin-skill__inner-item">CSS3
+                <input class="admin-skill__data" type="number"/><span>%</span>
+              </li>
+              <li class="admin-skill__inner-item">JavaScript
+                <input class="admin-skill__data" type="number"/><span>%</span>
+              </li>
+            </ul>
+          </li>
+          <li class="admin-skill__item">Backend
+            <ul class="admin-skill__inner-list">
+              <li class="admin-skill__inner-item">PHP</li>
+              <li class="admin-skill__inner-item">myEQL</li>
+              <li class="admin-skill__inner-item">Node.js</li>
+              <li class="admin-skill__inner-item">Mongo.db</li>
+            </ul>
+          </li>
+          <li class="admin-skill__item">WorkFlow
+            <ul class="admin-skill__inner-list">
+              <li class="admin-skill__inner-item">Git</li>
+              <li class="admin-skill__inner-item">Gulp</li>
+              <li class="admin-skill__inner-item">Bower</li>
+            </ul>
+          </li>
+        </ul>
+        <button type="submit">Сохранить</button>
+      </div>
+    </main>
+  </body>
+</html>

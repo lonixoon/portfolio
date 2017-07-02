@@ -1,43 +1,56 @@
 extends include/_template-default
 
 block title
-	include include/_author__name
+  include include/_author__name
 
 block content
-	section.about
-		h1.about__title Обо мне
-		article.who-am-i
-			img.who-am-i__autor-photo(src="img/my_photo.jpg", alt="Сойнов Алексей")
-			h3.who-am-i__title Кто я
-			p.who-am-i__text
-				| Я начинающий веб разработчик из Новосибирска. Учусь разрабатывать современные и удобные сайты. Мне нравятся современные и интересны проекты.
-				br
-				| Этот сайт я сдела в рамках учебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
-		article.skills
-			h3.skills__title Чем я могу быть полезен
-			p.skills__text
-				| Больше меня привлекает Frontend, но я так же знаком и могу решать не сложные задачи по Backend.
-			ul.skills__list
-				li.skills__item Frontend
-					ul.skills__inner-list
-						li.skills__inner-item HTML5
-						li.skills__inner-item CSS3
-						li.skills__inner-item JavaScript &amp; jQuery
-				li.skills__item Backend
-					ul.skills__inner-list
-						li.skills__inner-item PHP
-						li.skills__inner-item myEQL
-						li.skills__inner-item Node.js &amp; npm
-						li.skills__inner-item Mongo.db
-				li.skills__item WorkFlow
-					ul.skills__inner-list
-						li.skills__inner-item Git
-						li.skills__inner-item Gulp
-						li.skills__inner-item Bower
-	section.contacts
-		h2.contacts__title Контакты
-		div.body
-			p.contacts__item.contacts__item--skype skype_test
-			p.contacts__item.contacts__item--email soinov.alexey@yandex.ru
-			p.contacts__item.contacts__item--tel +7&nbsp;999&nbsp;999&nbsp;99&nbsp;99
-			p.contacts__item.contacts__item--address г.&nbsp;Новосибирск, ул.&nbsp;Ватутина, д.107
+  section.about
+    svg.about__icon-corner
+      use(xlink:href="#icon-corner")
+    div.about__title-wrap
+      svg.about__icon
+        use(xlink:href="#icon-about_header")
+      h1.about__title Обо мне
+    article.who-am-i
+      img.who-am-i__autor-photo(src="img/my_photo.jpg", alt="Сойнов Алексей")
+      h3.who-am-i__title Кто я
+      p.who-am-i__text
+        | Я начинающий веб разработчик из Новосибирска. Учусь разрабатывать современные и удобные сайты. Мне нравятся современные и интересны проекты.
+        br
+        | Этот сайт я сдела в рамках учебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
+    article.skills
+      h3.skills__title Чем я могу быть полезен
+      p.skills__text
+        | Больше меня привлекает Frontend, но я так же знаком и могу решать не сложные задачи по Backend.
+      ul.skills__list
+        li.skills__item Frontend
+          ul.skills__inner-list
+            li.skills__inner-item HTML5
+            li.skills__inner-item CSS3
+            li.skills__inner-item JavaScript &amp; jQuery
+        li.skills__item Backend
+          ul.skills__inner-list
+            li.skills__inner-item PHP
+            li.skills__inner-item myEQL
+            li.skills__inner-item Node.js &amp; npm
+            li.skills__inner-item Mongo.db
+        li.skills__item WorkFlow
+          ul.skills__inner-list
+            li.skills__inner-item Git
+            li.skills__inner-item Gulp
+            li.skills__inner-item Bower
+  section.contacts
+    h2.contacts__title Контакты
+    div.body
+      p.contacts__item.contacts__item--skype skype_test
+        svg.contacts__icon
+          use(xlink:href="#icon-skype")
+      p.contacts__item.contacts__item--email soinov.alexey@yandex.ru
+        svg.contacts__icon
+          use(xlink:href="#icon-envelope")
+      p.contacts__item.contacts__item--tel +7&nbsp;999&nbsp;999&nbsp;99&nbsp;99
+        svg.contacts__icon
+          use(xlink:href="#icon-phone")
+      p.contacts__item.contacts__item--address г.&nbsp;Новосибирск, ул.&nbsp;Ватутина, д.107
+        svg.contacts__icon
+          use(xlink:href="#icon-map_marker")

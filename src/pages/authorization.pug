@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    link(href="css/styles.min.css" rel="stylesheet")
+    title Портфолио
+  body.page
+    header.page__header
+      div.authorization
+        div.authorization__wrap
+          form(action="").authorization__form
+            div.title-line
+              h1.authorization__title Авторизуйтесь
+            div.authorization__login
+              div.authorization__input-text-wrap
+                label.authorization__icon-wrap(for="login")
+                  svg.authorization__icon-login
+                    use(xlink:href="#icon-login")
+                input.authorization__input-text(type="text" placeholder="Логин" id="login")
+              div.authorization__input-text-wrap
+                label.authorization__icon-wrap(for="password")
+                  svg.authorization__icon-password
+                    use(xlink:href="#icon-password")
+                input.authorization__input-text(type="password" placeholder="Пароль" id="password")
+            div.authorization__test
+              input(type="checkbox" id="human")
+              label.authorization__checkbox.checkbox(for="human") Я человек
+              p.authorization__test-robot Вы точно не робот?
+              div.authorization__radio
+                input(type="radio" id="authorization-yes" name="authorization")
+                label.authorization__radio-btn.radio(for="authorization-yes" name="authorization") Да
+                input(type="radio" id="authorization-no" name="authorization")
+                label.authorization__radio-btn.radio(for="authorization-no") Не уверен
+            div.authorization__btn
+              a(href="index.html").btn.btn--authorization.btn--green На главную
+              button.btn.btn--authorization.btn--green(type="submit") Войти
+    script(src="js/main.min.js")

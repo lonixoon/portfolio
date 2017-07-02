@@ -1,12 +1,44 @@
 .my-work {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #FBF8F1;
 
-  &__title {
+  &__icon-corner {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    height: @rem*40;
+    z-index: 30;
+    fill: #faf8f0;
+  }
+
+  &__title-wrap {
+    position: relative;
     text-align: center;
+    background-color: #faf8f0;
+  }
+
+  &__title {
+    position: relative;
     font-size: @rem*35;
+    z-index: 20;    
+  }
+
+  &__icon-works {
+    position: absolute;
+    width: @rem*260;
+    // height: @rem*70;
+
+    left: 50%;
+    top: 50%;
+
+    margin-top: -@rem*55;
+    margin-left: -@rem*110;
+    
+    fill: #f0eee7;
+    z-index: 10;
   }
 
   &__list {
@@ -55,5 +87,18 @@
   }
 
   &__slider {
+  }
+
+  &__btn {
+    position: relative;
+    padding-left: @rem*45;
+  }
+
+  &__icon-link {
+    position: absolute;
+    width: @rem*20;
+    fill: #fff;
+    top: 0;
+    left: @rem*12;
   }
 }

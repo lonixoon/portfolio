@@ -1,12 +1,44 @@
 .about {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #efeee9;
   
+  &__icon-corner {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    height: @rem*40;
+    z-index: 30;
+    fill: #eee;
+  }
+
+  &__title-wrap {
+    position: relative;
+    text-align: center;
+    background-color: #eee;
+  }
 
   &__title {
-    text-align: center;
+    position: relative;
     font-size: @rem*35;
+    z-index: 20;
+    
+  }
+
+  &__icon {
+    position: absolute;
+    width: @rem*220;
+    height: @rem*70;
+
+    left: 50%;
+    top: 50%;
+
+    margin-top: -@rem*45;
+    margin-left: -@rem*110;
+    
+    fill: #e5e5e5;
+    z-index: 10;
   }
 }
