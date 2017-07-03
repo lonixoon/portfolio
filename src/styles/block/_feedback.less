@@ -2,9 +2,29 @@
   background: #fff url(../img/bg2-tablet.jpg) no-repeat 50% 150%;
   width: 100%;
 
-  &__title {
-    font-size: @rem*35;
+  &__title-wrap {
+    position: relative;
     text-align: center;
+  }
+
+  &__icon-about_header {
+    position: absolute;
+    width: @rem*220;
+
+    left: 50%;
+    top: 50%;
+
+    margin-top: -@rem*85;
+    margin-left: -@rem*110;
+    
+    fill: fade(#000, 4%);
+    z-index: 10;
+  }
+
+  &__title {
+    .line-for-title();
+    font-size: @rem*35;
+    z-index: 20;
   }
 
   &__form {

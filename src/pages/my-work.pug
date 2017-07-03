@@ -16,7 +16,8 @@ block content
         div.my-work__img
           img(src="img/sedona.jpg" alt="Седона")
         div.my-work__info
-          h3.my-work__subtitle Заповедник Седона<br> в Америке
+          div.my-work__subtitle-wrap
+            h3.my-work__subtitle Заповедник Седона<br> в Америке
           p.my-work__technologies HTML, CSS, JavaScript
           a.my-work__btn.btn.btn--green(href="#") Посмотреть сайт
             svg.my-work__icon-link
@@ -29,10 +30,10 @@ block content
             svg.slider__icon-portf_arrow_up
               use(xlink:href="#icon-portf_arrow_up")
   section.feedback
-    h2.feedback__title
-      |Что обо мне
-      br
-      |говорят
+    div.feedback__title-wrap
+      svg.feedback__icon-about_header
+        use(xlink:href="#icon-about_header")
+      h2.feedback__title Что обо мне<br> говорят
     ul.feedback__list
       li.feedback__item
         p.feedback__quote.
@@ -51,12 +52,12 @@ block content
             p.feedback__user-name Роман
             p.feedback__user-position крутой директор
     form(action="").feedback__form.form
-      div.feedback__wrap
+      div.form__title-wrap
         h3.form__title Связаться со мной
-        div.form__body
-          input.form__text(type="text" placeholder="Имя")
-          input.form__text(type="email" placeholder="Email")
-          textarea.form__text.form__text--textarea(placeholder="Ваше сообщение")
-        div.form__bottom
-          button.btn.btn--authorization.btn--green(type="submit") Отправить
-          button.btn.btn--authorization.btn--green Очистить
+      div.form__body
+        input.form__text(type="text" placeholder="Имя")
+        input.form__text(type="email" placeholder="Email")
+        textarea.form__text.form__text--textarea(placeholder="Ваше сообщение")
+      div.form__bottom
+        button.btn.btn--authorization.btn--green(type="submit") Отправить
+        button.btn.btn--authorization.btn--green Очистить

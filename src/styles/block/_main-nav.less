@@ -65,18 +65,23 @@
       margin-right: 0px;
     }
 
-    &--inner-page {
-      width: 100%;
-      font-family: "BERNIERRegular";
-      font-size: @rem*35;
-      font-weight: normal;
-    }
-
     a {
       display: flex;
       width: 100%;
       align-items: center;
       justify-content: center;
+    }
+
+    &--inner-page {
+      font-family: "BERNIERRegular";
+      font-size: @rem*35;
+      font-weight: normal;
+
+      a {
+        .line-for-title-nav();
+        text-decoration: none;
+        width: auto;
+      }
     }
   }
 

@@ -9,17 +9,22 @@
   border-radius: @rem*5;
   overflow: hidden;
 
-  background-color:  fade(#fff, 50%);
+  background-color:  fade(#fff, 70%);
+
+  &__title-wrap {
+    text-align: center;
+  }
 
   &__title {
+    .line-for-title();
     font-size: @rem*21;
-    text-align: center;
   }
 
   &__body {
     display: flex;
     flex-direction: column;
     padding: @rem*20;
+    padding-top: 0;
   }
 
   &__text {

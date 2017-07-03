@@ -8,18 +8,23 @@ block content
     svg.about__icon-corner
       use(xlink:href="#icon-corner")
     div.about__title-wrap
-      svg.about__icon
+      svg.about__icon-about_header
         use(xlink:href="#icon-about_header")
       h1.about__title Обо мне
     article.who-am-i
       img.who-am-i__autor-photo(src="img/my_photo.jpg", alt="Сойнов Алексей")
-      h3.who-am-i__title Кто я
+      div.who-am-i__title-wrap
+        h3.who-am-i__title Кто я
       p.who-am-i__text
         | Я начинающий веб разработчик из Новосибирска. Учусь разрабатывать современные и удобные сайты. Мне нравятся современные и интересны проекты.
         br
         | Этот сайт я сдела в рамках учебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
     article.skills
-      h3.skills__title Чем я могу быть полезен
+      div.skills__title-wrap
+        h3.skills__title
+          | Чем я могу быть
+          br
+          | вам полезен
       p.skills__text
         | Больше меня привлекает Frontend, но я так же знаком и могу решать не сложные задачи по Backend.
       ul.skills__list
@@ -40,7 +45,8 @@ block content
             li.skills__inner-item Gulp
             li.skills__inner-item Bower
   section.contacts
-    h2.contacts__title Контакты
+    div.contacts__title-wrap
+      h2.contacts__title Контакты
     div.body
       p.contacts__item.contacts__item--skype skype_test
         svg.contacts__icon

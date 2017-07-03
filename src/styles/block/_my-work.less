@@ -21,15 +21,24 @@
   }
 
   &__title {
+    .line-for-title();
     position: relative;
     font-size: @rem*35;
     z-index: 20;    
   }
 
+  &__subtitle-wrap {
+  }
+
+  &__subtitle {
+    .line-for-title();
+    margin: 0;
+    font-size: @rem*20;
+  }
+
   &__icon-works {
     position: absolute;
-    width: @rem*260;
-    // height: @rem*70;
+    width: @rem*240;
 
     left: 50%;
     top: 50%;
@@ -37,7 +46,8 @@
     margin-top: -@rem*55;
     margin-left: -@rem*110;
     
-    fill: #f0eee7;
+    // fill: #f0eee7;
+    fill: fade(#000, 4%);
     z-index: 10;
   }
 
@@ -76,14 +86,6 @@
     font-weight: 500;
 
     color: @green;    
-  }
-
-  &__subtitle {
-    padding: 0 @rem*40;
-    margin: 0;
-
-    text-align: center;
-    font-size: @rem*20;
   }
 
   &__slider {

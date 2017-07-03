@@ -9,7 +9,7 @@
     position: absolute;
     bottom: 100%;
     width: 100%;
-    height: @rem*40;
+    height: @rem*40; 
     z-index: 30;
     fill: #eee;
   }
@@ -21,24 +21,25 @@
   }
 
   &__title {
+    .line-for-title();
     position: relative;
     font-size: @rem*35;
     z-index: 20;
     
   }
 
-  &__icon {
+  &__icon-about_header {
     position: absolute;
     width: @rem*220;
-    height: @rem*70;
 
     left: 50%;
     top: 50%;
 
-    margin-top: -@rem*45;
-    margin-left: -@rem*110;
+    margin-top: -@rem*55;
+    margin-left: -@rem*100;
     
-    fill: #e5e5e5;
+    // fill: #e5e5e5;
+    fill: fade(#000, 4%);
     z-index: 10;
   }
 }
