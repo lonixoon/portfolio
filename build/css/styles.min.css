@@ -884,12 +884,20 @@ input[type="radio"]:checked + .radio::before {
           box-shadow: inset 0.71428571rem 0 2.14285714rem 0.71428571rem #CAC4B4;
   background: url(../img/sedona.jpg) no-repeat 50% 50%;
   background-size: 7.14285714rem;
+  cursor: pointer;
 }
 
 .slider__icon-portf_arrow_down,
 .slider__icon-portf_arrow_up {
   fill: #fff;
+  stroke: #555;
   width: 3.07142857rem;
+}
+
+.slider__next:hover .slider__icon-portf_arrow_down,
+.slider__back:hover .slider__icon-portf_arrow_up {
+  fill: #00bfa5;
+  stroke: #00bfa5;
 }
 
 .admin-navbar {
@@ -972,6 +980,13 @@ input[type="radio"]:checked + .radio::before {
   width: 1.85714286rem;
   height: 1.14285714rem;
   fill: #ccc;
+}
+
+.arrow-down__icon--up {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .page {
@@ -1751,6 +1766,18 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .feedback {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: #fff url(../img/bg2-tablet.jpg) no-repeat 50% 150%;
   width: 100%;
 }
@@ -1819,8 +1846,22 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .feedback__item {
-  padding-top: 3.57142857rem;
+  position: relative;
+  padding-top: 1.78571429rem;
   margin-bottom: 2.14285714rem;
+}
+
+.feedback__item::before {
+  position: absolute;
+  width: 2.85714286rem;
+  top: 0rem;
+  left: 50%;
+  margin-left: -1.42857143rem;
+  content: "“";
+  font-size: 8.57142857rem;
+  font-family: "arial";
+  line-height: 0.75;
+  opacity: 0.2;
 }
 
 .feedback__avatar {

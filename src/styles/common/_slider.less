@@ -3,6 +3,7 @@
   width: 100%;
   height: @rem*90;
   background-color: #EFEBE0;
+  // background-color: #ccc;
   opacity: 0.8;
 
   &__next,
@@ -12,13 +13,23 @@
     width: 50%;
     height: 100%;
     box-shadow: inset @rem*10 0 @rem*30 @rem*10 #CAC4B4;
+    // box-shadow: inset @rem*10 0 @rem*60 @rem*10 #bbb;
+    // box-shadow: inset @rem*15 0 @rem*60 @rem*15 #aaa;
     background: url(../img/sedona.jpg) no-repeat 50% 50%;
-    background-size: @rem*100;;
+    background-size: @rem*100;
+    cursor: pointer;
   }
 
   &__icon-portf_arrow_down,
   &__icon-portf_arrow_up {
     fill: #fff;
+    stroke: #555;
     width: @rem*43;
+  }
+
+  &__next:hover &__icon-portf_arrow_down,
+  &__back:hover &__icon-portf_arrow_up {
+    fill: @green;
+    stroke: @green;
   }
 }

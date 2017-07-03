@@ -1,4 +1,6 @@
 .feedback {
+  display: flex;
+  flex-direction: column;
   background: #fff url(../img/bg2-tablet.jpg) no-repeat 50% 150%;
   width: 100%;
 
@@ -37,8 +39,22 @@
   }
 
   &__item{
-    padding-top: @rem*50;
+    position: relative;
+    padding-top: @rem*25;
     margin-bottom: @rem*30;
+
+    &::before {
+      position: absolute;
+      width: @rem*40;
+      top: @rem*0;
+      left: 50%;
+      margin-left: -@rem*20;
+      content: "“";
+      font-size: @rem*120;
+      font-family: "arial";
+      line-height: 0.75;
+      opacity: 0.2;
+    }
   }
 
   &__avatar {
