@@ -2094,6 +2094,7 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .skills__inner-item {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -2110,12 +2111,77 @@ input[type="radio"]:checked + .radio::before {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 0.71428571rem 1.42857143rem 0.71428571rem;
-  width: 7.85714286rem;
-  height: 7.85714286rem;
   font-size: 1rem;
   color: #00bfa5;
-  border-radius: 50%;
-  background-color: #eeeeee;
+}
+
+.skills__name {
+  position: absolute;
+}
+
+.skills__circle {
+  -webkit-transform: rotate(-90deg);
+     -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  width: 7.85714286rem;
+  height: 7.85714286rem;
+}
+
+.skills__circle circle {
+  r: 3.21428571rem;
+  cx: 3.92857143rem;
+  cy: 3.92857143rem;
+  fill: none;
+  stroke-width: 1.42857143rem;
+}
+
+.skills__circle circle:last-child {
+  stroke: #00bfa5;
+}
+
+.skills__circle circle:first-child {
+  stroke: #ccc;
+}
+
+.skills__circle--html circle:last-child {
+  stroke-dasharray: 12.85714286rem 20.19285714rem;
+}
+
+.skills__circle--css circle:last-child {
+  stroke-dasharray: 10.71428571rem 20.19285714rem;
+}
+
+.skills__circle--js circle:last-child {
+  stroke-dasharray: 1.42857143rem 20.19285714rem;
+}
+
+.skills__circle--php circle:last-child {
+  stroke-dasharray: 0rem 20.19285714rem;
+}
+
+.skills__circle--sql circle:last-child {
+  stroke-dasharray: 0rem 20.19285714rem;
+}
+
+.skills__circle--node circle:last-child {
+  stroke-dasharray: 0.71428571rem 20.19285714rem;
+}
+
+.skills__circle--mongo circle:last-child {
+  stroke-dasharray: 0rem 20.19285714rem;
+}
+
+.skills__circle--git circle:last-child {
+  stroke-dasharray: 4.28571429rem 20.19285714rem;
+}
+
+.skills__circle--gulp circle:last-child {
+  stroke-dasharray: 2.85714286rem 20.19285714rem;
+}
+
+.skills__circle--bower circle:last-child {
+  stroke-dasharray: 0rem 20.19285714rem;
 }
 
 .contacts {
@@ -2252,6 +2318,17 @@ input[type="radio"]:checked + .radio::before {
 
 .page-nav__item {
   margin-bottom: 2.5rem;
+}
+
+.about-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
 }
 
 @media (min-width: 768px) {

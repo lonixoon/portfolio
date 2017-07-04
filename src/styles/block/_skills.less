@@ -31,18 +31,98 @@
   }
 
   &__inner-item {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin: 0 @rem*10 @rem*20 @rem*10;
+    font-size: @rem*14;
+    color: @green;
+    // background-color: @gray-lighter;
+  }
+
+  &__name {
+    position: absolute;
+    // top: 0;
+  }
+
+  &__circle {
+    transform: rotate(-90deg);
     width: @rem*110;
     height: @rem*110;
 
-    font-size: @rem*14;
+    circle {
+      r: @rem*45;
+      cx: @rem*55;
+      cy: @rem*55;
+      fill: none;
+      stroke-width: @rem*20;
+    }
+    circle:last-child {      
+      stroke: @green;
+    }
+    circle:first-child {
+      stroke: #ccc;
+    }
 
-    color: @green;
-    border-radius: 50%;
-    background-color: @gray-lighter;
+    &--html {
+      circle:last-child {
+        stroke-dasharray: @rem*180 @rem*282.7;
+      }
+    }
+
+    &--css {
+      circle:last-child {
+        stroke-dasharray: @rem*150 @rem*282.7;
+      }
+    }
+
+    &--js {
+      circle:last-child {
+        stroke-dasharray: @rem*20 @rem*282.7;
+      }
+    }
+
+    &--php {
+      circle:last-child {
+        stroke-dasharray: @rem*0 @rem*282.7;
+      }
+    }
+
+    &--sql {
+      circle:last-child {
+        stroke-dasharray: @rem*0 @rem*282.7;
+      }
+    }
+
+    &--node {
+      circle:last-child {
+        stroke-dasharray: @rem*10 @rem*282.7;
+      }
+    }
+
+    &--mongo {
+      circle:last-child {
+        stroke-dasharray: @rem*0 @rem*282.7;
+      }
+    }
+
+    &--git {
+      circle:last-child {
+        stroke-dasharray: @rem*60 @rem*282.7;
+      }
+    }
+
+    &--gulp {
+      circle:last-child {
+        stroke-dasharray: @rem*40 @rem*282.7;
+      }
+    }
+
+    &--bower {
+      circle:last-child {
+        stroke-dasharray: @rem*0 @rem*282.7;
+      }
+    }
   }
 }
