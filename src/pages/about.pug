@@ -17,7 +17,7 @@ block content
         h3.who-am-i__title Кто я
       p.who-am-i__text
         | Я начинающий веб разработчик из Новосибирска. Учусь разрабатывать современные и удобные сайты. Мне нравятся современные и интересны проекты.
-        br
+      p.who-am-i__text
         | Этот сайт я сдела в рамках учебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
     article.skills
       div.skills__title-wrap
@@ -28,7 +28,8 @@ block content
       p.skills__text
         | Больше меня привлекает Frontend, но я так же знаком и могу решать не сложные задачи по Backend.
       ul.skills__list
-        li.skills__item Frontend
+        li.skills__item
+          h4.skills__type Frontend
           ul.skills__inner-list
             li.skills__inner-item.skills__inner-item
               svg.skills__circle.skills__circle--html
@@ -45,7 +46,8 @@ block content
                 circle
                 circle
               span.skills__name JavaScript<br> &amp; jQuery
-        li.skills__item Backend
+        li.skills__item
+          h4.skills__type Backend
           ul.skills__inner-list
             li.skills__inner-item
               svg.skills__circle.skills__circle--php
@@ -67,7 +69,8 @@ block content
                 circle
                 circle
               span.skills__name Mongo.db
-        li.skills__item WorkFlow
+        li.skills__item
+          h4.skills__type WorkFlow
           ul.skills__inner-list
             li.skills__inner-item
               svg.skills__circle.skills__circle--git

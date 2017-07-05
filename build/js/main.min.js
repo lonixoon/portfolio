@@ -1,4 +1,4 @@
-// localstorage для SVG
+//-localstorage для SVG-------------------------------------
 var request = new XMLHttpRequest();
 
 request.open('GET', './symbol_sprite.html', true);
@@ -18,7 +18,7 @@ request.onload = function() {
 
 request.send();
 
-// Открывашка для меню
+ //-Открывашка для главного меню-----------------------------
 var menuToggle = document.querySelector(".main-nav__toggle");
 var menuClosed = document.querySelector(".main-nav__list");
 
@@ -27,6 +27,30 @@ menuToggle.addEventListener("click", function (event) {
     // menuClosed.classList.toggle("main-nav__list--closed");
     menuClosed.classList.toggle("main-nav__list--opened");
 });
+
+//-Открывашка для навигации по станицы-----------------------
+var pageToggle = document.querySelector(".page-nav__toggle");
+var pageClosed = document.querySelector(".page-nav__wrap");
+
+pageToggle.addEventListener("click", function (event) {
+    event.preventDefault();
+    pageToggle.classList.toggle("page-nav__toggle--opened");
+    pageClosed.classList.toggle("page-nav__wrap--opened");
+});
+
+pageClosed.addEventListener("click", function (event) {
+    pageToggle.classList.toggle("page-nav__toggle--opened");
+    pageClosed.classList.toggle("page-nav__wrap--opened");
+});
+
+
+
+
+
+
+
+
+
 
 // var loginFormOpened = document.querySelector(".main-nav__login");
 // var loginForm = document.querySelector(".login-form");

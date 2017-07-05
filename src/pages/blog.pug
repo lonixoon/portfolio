@@ -7,10 +7,15 @@ block title
 
 block content
   aside.page-nav
-    ul.page-nav__list
-      li.page-nav__item Рыбный текст
-      li.page-nav__item Страдания юного Вертера
-      li.page-nav__item Кафка
+    div.page-nav__toggle
+    div.page-nav__wrap
+      ul.page-nav__list
+        li.page-nav__item
+          a(href="#").page-nav__link Рыбный текст
+        li.page-nav__item
+          a(href="#").page-nav__link Страдания юного Вертера
+        li.page-nav__item
+          a(href="#").page-nav__link Кафка
   div.blog
     svg.blog__icon-corner
       use(xlink:href="#icon-corner")

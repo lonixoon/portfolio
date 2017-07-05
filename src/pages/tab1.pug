@@ -1,29 +1,29 @@
 extends include/_template-admin
 
 block content
-  h2.admin-page__title Страница «Обо мне»
-  div.admin-skill
-    ul.admin-skill__list
-      li.admin-skill__item Frontend
-        ul.admin-skill__inner-list
-          li.admin-skill__inner-item HTML5
-            input.admin-skill__data(type="number")
+  div.admin-skills
+    h2.admin-skills__title Страница «Обо мне»
+    ul.admin-skills__list
+      li.admin-skills__item Frontend
+        ul.admin-skills__inner-list
+          li.admin-skills__inner-item HTML5
+            input.admin-skills__data(type="number")
             span %
-          li.admin-skill__inner-item CSS3
-            input.admin-skill__data(type="number")
+          li.admin-skills__inner-item CSS3
+            input.admin-skills__data(type="number")
             span %
-          li.admin-skill__inner-item JavaScript
-            input.admin-skill__data(type="number")
+          li.admin-skills__inner-item JavaScript
+            input.admin-skills__data(type="number")
             span %
-      li.admin-skill__item Backend
-        ul.admin-skill__inner-list
-          li.admin-skill__inner-item PHP
-          li.admin-skill__inner-item myEQL
-          li.admin-skill__inner-item Node.js
-          li.admin-skill__inner-item Mongo.db
-      li.admin-skill__item WorkFlow
-        ul.admin-skill__inner-list
-          li.admin-skill__inner-item Git
-          li.admin-skill__inner-item Gulp
-          li.admin-skill__inner-item Bower
+      li.admin-skills__item Backend
+        ul.admin-skills__inner-list
+          li.admin-skills__inner-item PHP
+          li.admin-skills__inner-item myEQL
+          li.admin-skills__inner-item Node.js
+          li.admin-skills__inner-item Mongo.db
+      li.admin-skills__item WorkFlow
+        ul.admin-skills__inner-list
+          li.admin-skills__inner-item Git
+          li.admin-skills__inner-item Gulp
+          li.admin-skills__inner-item Bower
     button(type="submit") Сохранить

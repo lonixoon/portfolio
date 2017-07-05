@@ -5,8 +5,8 @@ html(lang="ru")
     meta(name="viewport" content="width=device-width,initial-scale=1")
     link(href="css/styles.min.css" rel="stylesheet")
     title Панель администрирования
-  body
-    header
+  body.admin-page
+    header.admin-page__header
       div.admin-navbar
         a(href="index.html").admin-navbar__back-site Вернуться на сайт
         h1.admin-navbar__ttile Панель администрирования
@@ -18,5 +18,5 @@ html(lang="ru")
             a(href="tab2.html") Tab 2
           li.admin-nav__item
             a(href="tab3.html") Tab 3
-    main.admin-page
+    main.admin-page__main
       block content
