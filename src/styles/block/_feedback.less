@@ -34,12 +34,12 @@
     margin-bottom: 30px;
   }
 
-  &__list{
+  &__list {
     list-style: none;
     padding: 0 10px;
   }
 
-  &__item{
+  &__item {
     position: relative;
     padding-top: 25px;
     margin-bottom: 30px;
@@ -80,6 +80,47 @@
   &__user-position {
     margin: 0;
     font-weight: 300;
-  } 
+  }
+}
 
+
+@media @tablet {
+  .feedback {
+
+
+    &__icon-about_header {
+      position: absolute;
+      width: 400px;
+      margin-top: -70px;
+      margin-left: -200px;
+      
+      fill: fade(#000, 4%);
+      z-index: 10;
+    }
+
+    &__title {
+      font-size: 48px;
+      margin-bottom: 30px;
+
+      br {
+        display: none;
+      }
+    }
+
+    &__list {
+      display: flex;
+      // justify-content: space-around;
+      // padding: 0 20px;
+    }
+
+    &__item {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &::before {
+        left: 8px;
+        margin-left: 0;
+      }
+    }
+  }
 }

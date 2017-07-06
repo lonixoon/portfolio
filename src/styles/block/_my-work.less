@@ -32,6 +32,7 @@
 
   &__subtitle {
     .line-for-title();
+    text-align: center;
     margin: 0;
     font-size: 20px;
   }
@@ -70,12 +71,13 @@
   &__info {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 30px 10px;
-    text-align: center;
     background-color: #F0EFEA;
   }
 
   &__technologies {
+    width: 100%;
     padding: 8px 0;
     margin-bottom: 20px;
 
@@ -86,10 +88,7 @@
     text-transform: uppercase;
     font-weight: 500;
 
-    color: @green;    
-  }
-
-  &__slider {
+    color: @green;
   }
 
   &__btn {
@@ -102,6 +101,49 @@
     width: 20px;
     fill: #fff;
     top: 0;
-    left: 12px;
+    left: 15px;
+  }
+
+  &__slider {
+  }
+}
+
+
+@media @tablet {
+  .my-work {
+    
+    &__icon-corner {
+      height: 65px;
+    }
+
+    &__icon-works {
+      width: 400px;
+      margin-top: -90px;
+      margin-left: -190px;
+    }
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__subtitle {
+      font-size: 30px;
+
+      br {
+        display: none;
+      }
+    }
+
+    &__technologies {
+      item-self:center;
+      padding: 12px 0;
+      width: 350px;
+    }
+
+    &__btn {
+      padding-top: 13px;
+      padding-bottom: 13px;
+      padding-left: 50px;
+    }
   }
 }

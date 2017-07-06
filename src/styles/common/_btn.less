@@ -1,5 +1,6 @@
 .btn {
   display: inline-flex;
+  justify-content: center;
   
   padding: 10px 20px;
   margin: 0 auto;
@@ -16,7 +17,7 @@
   color: #FFF;
 
   text-decoration: none;
-  cursor: pointer;  
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
@@ -55,13 +56,25 @@
     }
   }
 
-  &--login {
+  &--login {    
     border: 1px solid #fff;
-    padding: 10px 25px;
+    width: 160px;
 
     &:hover {
       color: @green;
       background-color: #fff;
+    }
+  }
+}
+
+
+@media @tablet {
+  .btn {
+    font-size: 16px;
+    
+    &--login {
+      padding: 10px 0;
+      width: 180px;
     }
   }
 }

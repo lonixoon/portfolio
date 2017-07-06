@@ -586,7 +586,7 @@ body {
   color: #455A64;
   width: 100%;
   height: 100%;
-  line-height: 1.7;
+  line-height: 1.6;
   background: #C5CEC9;
 }
 
@@ -609,6 +609,7 @@ h3 {
   font-size: inherit;
   font-family: "BERNIERRegular";
   font-weight: normal;
+  line-height: 1.3;
   color: #373e42;
 }
 
@@ -687,6 +688,11 @@ input[type="radio"]:checked + .radio::before {
   display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 10px 20px;
   margin: 0 auto;
   border: none;
@@ -747,7 +753,7 @@ input[type="radio"]:checked + .radio::before {
 
 .btn--login {
   border: 1px solid #fff;
-  padding: 10px 25px;
+  width: 160px;
 }
 
 .btn--login:hover {
@@ -972,16 +978,16 @@ input[type="radio"]:checked + .radio::before {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-  width: 60px;
-  height: 45px;
+  width: 65px;
+  height: 50px;
   margin: auto 0 20px 0;
   cursor: pointer;
   z-index: 40;
 }
 
 .arrow-down__icon {
-  width: 26px;
-  height: 16px;
+  width: 30px;
+  height: 20px;
   fill: #ccc;
 }
 
@@ -1308,7 +1314,7 @@ input[type="radio"]:checked + .radio::before {
 
 .authorization__input-text {
   padding: 0 10px;
-  width: 215px;
+  width: 100%;
   height: 100%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -1364,7 +1370,7 @@ input[type="radio"]:checked + .radio::before {
   position: absolute;
   top: 10px;
   left: 50%;
-  margin-left: -75.05px;
+  margin-left: -80px;
 }
 
 .main-nav {
@@ -1385,7 +1391,6 @@ input[type="radio"]:checked + .radio::before {
 
 .main-nav__icon {
   width: 25px;
-  height: 22px;
   fill: #fff;
 }
 
@@ -1583,13 +1588,12 @@ input[type="radio"]:checked + .radio::before {
 .social__icon {
   opacity: 0.5;
   fill: #fff;
+  width: 25px;
   height: 20px;
 }
 
 .social__icon--green {
   fill: #00bfa5;
-  width: 25px;
-  height: 20px;
 }
 
 .social__icon--round {
@@ -1680,6 +1684,7 @@ input[type="radio"]:checked + .radio::before {
   display: inline-flex;
   padding-left: 40px;
   padding-right: 40px;
+  text-align: center;
   margin: 0;
   font-size: 20px;
 }
@@ -1745,12 +1750,17 @@ input[type="radio"]:checked + .radio::before {
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 30px 10px;
-  text-align: center;
   background-color: #F0EFEA;
 }
 
 .my-work__technologies {
+  width: 100%;
   padding: 8px 0;
   margin-bottom: 20px;
   border-top: 1px solid #00bfa5;
@@ -1771,7 +1781,7 @@ input[type="radio"]:checked + .radio::before {
   width: 20px;
   fill: #fff;
   top: 0;
-  left: 12px;
+  left: 15px;
 }
 
 .feedback {
@@ -2386,8 +2396,70 @@ input[type="radio"]:checked + .radio::before {
     font-size: 16px;
   }
 
+  .btn {
+    font-size: 16px;
+  }
+
+  .btn--login {
+    padding: 10px 0;
+    width: 180px;
+  }
+
+  .slider {
+    height: 215px;
+  }
+
+  .slider__next,
+  .slider__back {
+    -webkit-box-shadow: inset 20px 0 60px 20px #CAC4B4;
+            box-shadow: inset 20px 0 60px 20px #CAC4B4;
+    background: url(../img/sedona.jpg) no-repeat 50% 50%;
+    background-size: 230px;
+  }
+
+  .slider__icon-portf_arrow_down,
+  .slider__icon-portf_arrow_up {
+    width: 48px;
+  }
+
+  .arrow-down {
+    width: 75px;
+    height: 60px;
+  }
+
+  .arrow-down__icon {
+    width: 35px;
+    height: 25px;
+  }
+
   .page {
     background-size: auto;
+  }
+
+  .author__wrap {
+    width: 348px;
+  }
+
+  .author__name {
+    font-size: 36px;
+  }
+
+  .author__name--index {
+    font-size: 28px;
+  }
+
+  .author__title {
+    font-size: 18px;
+  }
+
+  .authorization__wrap {
+    width: 348px;
+  }
+
+  .authorization__radio-btn {
+    margin-left: 95px;
+    font-size: 15px;
+    font-weight: 500;
   }
 
   .authorization-btn {
@@ -2396,6 +2468,111 @@ input[type="radio"]:checked + .radio::before {
     left: auto;
     margin-left: 0;
     margin-right: 20px;
+  }
+
+  .main-nav__toggle {
+    position: absolute;
+    width: 70px;
+    height: 65px;
+    top: 10px;
+    right: 10px;
+    z-index: 110;
+    font-size: 0;
+    border: none;
+    background: none;
+  }
+
+  .main-nav__icon {
+    width: 40px;
+  }
+
+  .social__list {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  .social__link {
+    width: 50px;
+    height: 45px;
+  }
+
+  .social__icon {
+    width: 28px;
+    height: 23px;
+  }
+
+  .social__icon--round {
+    height: 36px;
+  }
+
+  .my-work__icon-corner {
+    height: 65px;
+  }
+
+  .my-work__icon-works {
+    width: 400px;
+    margin-top: -90px;
+    margin-left: -190px;
+  }
+
+  .my-work__title {
+    font-size: 48px;
+  }
+
+  .my-work__subtitle {
+    font-size: 30px;
+  }
+
+  .my-work__subtitle br {
+    display: none;
+  }
+
+  .my-work__technologies {
+    item-self: center;
+    padding: 12px 0;
+    width: 350px;
+  }
+
+  .my-work__btn {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 50px;
+  }
+
+  .feedback__icon-about_header {
+    position: absolute;
+    width: 400px;
+    margin-top: -70px;
+    margin-left: -200px;
+    fill: rgba(0, 0, 0, 0.04);
+    z-index: 10;
+  }
+
+  .feedback__title {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+
+  .feedback__title br {
+    display: none;
+  }
+
+  .feedback__list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .feedback__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .feedback__item::before {
+    left: 8px;
+    margin-left: 0;
   }
 }
 
@@ -2407,6 +2584,24 @@ input[type="radio"]:checked + .radio::before {
 
   .page {
     background-image: url(../img/bg-desktop.jpg);
+  }
+
+  .author__wrap {
+    width: 380px;
+  }
+
+  .authorization__wrap {
+    width: 380px;
+  }
+
+  .authorization__title {
+    font-size: 36px;
+  }
+
+  .authorization__radio-btn {
+    margin-left: 105px;
+    font-size: 15px;
+    font-weight: 500;
   }
 }
 

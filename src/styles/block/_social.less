@@ -33,13 +33,11 @@
   &__icon {
     opacity: 0.5;
     fill: #fff;
-    // width: 25px;
+    width: 25px;
     height: 20px;
 
     &--green {
       fill: @green;
-      width: 25px;
-      height: 20px;
     }
 
     &--round {
@@ -50,5 +48,31 @@
   
   &__link:hover &__icon {
       opacity: 1;
+  }
+}
+
+
+@media @tablet {
+  .social {
+
+    &__list {
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+
+    &__link {
+      width: 50px;
+      height: 45px;
+    }
+
+    &__icon {
+      width: 28px;
+      height: 23px;
+
+      &--round {
+        // width: 36px;
+        height: 36px;
+      }
+    }
   }
 }
