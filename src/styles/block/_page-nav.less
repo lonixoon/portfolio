@@ -13,7 +13,7 @@
     z-index: 50;
 
     &--opened {
-      left: 90%;
+      left: 275px;
     }
   }
 
@@ -23,7 +23,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 90%;  
+    width: 275px;  
     color: #fff;
     font-size: 16px;
     background-color: @green;
@@ -45,3 +45,37 @@
     margin-bottom: 35px;
   }
 }
+
+
+@media @tablet {
+  .page-nav {
+    &__toggle {
+      width: 45px;
+      height: 55px;
+      margin-left: -27px;
+
+      &--opened {
+        left: 310px;
+      }
+    }
+
+    &__wrap {
+      width: 310px;
+      // font-size: 18px;
+    }
+  }
+}
+
+
+// @media @laptop {
+//   .page-nav {
+//     &__toggle {
+//       display: none;
+//     }
+
+//     &__wrap {
+//       display: block;
+//       position: relative;
+//     }
+//   }
+// }

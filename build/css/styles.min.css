@@ -2347,7 +2347,7 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page-nav__toggle--opened {
-  left: 90%;
+  left: 275px;
 }
 
 .page-nav__wrap {
@@ -2356,7 +2356,7 @@ input[type="radio"]:checked + .radio::before {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 90%;
+  width: 275px;
   color: #fff;
   font-size: 16px;
   background-color: #00bfa5;
@@ -2594,6 +2594,28 @@ input[type="radio"]:checked + .radio::before {
     margin-left: 0;
   }
 
+  .blog {
+    padding: 0 20px;
+  }
+
+  .blog__icon-corner {
+    height: 65px;
+  }
+
+  .page-nav__toggle {
+    width: 45px;
+    height: 55px;
+    margin-left: -27px;
+  }
+
+  .page-nav__toggle--opened {
+    left: 310px;
+  }
+
+  .page-nav__wrap {
+    width: 310px;
+  }
+
   .about-footer {
     padding-left: 20px;
     padding-right: 20px;
@@ -2745,6 +2767,14 @@ input[type="radio"]:checked + .radio::before {
   .feedback__item::before {
     left: 16px;
     margin-left: 0;
+  }
+
+  .blog {
+    padding: 0 40px;
+  }
+
+  .blog__icon-corner {
+    height: 100px;
   }
 }
 
