@@ -63,8 +63,9 @@
   }
 
   &__img {
+    display: flex;
+    justify-content: center;
     padding: 40px;
-    text-align: center;
     background-color: #EFEBE0;
   }
 
@@ -144,6 +145,58 @@
       padding-top: 13px;
       padding-bottom: 13px;
       padding-left: 50px;
+    }
+  }
+}
+
+
+@media @laptop {
+  .my-work {
+    
+    &__icon-corner {
+      height: 100px;
+    }
+
+    &__icon-works {
+      width: 500px;
+      height: 160px;
+      margin-top: -95px;
+      margin-left: -240px;
+    }
+
+    &__title {
+      font-size: 60px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #F0EFEA;
+      height: 100vh;
+    }
+
+    &__img {
+      display: flex;
+      order: 2;
+      width: 50%;
+      max-height: 70%;
+    }
+
+    &__slider {
+      order: 3;
+      height: 30%;
+      width: 50%;
+      margin-left: 50%;
+    }
+
+    &__info {
+      display: flex;
+      order: 1;
+      width: 50%;
+      aling-items: flex-end;
+      justify-content: flex-end;
     }
   }
 }
