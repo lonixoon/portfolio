@@ -1,8 +1,16 @@
 .who-am-i {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
   background-color: #f0eee9;
   
   &__autor-photo {
+    text-align: center;
 
+    img {
+      max-width: 400px;
+    }
   }
   
   &__title-wrap {
@@ -18,5 +26,33 @@
 
   &__text {
     padding: 0 10px;
+  }
+}
+
+
+@media @tablet {
+  .who-am-i {
+    &__title {
+      font-size: 32px;
+    }
+
+    &__text {
+      padding: 0 80px;
+    }
+  }
+}
+
+
+@media @laptop {
+  .who-am-i {
+    width: 50%;
+
+    &__autor-photo {
+      padding-top: 25px;
+    }
+
+    &__text {
+      padding: 0 40px;
+    }
   }
 }

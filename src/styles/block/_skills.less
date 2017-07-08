@@ -1,4 +1,8 @@
 .skills {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
   padding: 0 10px;
   background-color: #eeebdf;
 
@@ -30,10 +34,9 @@
 
   &__inner-list {
     display: flex;
-    // justify-content: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 0 10px;
+    padding: 0;
     list-style: none;
   }
 
@@ -42,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 10px 20px 10px;
+    margin: 0 18px 20px 18px;
     font-size: 14px;
     color: @green;
     // background-color: @gray-lighter;
@@ -130,6 +133,43 @@
       circle:last-child {
         stroke-dasharray: 0px 282.7px;
       }
+    }
+  }
+}
+
+
+@media @tablet {
+  .skills {
+    padding: 0;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__text {
+      padding: 0 80px;
+    }
+  }
+}
+
+
+@media @laptop {
+  .skills {
+    // align-items: flex-start;
+    width: 50%;
+
+    &__text {
+      padding: 0 40px;
+    }
+
+    &__type {
+      text-align: left;
+      padding-left: 20px;
+      font-size: 28px;
+    }
+
+    &__inner-list {
+      justify-content: flex-start;
     }
   }
 }

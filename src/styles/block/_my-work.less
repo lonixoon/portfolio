@@ -5,28 +5,6 @@
   width: 100%;
   background-color: #FBF8F1;
 
-  &__icon-corner {
-    position: absolute;
-    bottom: 100%;
-    width: 100%;
-    height: 40px;
-    z-index: 30;
-    fill: #faf8f0;
-  }
-
-  &__title-wrap {
-    position: relative;
-    text-align: center;
-    background-color: #faf8f0;
-  }
-
-  &__title {
-    .line-for-title();
-    position: relative;
-    font-size: 35px;
-    z-index: 20;    
-  }
-
   &__subtitle-wrap {
   }
 
@@ -35,21 +13,6 @@
     text-align: center;
     margin: 0;
     font-size: 20px;
-  }
-
-  &__icon-works {
-    position: absolute;
-    width: 240px;
-
-    left: 50%;
-    top: 50%;
-
-    margin-top: -55px;
-    margin-left: -110px;
-    
-    // fill: #f0eee7;
-    fill: fade(#000, 4%);
-    z-index: 10;
   }
 
   &__list {
@@ -67,6 +30,10 @@
     justify-content: center;
     padding: 40px;
     background-color: #EFEBE0;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   &__info {
@@ -112,20 +79,6 @@
 
 @media @tablet {
   .my-work {
-    
-    &__icon-corner {
-      height: 65px;
-    }
-
-    &__icon-works {
-      width: 400px;
-      margin-top: -90px;
-      margin-left: -190px;
-    }
-
-    &__title {
-      font-size: 48px;
-    }
 
     &__subtitle {
       font-size: 30px;
@@ -152,23 +105,6 @@
 
 @media @laptop {
   .my-work {
-    
-    &__icon-corner {
-      height: 100px;
-    }
-
-    &__icon-works {
-      width: 500px;
-      height: 160px;
-      margin-top: -95px;
-      margin-left: -240px;
-    }
-
-    &__title {
-      font-size: 60px;
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
 
     &__item {
       display: flex;

@@ -1,9 +1,13 @@
 extends include/_template-default
 
+block author
+  include include/_author__name
+
 block title
+  svg.page__icon-title.page__icon-title--blog
+    use(xlink:href="#icon-blog_header")
   h1.page__title Блог
-  p.page__intro
-    | Статьи, которые которыея нельзя отставить без внимания
+
 
 block content
   aside.page-nav
@@ -17,8 +21,6 @@ block content
         li.page-nav__item
           a(href="#kafka").page-nav__link Кафка
   div.blog
-    svg.blog__icon-corner
-      use(xlink:href="#icon-corner")
     article.blog__item.article#fish-text
       h3.article__title Рыбный текст
       time.article__time(datetime="2017-06-15") 15 июня 2017

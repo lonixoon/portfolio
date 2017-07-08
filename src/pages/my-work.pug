@@ -1,16 +1,15 @@
 extends include/_template-default
 
-block title
+block author
   include include/_author__name
+
+block title
+  svg.page__icon-title
+    use(xlink:href="#icon-works_header")
+  h1.page__title Мои работы
 
 block content
   section.my-work
-    svg.my-work__icon-corner
-      use(xlink:href="#icon-corner")
-    div.my-work__title-wrap
-      svg.my-work__icon-works
-        use(xlink:href="#icon-works_header")
-      h1.my-work__title Мои работы
     ul.my-work__list
       li.my-work__item
         div.my-work__img

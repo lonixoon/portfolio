@@ -1,18 +1,18 @@
 extends include/_template-default
 
-block title
+block author
   include include/_author__name
+
+block title
+  svg.page__icon-title
+    use(xlink:href="#icon-about_header")
+  h1.page__title Обо мне
 
 block content
   section.about
-    svg.about__icon-corner
-      use(xlink:href="#icon-corner")
-    div.about__title-wrap
-      svg.about__icon-about_header
-        use(xlink:href="#icon-about_header")
-      h1.about__title Обо мне
     article.who-am-i
-      img.who-am-i__autor-photo(src="img/my_photo.jpg", alt="Сойнов Алексей")
+      div.who-am-i__autor-photo
+        img(src="img/my_photo.jpg", alt="Сойнов Алексей")
       div.who-am-i__title-wrap
         h3.who-am-i__title Кто я
       p.who-am-i__text

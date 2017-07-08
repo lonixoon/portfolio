@@ -37,10 +37,14 @@ html(lang="ru")
       div.author.author--inner-page
         div.author__inner-page-wrap
           img.author__photo(src="img/my_photo.jpg", alt="Сойнво Алексей")
-          block title
+          block author
       div.arrow-down
         svg.arrow-down__icon
           use(xlink:href="#icon-arrow_down")
+      div.page__title-wrap
+        svg.page__icon-corner
+          use(xlink:href="#icon-corner")
+        block title
     main.page__main
       block content
     footer.page__footer
