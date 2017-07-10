@@ -58,6 +58,10 @@
     &__list {
       margin-top: 20px;
       margin-left: 10px;
+
+      &--footer {
+        margin-top: 0;
+      }
     }
 
     &__link {
@@ -73,6 +77,23 @@
         width: 40px;
         height: 40px;
       }
+    }
+  }
+}
+
+
+@media @laptop {
+  .social {
+    &__list {
+      &--footer {
+        justify-content: flex-end;
+        margin: 15px;
+        margin-right: 25px;
+      }
+    }
+
+    &--footer {
+      width: 50%;
     }
   }
 }

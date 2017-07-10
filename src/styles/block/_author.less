@@ -57,8 +57,16 @@
       width: 348px;
     }
 
+    &__photo {
+      margin-top: 20px;
+
+      &--index {
+        margin-top: 40px;
+      }
+    }
+
     &__name {
-      font-size: 36px;
+      font-size: 30px;
 
       &--index {
         font-size: 28px;
@@ -76,6 +84,24 @@
   .author {
     &__wrap {
       width: 380px;
+    }    
+  }
+}
+
+
+@media @desktop {
+  .author {
+
+    &__photo {
+      margin-top: 80px;
+
+      &--index {
+        margin-top: 40px;
+      }
+    }
+
+    &__name {
+      font-size: 36px;
     }
   }
 }

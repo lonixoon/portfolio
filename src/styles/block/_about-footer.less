@@ -1,5 +1,4 @@
 .about-footer {
-  // display: block;
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
@@ -13,6 +12,23 @@
   .about-footer {
     padding-left: 20px;
     padding-right: 20px;
-    // font-size: 16px;
+  }
+}
+
+
+@media @laptop {
+  .about-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      width: 600px;
+      text-align: left;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
   }
 }

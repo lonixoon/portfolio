@@ -73,8 +73,20 @@
 }
 
 
+
+@media @mobile-only and (orientation:landscape) {
+  .page {
+    height: auto;
+    &__header {
+      height: auto;
+    }
+  }
+}
+
+
 @media @tablet {
   .page {
+    background-image: url(../img/bg-desktop.jpg);
     background-size: auto;
 
     &__icon-corner {
@@ -124,6 +136,11 @@
     }
 
     &__header {
+    }
+
+    &__footer {
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 }

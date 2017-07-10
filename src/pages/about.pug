@@ -21,10 +21,7 @@ block content
         | Этот сайт я сдела в рамках учебного проекты. Чуть позже он наполнится контентом, а пока просто посмотрите как тут все красиво!
     article.skills
       div.skills__title-wrap
-        h3.skills__title
-          | Чем я могу быть
-          br
-          | вам полезен
+        h3.skills__title Чем я могу быть<br> вам полезен
       p.skills__text
         | Больше меня привлекает Frontend, но я так же знаком и могу решать не сложные задачи по Backend.
       ul.skills__list
@@ -88,18 +85,21 @@ block content
                 circle
               span.skills__name Bower
   section.contacts
-    div.contacts__title-wrap
-      h2.contacts__title Контакты
-    div.body
-      p.contacts__item.contacts__item--skype skype_test
-        svg.contacts__icon
-          use(xlink:href="#icon-skype")
-      p.contacts__item.contacts__item--email soinov.alexey@yandex.ru
-        svg.contacts__icon
-          use(xlink:href="#icon-envelope")
-      p.contacts__item.contacts__item--tel +7&nbsp;999&nbsp;999&nbsp;99&nbsp;99
-        svg.contacts__icon
-          use(xlink:href="#icon-phone")
-      p.contacts__item.contacts__item--address г.&nbsp;Новосибирск, ул.&nbsp;Ватутина, д.107
-        svg.contacts__icon
-          use(xlink:href="#icon-map_marker")
+    div.contacts__map
+      <iframe src="https://yandex.ru/map-widget/v1/-/CBQSVVwZOC" width="100%" height="100%" frameborder="0"></iframe>
+    div.contacts__wrap
+      div.contacts__title-wrap
+        h2.contacts__title Контакты
+      div.contacts__body
+        p.contacts__item.contacts__item--skype skype_test
+          svg.contacts__icon
+            use(xlink:href="#icon-skype")
+        p.contacts__item.contacts__item--email soinov.alexey@yandex.ru
+          svg.contacts__icon
+            use(xlink:href="#icon-envelope")
+        p.contacts__item.contacts__item--tel +7&nbsp;999&nbsp;999&nbsp;99&nbsp;99
+          svg.contacts__icon
+            use(xlink:href="#icon-phone")
+        p.contacts__item.contacts__item--address г.&nbsp;Новосибирск, ул.&nbsp;Ватутина, д.107
+          svg.contacts__icon
+            use(xlink:href="#icon-map_marker")

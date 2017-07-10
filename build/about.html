@@ -70,7 +70,7 @@
         </article>
         <article class="skills">
           <div class="skills__title-wrap">
-            <h3 class="skills__title">Чем я могу быть<br/>вам полезен</h3>
+            <h3 class="skills__title">Чем я могу быть<br> вам полезен</h3>
           </div>
           <p class="skills__text">Больше меня привлекает Frontend, но я так же знаком и могу решать не сложные задачи по Backend.</p>
           <ul class="skills__list">
@@ -153,44 +153,47 @@
         </article>
       </section>
       <section class="contacts">
-        <div class="contacts__title-wrap">
-          <h2 class="contacts__title">Контакты</h2>
-        </div>
-        <div class="body">
-          <p class="contacts__item contacts__item--skype">skype_test
-            <svg class="contacts__icon">
-              <use xlink:href="#icon-skype"></use>
-            </svg>
-          </p>
-          <p class="contacts__item contacts__item--email">soinov.alexey@yandex.ru
-            <svg class="contacts__icon">
-              <use xlink:href="#icon-envelope"></use>
-            </svg>
-          </p>
-          <p class="contacts__item contacts__item--tel">+7&nbsp;999&nbsp;999&nbsp;99&nbsp;99
-            <svg class="contacts__icon">
-              <use xlink:href="#icon-phone"></use>
-            </svg>
-          </p>
-          <p class="contacts__item contacts__item--address">г.&nbsp;Новосибирск, ул.&nbsp;Ватутина, д.107
-            <svg class="contacts__icon">
-              <use xlink:href="#icon-map_marker"></use>
-            </svg>
-          </p>
+        <div class="contacts__map"><iframe src="https://yandex.ru/map-widget/v1/-/CBQSVVwZOC" width="100%" height="100%" frameborder="0"></iframe></div>
+        <div class="contacts__wrap">
+          <div class="contacts__title-wrap">
+            <h2 class="contacts__title">Контакты</h2>
+          </div>
+          <div class="contacts__body">
+            <p class="contacts__item contacts__item--skype">skype_test
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-skype"></use>
+              </svg>
+            </p>
+            <p class="contacts__item contacts__item--email">soinov.alexey@yandex.ru
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-envelope"></use>
+              </svg>
+            </p>
+            <p class="contacts__item contacts__item--tel">+7&nbsp;999&nbsp;999&nbsp;99&nbsp;99
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-phone"></use>
+              </svg>
+            </p>
+            <p class="contacts__item contacts__item--address">г.&nbsp;Новосибирск, ул.&nbsp;Ватутина, д.107
+              <svg class="contacts__icon">
+                <use xlink:href="#icon-map_marker"></use>
+              </svg>
+            </p>
+          </div>
         </div>
       </section>
     </main>
     <footer class="page__footer">
-      <nav class="main-nav">
-        <ul class="main-nav__item">
+      <nav class="main-nav main-nav--footer">
+        <ul class="main-nav__list main-nav__list--footer">
           <li class="main-nav__item"><a href="my-work.html">Мои работы</a></li>
           <li class="main-nav__item"><a href="blog.html">Блог</a></li>
           <li class="main-nav__item"><a href="about.html">Обо мне</a></li>
           <li class="main-nav__item"><a href="index.html">Авторизация</a></li>
         </ul>
       </nav>
-      <div class="social">
-        <ul class="social__list">
+      <div class="social social--footer">
+        <ul class="social__list social__list--footer">
           <li class="social__item"><a class="social__link social__link--vk" href="#">Вконтакте
               <svg class="social__icon social__icon--round">
                 <use xlink:href="#icon-vk_round"></use>
@@ -207,9 +210,7 @@
       </div>
       <div class="about-footer">
         <p class="about-footer__text">Я начинающий веб разработчик из Новосибирска. Этот сайт делал в рамках учебного проекта.</p>
-      </div>
-      <div class="copyright">
-        <p class="copyright__text">Свёрстано мной.</p>
+        <p class="about-footer__text">Свёрстано мной.</p>
       </div>
     </footer>
     <script src="js/main.min.js"></script>
