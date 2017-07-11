@@ -6,14 +6,71 @@
   
   &__toggle {
     position: absolute;
-    width: 50px;
-    height: 45px;
-    top: 2px;
+    width: 55px;
+    height: 48px;
+    top: 0px;
     right: 5px;
     z-index: 110;
     font-size: 0;
     border: none;
     background: none;
+
+    span {
+      display: block;
+      position: absolute;
+      top: 21px;
+      left: 10px;
+      right: 10px;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        content: "";
+        border-radius: 2px;
+
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0;
+      }
+
+      &::before {
+        top: -12px;
+        transition-property: transform, top;
+      }
+
+      &::after {
+        bottom: -12px;
+        transition-property: transform, bottom;
+      }
+    }
+    
+    &--active {
+      span {
+        background: none;      
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+
+        &::before,
+        &::after {
+          transition-delay: 0, 0.3s;
+        }
+      }
+    }
   }
 
   &__icon {
@@ -55,7 +112,6 @@
     }
 
     &--index-page {
-      flex-direction: row;
     }
   }
 

@@ -25,17 +25,21 @@ var menuClosed = document.querySelector(".main-nav__list");
 menuToggle.addEventListener("click", function (event) {
     event.preventDefault();
     menuClosed.classList.toggle("main-nav__list--opened");
+    menuToggle.classList.toggle("main-nav__toggle--active");
 });
 
-menuClosed.addEventListener("click", function (event) {
-    menuClosed.classList.toggle("main-nav__list--opened");
-});
+// menuClosed.addEventListener("click", function (event) {
+//     menuClosed.classList.toggle("main-nav__list--opened");
+//     menuToggle.classList.toggle("main-nav__toggle--active");
+// });
 
 window.addEventListener("keydown", function(event) {
     if (event.keyCode === 27) {
         menuClosed.classList.remove("main-nav__list--opened");
+        menuToggle.classList.toggle("main-nav__toggle--active");
     }
 });
+
 
 //-Открывашка для навигации по станицы-----------------------
 var pageToggle = document.querySelector(".page-nav__toggle");
