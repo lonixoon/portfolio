@@ -44,8 +44,9 @@
 @media @tablet {
   .contacts {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     height: 650px;
 
     &__map {
@@ -57,6 +58,7 @@
     }
 
     &__wrap {
+      align-self: center;
       position: relative;
       width: 380px;
       height: 260px;

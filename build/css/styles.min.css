@@ -1286,7 +1286,7 @@ input[type="radio"]:checked + .radio::before {
   width: 300px;
   border-radius: 5px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .authorization__title-wrap {
@@ -1370,8 +1370,7 @@ input[type="radio"]:checked + .radio::before {
           justify-content: center;
   width: 46px;
   height: 100%;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
+  border-radius: 5px 0 0 5px;
   background-color: #f0efe9;
 }
 
@@ -1391,8 +1390,7 @@ input[type="radio"]:checked + .radio::before {
   padding: 0 10px;
   width: 100%;
   height: 100%;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 0 5px 5px 0;
   border: none;
   outline: none;
 }
@@ -2724,16 +2722,18 @@ input[type="radio"]:checked + .radio::before {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
        -moz-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     height: 650px;
   }
 
@@ -2750,6 +2750,9 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .contacts__wrap {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
     position: relative;
     width: 380px;
     height: 260px;
