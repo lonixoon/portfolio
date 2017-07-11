@@ -11,7 +11,7 @@ block title
 block content
   section.my-work
     ul.my-work__list
-      li.my-work__item
+      li.my-work__item.my-work__item1.my-work__item--show
         div.my-work__img
           img(src="img/sedona.png" alt="Седона")
         div.my-work__info
@@ -22,10 +22,44 @@ block content
             svg.my-work__icon-link
               use(xlink:href="#icon-link")
         div.my-work__slider.slider
-          div.slider__next
+          div.slider__next.slider__next--barbershop
             svg.slider__icon-portf_arrow_down
               use(xlink:href="#icon-portf_arrow_down")
-          div.slider__back
+          div.slider__back.slider__back--nerds
+            svg.slider__icon-portf_arrow_up
+              use(xlink:href="#icon-portf_arrow_up")
+      li.my-work__item.my-work__item2
+        div.my-work__img
+          img(src="img/barbershop.png" alt="Барбершоп Бородинский")
+        div.my-work__info
+          div.my-work__subtitle-wrap
+            h3.my-work__subtitle Барбершоп Бородинский
+          p.my-work__technologies HTML, CSS, JavaScript
+          a.my-work__btn.btn.btn--green(href="https://lonixoon.github.io/barbershop-adaptive/" target="_blank") Посмотреть сайт
+            svg.my-work__icon-link
+              use(xlink:href="#icon-link")
+        div.my-work__slider.slider
+          div.slider__next.slider__next--nerds
+            svg.slider__icon-portf_arrow_down
+              use(xlink:href="#icon-portf_arrow_down")
+          div.slider__back.slider__back--sedona
+            svg.slider__icon-portf_arrow_up
+              use(xlink:href="#icon-portf_arrow_up")
+      li.my-work__item.my-work__item3
+        div.my-work__img
+          img(src="img/nerds.png" alt="Nerds")
+        div.my-work__info
+          div.my-work__subtitle-wrap
+            h3.my-work__subtitle Студия веб дизайна Nerds
+          p.my-work__technologies HTML, CSS
+          a.my-work__btn.btn.btn--green(href="https://lonixoon.github.io/nerds/" target="_blank") Посмотреть сайт
+            svg.my-work__icon-link
+              use(xlink:href="#icon-link")
+        div.my-work__slider.slider
+          div.slider__next.slider__next--sedona
+            svg.slider__icon-portf_arrow_down
+              use(xlink:href="#icon-portf_arrow_down")
+          div.slider__back.slider__back--barbershop
             svg.slider__icon-portf_arrow_up
               use(xlink:href="#icon-portf_arrow_up")
   section.feedback
@@ -36,15 +70,16 @@ block content
     ul.feedback__list
       li.feedback__item
         p.feedback__quote.
-          Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
+          Доброго дня всем! Хочу похвалить за отлично проделанную работу!<br>
+          Уже обращались в эту компанию много лет назад и были вполне довольны результатами, поэтому когда в очередной раз понадобился сайт, вновь и без сомнений, обратились к ним!
         div.feedback__user-wrap
           img.feedback__avatar(src="img/sedona.jpg", alt="Роман")
           div.feedback__user-name-wrap
             p.feedback__user-name Роман
-            p.feedback__user-position крутой директор
+            p.feedback__user-position Менеджер
       li.feedback__item
         p.feedback__quote.
-          Никогда ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас. Сами предложат и сами всё дадут!
+          Всем привет! Хочу выразить благодарность чудесный сайт, который они сделали мне, в довольно короткие сроки.
         div.feedback__user-wrap
           img.feedback__avatar(src="img/sedona.jpg", alt="Роман")
           div.feedback__user-name-wrap
@@ -58,8 +93,10 @@ block content
         input.form__text(type="email" placeholder="Email")
         textarea.form__text.form__text--textarea(placeholder="Ваше сообщение")
       div.form__bottom
-        button.btn.btn--authorization.btn--green(type="submit") Отправить
-        button.btn.btn--authorization.btn--green Очистить
+        //- button.btn.btn--authorization.btn--green(type="submit") Отправить
+        a.btn.btn--authorization.btn--green Отправить
+        //- button.btn.btn--authorization.btn--green Очистить
+        a.btn.btn--authorization.btn--green Очистить
     div.arrow-down
         svg.arrow-down__icon.arrow-down__icon--up
           use(xlink:href="#icon-arrow_down")

@@ -888,9 +888,25 @@ input[type="radio"]:checked + .radio::before {
   height: 100%;
   -webkit-box-shadow: inset 10px 0 30px 10px #CAC4B4;
           box-shadow: inset 10px 0 30px 10px #CAC4B4;
-  background: url(../img/sedona.jpg) no-repeat 50% 50%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   background-size: contain;
   cursor: pointer;
+}
+
+.slider__next--barbershop,
+.slider__back--barbershop {
+  background-image: url(../img/barbershop.png);
+}
+
+.slider__next--sedona,
+.slider__back--sedona {
+  background-image: url(../img/sedona.png);
+}
+
+.slider__next--nerds,
+.slider__back--nerds {
+  background-image: url(../img/nerds.png);
 }
 
 .slider__icon-portf_arrow_down,
@@ -1840,6 +1856,25 @@ input[type="radio"]:checked + .radio::before {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.my-work__item {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.my-work__item--show {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .my-work__img {
@@ -3001,11 +3036,13 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .my-work__item {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;

@@ -18,6 +18,61 @@ request.onload = function() {
 
 request.send();
 
+
+//-Слайдер---------------------------------------------------
+var sliderItem1 = document.querySelector(".my-work__item1");
+var sliderItem2 = document.querySelector(".my-work__item2");
+var sliderItem3 = document.querySelector(".my-work__item3");
+var nextSlideItem1 = document.querySelector(".slider__next--barbershop");
+var backSlideItem1 = document.querySelector(".slider__back--nerds");
+var nextSlideItem2 = document.querySelector(".slider__next--nerds");
+var backSlideItem2 = document.querySelector(".slider__back--sedona");
+var nextSlideItem3 = document.querySelector(".slider__next--sedona");
+var backSlideItem3 = document.querySelector(".slider__back--barbershop");
+
+nextSlideItem1.addEventListener("click", function (event) {
+    event.preventDefault();
+    sliderItem1.classList.remove("my-work__item--show");
+    sliderItem2.classList.add("my-work__item--show");
+    sliderItem3.classList.remove("my-work__item--show");
+});
+
+backSlideItem1.addEventListener("click", function (event) {
+    event.preventDefault();
+    sliderItem1.classList.remove("my-work__item--show");
+    sliderItem2.classList.remove("my-work__item--show");
+    sliderItem3.classList.add("my-work__item--show");
+});
+
+nextSlideItem2.addEventListener("click", function (event) {
+    event.preventDefault();
+    sliderItem1.classList.remove("my-work__item--show");
+    sliderItem2.classList.remove("my-work__item--show");
+    sliderItem3.classList.add("my-work__item--show");
+});
+
+backSlideItem2.addEventListener("click", function (event) {
+    event.preventDefault();
+    sliderItem1.classList.add("my-work__item--show");
+    sliderItem2.classList.remove("my-work__item--show");
+    sliderItem3.classList.remove("my-work__item--show");
+});
+
+nextSlideItem3.addEventListener("click", function (event) {
+    event.preventDefault();
+    sliderItem1.classList.add("my-work__item--show");
+    sliderItem2.classList.remove("my-work__item--show");
+    sliderItem3.classList.remove("my-work__item--show");
+});
+
+backSlideItem3.addEventListener("click", function (event) {
+    event.preventDefault();
+    sliderItem1.classList.remove("my-work__item--show");
+    sliderItem2.classList.add("my-work__item--show");
+    sliderItem3.classList.remove("my-work__item--show");
+});
+
+
  //-Открывашка для главного меню-----------------------------
 var menuToggle = document.querySelector(".main-nav__toggle");
 var menuClosed = document.querySelector(".main-nav__list");
@@ -27,11 +82,6 @@ menuToggle.addEventListener("click", function (event) {
     menuClosed.classList.toggle("main-nav__list--opened");
     menuToggle.classList.toggle("main-nav__toggle--active");
 });
-
-// menuClosed.addEventListener("click", function (event) {
-//     menuClosed.classList.toggle("main-nav__list--opened");
-//     menuToggle.classList.toggle("main-nav__toggle--active");
-// });
 
 window.addEventListener("keydown", function(event) {
     if (event.keyCode === 27) {

@@ -22,19 +22,21 @@
   }
 
   &__item {
+    display: none;
+    flex-direction: column;
     
+    &--show {
+      display: flex;
+    }
   }
 
   &__img {
-    // display: flex;
-    // justify-content: center;
     text-align: center;
     padding: 40px;
     background-color: #EFEBE0;
 
     img {
       width: 700px;
-      // object-fit: contain;
     }
   }
 
@@ -90,8 +92,10 @@
       }
     }
 
+    &__item {
+    }
+
     &__technologies {
-      // item-self: center;
       padding: 12px 0;
       width: 350px;
     }
@@ -113,7 +117,7 @@
     }
 
     &__item {
-      display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
       background-color: #F0EFEA;
       height: 100vh;
