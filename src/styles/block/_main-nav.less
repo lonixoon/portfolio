@@ -112,6 +112,7 @@
     }
 
     &--index-page {
+      flex-direction: row;
     }
   }
 
@@ -154,15 +155,46 @@
 @media @tablet {
   .main-nav {
     &__toggle {
-      position: absolute;
-      width: 70px;
-      height: 65px;
-      top: 10px;
-      right: 10px;
-      z-index: 110;
-      font-size: 0;
-      border: none;
-      background: none;
+      width: 65px;
+      height: 60px;
+      top: 12px;
+      right: 20px;
+
+      span {
+        top: 28px;
+        left: 10px;
+        right: 10px;
+        height: 5px;
+        border-radius: 3px;
+
+        &::before,
+        &::after {
+          left: 0;
+          height: 5px;
+          border-radius: 3px;
+        }
+
+        &::before {
+          top: -18px;
+        }
+
+        &::after {
+          bottom: -18px;
+        }
+      }
+
+      &--active {
+        span {
+          
+          &::before {
+            top: 0px;
+          }
+
+          &::after {
+            bottom: 0px;
+          }
+        }
+      }
     }
 
     &__icon {

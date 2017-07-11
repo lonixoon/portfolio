@@ -1612,6 +1612,16 @@ input[type="radio"]:checked + .radio::before {
   display: flex;
 }
 
+.main-nav__list--index-page {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .main-nav__item {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2665,15 +2675,41 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .main-nav__toggle {
-    position: absolute;
-    width: 70px;
-    height: 65px;
-    top: 10px;
+    width: 65px;
+    height: 60px;
+    top: 12px;
+    right: 20px;
+  }
+
+  .main-nav__toggle span {
+    top: 28px;
+    left: 10px;
     right: 10px;
-    z-index: 110;
-    font-size: 0;
-    border: none;
-    background: none;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  .main-nav__toggle span::before,
+  .main-nav__toggle span::after {
+    left: 0;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  .main-nav__toggle span::before {
+    top: -18px;
+  }
+
+  .main-nav__toggle span::after {
+    bottom: -18px;
+  }
+
+  .main-nav__toggle--active span::before {
+    top: 0px;
+  }
+
+  .main-nav__toggle--active span::after {
+    bottom: 0px;
   }
 
   .main-nav__icon {
