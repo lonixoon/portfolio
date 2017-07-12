@@ -1865,7 +1865,6 @@ input[type="radio"]:checked + .radio::before {
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 92%;
 }
 
 .my-work__item--show {
