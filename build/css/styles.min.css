@@ -3308,3 +3308,9 @@ input[type="radio"]:checked + .radio::before {
     height: auto;
   }
 }
+
+@media (max-width: 767px) {
+  .page__header {
+    height: 95%;
+  }
+}
