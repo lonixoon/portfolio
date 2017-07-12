@@ -911,15 +911,13 @@ input[type="radio"]:checked + .radio::before {
 
 .slider__icon-portf_arrow_down,
 .slider__icon-portf_arrow_up {
-  fill: #fff;
-  stroke: #555;
+  fill: #00bfa5;
   width: 43px;
 }
 
 .slider__next:hover .slider__icon-portf_arrow_down,
 .slider__back:hover .slider__icon-portf_arrow_up {
-  fill: #00bfa5;
-  stroke: #00bfa5;
+  fill: #009688;
 }
 
 .admin-navbar {
