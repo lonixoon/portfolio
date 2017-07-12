@@ -3311,6 +3311,6 @@ input[type="radio"]:checked + .radio::before {
 
 @media (max-width: 767px) {
   .page__header {
-    height: 95%;
+    height: 93%;
   }
 }
