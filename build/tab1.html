@@ -20,8 +20,8 @@
       </nav>
     </header>
     <main class="admin-page__main">
+      <h2 class="admin-page__title">Страница «Обо мне»</h2>
       <div class="admin-skills">
-        <h2 class="admin-skills__title">Страница «Обо мне»</h2>
         <ul class="admin-skills__list">
           <li class="admin-skills__item">
             <h4 class="skills__type">Frontend</h4>
@@ -40,22 +40,36 @@
           <li class="admin-skills__item">
             <h4 class="skills__type">Backend</h4>
             <ul class="admin-skills__inner-list">
-              <li class="admin-skills__inner-item">PHP</li>
-              <li class="admin-skills__inner-item">myEQL</li>
-              <li class="admin-skills__inner-item">Node.js</li>
-              <li class="admin-skills__inner-item">Mongo.db</li>
+              <li class="admin-skills__inner-item"><span class="admin-skills__name">PHP</span>
+                <input class="admin-skills__data" type="number"/><span class="admin-skills__pro">%</span>
+              </li>
+              <li class="admin-skills__inner-item"><span class="admin-skills__name">myEQL</span>
+                <input class="admin-skills__data" type="number"/><span class="admin-skills__pro">%</span>
+              </li>
+              <li class="admin-skills__inner-item"><span class="admin-skills__name">Node.js</span>
+                <input class="admin-skills__data" type="number"/><span class="admin-skills__pro">%</span>
+              </li>
+              <li class="admin-skills__inner-item"><span class="admin-skills__name">Mongo.db</span>
+                <input class="admin-skills__data" type="number"/><span class="admin-skills__pro">%</span>
+              </li>
             </ul>
           </li>
           <li class="admin-skills__item">
             <h4 class="skills__type">WorkFlow</h4>
             <ul class="admin-skills__inner-list">
-              <li class="admin-skills__inner-item">Git</li>
-              <li class="admin-skills__inner-item">Gulp</li>
-              <li class="admin-skills__inner-item">Bower</li>
+              <li class="admin-skills__inner-item"><span class="admin-skills__name">Git</span>
+                <input class="admin-skills__data" type="number"/><span class="admin-skills__pro">%</span>
+              </li>
+              <li class="admin-skills__inner-item"><span class="admin-skills__name">Gulp</span>
+                <input class="admin-skills__data" type="number"/><span class="admin-skills__pro">%</span>
+              </li>
+              <li class="admin-skills__inner-item"><span class="admin-skills__name">Bower</span>
+                <input class="admin-skills__data" type="number"/><span class="admin-skills__pro">%</span>
+              </li>
             </ul>
           </li>
         </ul>
-        <button type="submit">Сохранить</button>
+        <button class="btn btn--green" type="submit">Сохранить</button>
       </div>
     </main>
   </body>

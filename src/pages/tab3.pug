@@ -3,9 +3,9 @@ extends include/_template-admin
 block content
   h2.admin-page__title Страница «Мои работы»
   div.admin-my-work
-    h3.admin-my-work__titile Добавить работу
-    form.admin-my-work__form.form
-      input.form__text(type="text" placeholder="Название проекта")
-      input.form__text(type="text" placeholder="Технологии")
-      div.form__attachment Загрузить картинку
-      button(type="submit") Добавить
+    h3.admin-my-work__add Добавить работу
+    form.admin-my-work__form
+      input.admin-my-work__text(type="text" placeholder="Название проекта")
+      input.admin-my-work__text(type="text" placeholder="Технологии")
+      div.admin-my-work__attachment Загрузить картинку
+      button.btn.btn--green(type="submit") Добавить

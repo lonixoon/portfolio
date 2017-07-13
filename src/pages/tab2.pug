@@ -3,9 +3,9 @@ extends include/_template-admin
 block content
   h2.admin-page__title Страница «Блог»
   div.admin-blog
-    h3 Добавить запись
-    form.admin-blog__form.form
-      input.form__text(type="text" placeholder="Название")
-      input.form__text(type="text" placeholder="Дата")
-      textarea.form__textarea(placeholder="Содержание")
-      button(type="submit") Добавить
+    h3.admin-blog__add Добавить запись
+    form(action="").admin-blog__form
+      input.admin-blog__text(type="text" placeholder="Название")
+      input.admin-blog__text(type="text" placeholder="Дата")
+      textarea.admin-blog__text.admin-blog__text--textarea(placeholder="Содержание")
+      button.admin-blog__btn.btn.btn--green(type="submit") Добавить

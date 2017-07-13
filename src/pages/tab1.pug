@@ -1,8 +1,8 @@
 extends include/_template-admin
 
 block content
+  h2.admin-page__title Страница «Обо мне»
   div.admin-skills
-    h2.admin-skills__title Страница «Обо мне»
     ul.admin-skills__list
       li.admin-skills__item
         h4.skills__type Frontend
@@ -22,14 +22,35 @@ block content
       li.admin-skills__item
         h4.skills__type Backend
         ul.admin-skills__inner-list
-          li.admin-skills__inner-item PHP
-          li.admin-skills__inner-item myEQL
-          li.admin-skills__inner-item Node.js
-          li.admin-skills__inner-item Mongo.db
+          li.admin-skills__inner-item
+            span.admin-skills__name PHP
+            input.admin-skills__data(type="number")
+            span.admin-skills__pro %
+          li.admin-skills__inner-item
+            span.admin-skills__name myEQL
+            input.admin-skills__data(type="number")
+            span.admin-skills__pro %
+          li.admin-skills__inner-item
+            span.admin-skills__name Node.js
+            input.admin-skills__data(type="number")
+            span.admin-skills__pro %
+          li.admin-skills__inner-item
+            span.admin-skills__name Mongo.db
+            input.admin-skills__data(type="number")
+            span.admin-skills__pro %
       li.admin-skills__item
         h4.skills__type WorkFlow
         ul.admin-skills__inner-list
-          li.admin-skills__inner-item Git
-          li.admin-skills__inner-item Gulp
-          li.admin-skills__inner-item Bower
-    button(type="submit") Сохранить
+          li.admin-skills__inner-item
+            span.admin-skills__name Git
+            input.admin-skills__data(type="number")
+            span.admin-skills__pro %
+          li.admin-skills__inner-item
+            span.admin-skills__name Gulp
+            input.admin-skills__data(type="number")
+            span.admin-skills__pro %
+          li.admin-skills__inner-item
+            span.admin-skills__name Bower
+            input.admin-skills__data(type="number")
+            span.admin-skills__pro %
+    button.btn.btn--green(type="submit") Сохранить
