@@ -4,27 +4,30 @@ block content
   div.admin-skills
     h2.admin-skills__title Страница «Обо мне»
     ul.admin-skills__list
-      li.admin-skills__item Frontend
+      li.admin-skills__item
+        h4.skills__type Frontend
         ul.admin-skills__inner-list
           li.admin-skills__inner-item
-            span.skills__name HTML5
+            span.admin-skills__name HTML5
             input.admin-skills__data(type="number")
             span %
           li.admin-skills__inner-item
-            span.skills__name CSS3
+            span.admin-skills__name CSS3
             input.admin-skills__data(type="number")
-            span %
+            span.admin-skills__pro %
           li.admin-skills__inner-item
-            span.skills__name JavaScript
+            span.admin-skills__name JavaScript
             input.admin-skills__data(type="number")
-            span %
-      li.admin-skills__item Backend
+            span.admin-skills__badge %
+      li.admin-skills__item
+        h4.skills__type Backend
         ul.admin-skills__inner-list
           li.admin-skills__inner-item PHP
           li.admin-skills__inner-item myEQL
           li.admin-skills__inner-item Node.js
           li.admin-skills__inner-item Mongo.db
-      li.admin-skills__item WorkFlow
+      li.admin-skills__item
+        h4.skills__type WorkFlow
         ul.admin-skills__inner-list
           li.admin-skills__inner-item Git
           li.admin-skills__inner-item Gulp

@@ -584,8 +584,6 @@ body {
   font-family: "Roboto";
   font-size: 14px;
   color: #455A64;
-  width: 100%;
-  height: 100%;
   line-height: 1.6;
   background: #C5CEC9;
 }
@@ -2585,16 +2583,18 @@ input[type="radio"]:checked + .radio::before {
   font-weight: 300;
 }
 
+.admin-page {
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(255, 255, 255, 0.8))), url(../img/bg-tablet.jpg) no-repeat 50% 70px;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.8) 100%), url(../img/bg-tablet.jpg) no-repeat 50% 70px;
+  background: -moz-linear-gradient(rgba(255, 255, 255, 0.8) 100%), url(../img/bg-tablet.jpg) no-repeat 50% 70px;
+  background: -o-linear-gradient(rgba(255, 255, 255, 0.8) 100%), url(../img/bg-tablet.jpg) no-repeat 50% 70px;
+  background: linear-gradient(rgba(255, 255, 255, 0.8) 100%), url(../img/bg-tablet.jpg) no-repeat 50% 70px;
+}
+
 .admin-page h1,
 .admin-page h2,
 .admin-page h3 {
   font-family: "Roboto";
-}
-
-.admin-page__main {
-  position: relative;
-  background: url(../img/bg-tablet.jpg) no-repeat 50% -50px;
-  background-size: 1200px;
 }
 
 .admin-skills {
@@ -2613,6 +2613,22 @@ input[type="radio"]:checked + .radio::before {
 
 .admin-skills__inner-list {
   padding-left: 0;
+}
+
+.admin-skills__inner-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 180px;
+  padding-left: 20px;
+}
+
+.admin-skills__data {
+  width: 45px;
+  margin-left: auto;
+  margin-right: 8px;
 }
 
 @media (min-width: 768px) {
