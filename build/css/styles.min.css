@@ -940,7 +940,7 @@ input[type="radio"]:checked + .radio::before {
   display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 5px;
 }
 
@@ -966,9 +966,13 @@ input[type="radio"]:checked + .radio::before {
   border-bottom: 2px solid #fff;
 }
 
+.admin-nav__item:last-child {
+  border-bottom: none;
+}
+
 .admin-nav__item a {
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .arrow-down {
@@ -2591,6 +2595,24 @@ input[type="radio"]:checked + .radio::before {
   position: relative;
   background: url(../img/bg-tablet.jpg) no-repeat 50% -50px;
   background-size: 1200px;
+}
+
+.admin-skills {
+  padding: 20px 10px 0 10px;
+}
+
+.admin-skills__title {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.admin-skills__list {
+  padding-left: 0;
+}
+
+.admin-skills__inner-list {
+  padding-left: 0;
 }
 
 @media (min-width: 768px) {
