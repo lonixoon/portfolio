@@ -2,8 +2,8 @@
   display: flex;
   width: 100%;
   height: 100px;
-  background-color: #EFEBE0;
-  opacity: 0.8;
+  background-color: #EAE6DD;
+  // opacity: 0.8;
 
   &__next,
   &__back {
@@ -11,11 +11,16 @@
     justify-content: center;
     width: 50%;
     height: 100%;
-    box-shadow: inset 10px 0 30px 10px #CAC4B4;
+    // box-shadow: inset 10px 0 30px 10px #CAC4B4;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: contain;
+    opacity: 0.6;
     cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &--barbershop {
       background-image: url(../img/barbershop.png);
@@ -33,15 +38,12 @@
   &__icon-portf_arrow_down,
   &__icon-portf_arrow_up {
     fill: @green;
-    // fill: #000;
-    // stroke: #fff;
     width: 43px;
   }
 
   &__next:hover &__icon-portf_arrow_down,
   &__back:hover &__icon-portf_arrow_up {
     fill: @green-dark;
-    // stroke: @green;
   }
 }
 
@@ -49,11 +51,6 @@
 @media @tablet {
   .slider {
     height: 215px;
-
-    &__next,
-    &__back {
-      box-shadow: inset 20px 0 60px 20px #CAC4B4;
-    }
 
     &__icon-portf_arrow_down,
     &__icon-portf_arrow_up {

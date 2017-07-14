@@ -22,7 +22,43 @@
     }
   }
 
+  &__attachment {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 40px;
+    color: @green;
+  }
+
   &__btn {
     margin-left: 0;
+  }
+}
+
+
+@media @tablet {
+  .admin-my-work {
+    &__text {
+      width: 300px;
+    }
+  }
+}
+
+
+@media @laptop {
+  .admin-blog {
+
+    &__text {
+      width: 350px;
+    }
+  }
+}
+
+
+@media @desktop {
+  .admin-blog {
+
+    &__text {
+      width: 400px;
+    }
   }
 }

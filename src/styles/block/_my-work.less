@@ -63,6 +63,17 @@
     color: @green;
   }
 
+  &__other-work {
+    color: @green;
+    text-align: center;
+    background-color: #EAE6DD;
+
+    h4 {
+      margin: 15px;
+    }
+    
+  }
+
   &__btn {
     position: relative;
     padding-left: 45px;
@@ -77,6 +88,7 @@
   }
 
   &__slider {
+
   }
 }
 
@@ -86,10 +98,6 @@
 
     &__subtitle {
       font-size: 30px;
-
-      br {
-        display: none;
-      }
     }
 
     &__item {
@@ -135,19 +143,35 @@
       }
     }
 
-    &__slider {
+    &__other-work {
+      position: relative;
+      display: flex;
+      flex-direction: column;
       order: 3;
+      width: 50%;
+      font-size: 24px;
+      font-weight: 500;
+      color: @green;
+      justify-content: center;
+      aling-items: center;
+      
+      h4 {
+        font-weight: inherit;
+        margin: 0;
+      }
+    }
+
+    &__slider {
+      order: 4;
       height: 30%;
       width: 50%;
-      margin-left: 50%;
     }
 
     &__info {
       display: flex;
       order: 1;
       width: 50%;
-      aling-items: flex-end;
-      justify-content: flex-end;
+      justify-content: center;
     }
 
     &__technologies {

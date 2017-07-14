@@ -24,3 +24,28 @@
     }
   }
 }
+
+
+@media @tablet {
+  .admin-nav {
+    &__list {
+      display: flex;
+    }
+
+    &__item {
+      // display: flex;
+      flex-grow: 1;
+      border-bottom: none;
+      border-right: 2px solid #fff;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      a {
+        padding: 15px 0;
+        font-weight: 500;
+      }
+    }
+  }
+}
