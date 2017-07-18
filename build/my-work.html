@@ -7,14 +7,14 @@
     <title>Портфолио</title>
   </head>
   <body class="page">
-    <header class="page__header page__header--inner-page">
+    <header class="page__header page__header--inner-page" id="header">
       <div class="social">
         <ul class="social__list">
-          <li class="social__item"><a class="social__link social__link--vk" href="http://vk.com/lonixon">Вконтакте
+          <li class="social__item"><a class="social__link social__link--vk" href="http://vk.com/lonixon" target="_blank">Вконтакте
               <svg class="social__icon">
                 <use xlink:href="#icon-vk"></use>
               </svg></a></li>
-          <li class="social__item"><a class="social__link social__link--gh" href="https://github.com/lonixoon">Гитхаб
+          <li class="social__item"><a class="social__link social__link--gh" href="https://github.com/lonixoon" target="_blank">Гитхаб
               <svg class="social__icon">
                 <use xlink:href="#icon-github"></use>
               </svg></a></li>
@@ -182,17 +182,19 @@
             <h3 class="form__title">Связаться со мной</h3>
           </div>
           <div class="form__body">
-            <input class="form__text" type="text" placeholder="Имя"/>
-            <input class="form__text" type="email" placeholder="Email"/>
-            <textarea class="form__text form__text--textarea" placeholder="Ваше сообщение"></textarea>
+            <input class="form__text form__text--name" type="text" placeholder="Имя" required="required"/>
+            <input class="form__text" type="text" placeholder="Должность"/>
+            <input class="form__text form__text--email" type="email" placeholder="Email"/>
+            <textarea class="form__text form__text--textarea" placeholder="Ваше сообщение" required="required"></textarea>
           </div>
-          <div class="form__bottom"><a class="btn btn--authorization btn--green">Отправить</a><a class="btn btn--authorization btn--green">Очистить</a></div>
-        </form>
-        <div class="arrow-down">
+          <div class="form__bottom">
+            <button class="btn btn--authorization btn--green" type="submit">Отправить</button>
+            <button class="btn btn--authorization btn--green" type="reset">Очистить</button>
+          </div>
+        </form><a class="arrow-down" href="#header">
           <svg class="arrow-down__icon arrow-down__icon--up">
             <use xlink:href="#icon-arrow_down"></use>
-          </svg>
-        </div>
+          </svg></a>
       </section>
     </main>
     <footer class="page__footer">
@@ -206,11 +208,11 @@
       </nav>
       <div class="social social--footer">
         <ul class="social__list social__list--footer">
-          <li class="social__item"><a class="social__link social__link--vk" href="http://vk.com/lonixon">Вконтакте
+          <li class="social__item"><a class="social__link social__link--vk" href="http://vk.com/lonixon" target="_blank">Вконтакте
               <svg class="social__icon social__icon--round">
                 <use xlink:href="#icon-vk_round"></use>
               </svg></a></li>
-          <li class="social__item"><a class="social__link social__link--gh" href="https://github.com/lonixoon">Гитхаб
+          <li class="social__item"><a class="social__link social__link--gh" href="https://github.com/lonixoon" target="_blank">Гитхаб
               <svg class="social__icon social__icon--round">
                 <use xlink:href="#icon-github_round"></use>
               </svg></a></li>
@@ -221,7 +223,7 @@
         </ul>
       </div>
       <div class="about-footer">
-        <p class="about-footer__text">Я начинающий веб разработчик из Новосибирска. Этот сайт делал в рамках учебного проекта.</p>
+        <p class="about-footer__text">Я начинающий веб разработчик из Новосибирска.<br> Этот сайт делаю в рамках учебного проекта.</p>
         <p class="about-footer__text">Свёрстано мной.</p>
       </div>
     </footer>

@@ -6,15 +6,15 @@ html(lang="ru")
     link(href="css/styles.min.css" rel="stylesheet")
     title Портфолио
   body.page
-    header.page__header.page__header--inner-page
+    header.page__header.page__header--inner-page#header
       div.social
         ul.social__list
           li.social__item
-            a(href="http://vk.com/lonixon").social__link.social__link--vk Вконтакте
+            a(href="http://vk.com/lonixon" target="_blank").social__link.social__link--vk Вконтакте
               svg.social__icon
                 use(xlink:href="#icon-vk")
           li.social__item
-            a(href="https://github.com/lonixoon").social__link.social__link--gh Гитхаб
+            a(href="https://github.com/lonixoon" target="_blank").social__link.social__link--gh Гитхаб
               svg.social__icon
                 use(xlink:href="#icon-github")
           li.social__item
@@ -60,11 +60,11 @@ html(lang="ru")
       div.social.social--footer
         ul.social__list.social__list--footer
           li.social__item
-            a(href="http://vk.com/lonixon").social__link.social__link--vk Вконтакте
+            a(href="http://vk.com/lonixon" target="_blank").social__link.social__link--vk Вконтакте
               svg.social__icon.social__icon--round
                 use(xlink:href="#icon-vk_round")
           li.social__item
-            a(href="https://github.com/lonixoon").social__link.social__link--gh Гитхаб
+            a(href="https://github.com/lonixoon" target="_blank").social__link.social__link--gh Гитхаб
               svg.social__icon.social__icon--round
                 use(xlink:href="#icon-github_round")
           li.social__item
@@ -72,6 +72,6 @@ html(lang="ru")
               svg.social__icon.social__icon--round
                 use(xlink:href="#icon-in_round")
       div.about-footer
-        p.about-footer__text Я начинающий веб разработчик из Новосибирска. Этот сайт делал в рамках учебного проекта.
+        p.about-footer__text Я начинающий веб разработчик из Новосибирска.<br> Этот сайт делаю в рамках учебного проекта.
         p.about-footer__text Свёрстано мной.
     script(src="js/main.min.js")
