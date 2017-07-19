@@ -30,6 +30,7 @@ module.exports = {
         build: { // Папки готового проекта
             html: 'build/',
             js: 'build/js/',
+            lib: 'build/lib/',
             css: 'build/css',
             img: 'build/img/',
             fonts: 'build/fonts/',
@@ -41,12 +42,14 @@ module.exports = {
             html: 'src/pages/*.html', //  "*.html" говорит gulp что мы хотим взять все файлы с расширением .html
             pug: 'src/pages/*.pug',
             js: 'src/scripts/main.js', // В стилях и скриптах нам понадобятся только один исходный файлы
+            lib: 'src/lib/**/*.*', // Подключенные библиотеки
             less: 'src/styles/styles.less',
             sass: 'src/styles/styles.scss',
             img: 'src/images/**/*.*', // img/**/*.*  - взять все файлы всех расширений из папки и из вложенных папок
             fonts: 'src/fonts/**/*.*',
             sprites: 'src/images/sprites/*.png',
-            svg: 'src/images/svg/**/*.svg'
+            // svg: 'src/images/svg/**/*.svg',
+            svg: 'src/svg/**/*.*'
         },
 
 
@@ -54,12 +57,14 @@ module.exports = {
             html: 'src/pages/**/*.html',
             pug: 'src/pages/**/*.pug',
             js: 'src/scripts/**/*.js',
+            lib: 'src/lib/**/*.*',
             less: 'src/styles/**/*.less',
             sass: 'src/styles/**/*.scss',
             img: 'src/images/**/*.*',
             fonts: 'src/fonts/**/*.*',
             sprites: 'src/images/sprites/*.png',
-            svg: 'src/images/svg/**/*.svg'
+            // svg: 'src/images/svg/**/*.svg',
+            svg: 'src/svg/**/*.*'
         },
 
 
