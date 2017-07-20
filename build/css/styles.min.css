@@ -497,20 +497,6 @@ template {
 }
 
 @font-face {
-  font-family: "BERNIERShade";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/BERNIERShade-Regular.otf") format("opentype"), local('BERNIERShade-Regular');
-}
-
-@font-face {
-  font-family: "fontawesome";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/fontawesome-webfont.ttf") format("truetype"), local("fontawesome-webfont");
-}
-
-@font-face {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -1043,6 +1029,40 @@ input[type="radio"]:checked + .radio::before {
   display: none;
 }
 
+.preloader {
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: #00bfa5 url(../img/preloader-bg.jpg) no-repeat 50%;
+  z-index: 9999;
+}
+
+.preloader__bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "arial";
+  font-size: 40px;
+  color: #fff;
+}
+
 .page {
   position: relative;
   background: url(../img/bg-tablet.jpg) no-repeat 50% -50px;
@@ -1051,11 +1071,7 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page__header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1158,11 +1174,7 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page__main {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1178,11 +1190,7 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page__footer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
