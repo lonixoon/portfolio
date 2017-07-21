@@ -35,14 +35,13 @@
   }
   
   &__list {
-    margin-top: 70px;
-    padding: 0 20px 0 0;
+    padding-right: 20px;
     list-style: none;
     text-align: right;
   }
 
   &__item {
-    margin-bottom: 35px;
+    padding: 15px 0;
   }
 }
 
@@ -66,3 +65,37 @@
 }
 
 
+@media @laptop {
+  .page-nav {
+
+    &__toggle {
+      display: none;
+    }
+
+    &__wrap {
+      width: 300px;
+      display: block;
+      position: relative;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      color: inherit;
+      background-color: #fff;
+    }
+
+    &__list {
+      padding: 0;
+    }
+
+    &__item {
+    }
+
+    &__link {
+      font-weight: 500;
+
+      &:hover {
+        color: @green;          
+      }
+    }
+  }
+}
