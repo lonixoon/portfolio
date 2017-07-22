@@ -52,48 +52,49 @@ var nextSlideItem2 = document.querySelector('.slider__next--nerds');
 var backSlideItem2 = document.querySelector('.slider__back--sedona');
 var nextSlideItem3 = document.querySelector('.slider__next--sedona');
 var backSlideItem3 = document.querySelector('.slider__back--barbershop');
+var show = ('my-work__item--show');
 
 if (nextSlideItem1) {
     nextSlideItem1.addEventListener('click', function (event) {
         event.preventDefault();
-        sliderItem1.classList.remove('my-work__item--show');
-        sliderItem2.classList.add('my-work__item--show');
-        sliderItem3.classList.remove('my-work__item--show');
+        sliderItem1.classList.remove(show);
+        sliderItem2.classList.add(show);
+        sliderItem3.classList.remove(show);
     });
 
     backSlideItem1.addEventListener('click', function (event) {
         event.preventDefault();
-        sliderItem1.classList.remove('my-work__item--show');
-        sliderItem2.classList.remove('my-work__item--show');
-        sliderItem3.classList.add('my-work__item--show');
+        sliderItem1.classList.remove(show);
+        sliderItem2.classList.remove(show);
+        sliderItem3.classList.add(show);
     });
 
     nextSlideItem2.addEventListener('click', function (event) {
         event.preventDefault();
-        sliderItem1.classList.remove('my-work__item--show');
-        sliderItem2.classList.remove('my-work__item--show');
-        sliderItem3.classList.add('my-work__item--show');
+        sliderItem1.classList.remove(show);
+        sliderItem2.classList.remove(show);
+        sliderItem3.classList.add(show);
     });
 
     backSlideItem2.addEventListener('click', function (event) {
         event.preventDefault();
-        sliderItem1.classList.add('my-work__item--show');
-        sliderItem2.classList.remove('my-work__item--show');
-        sliderItem3.classList.remove('my-work__item--show');
+        sliderItem1.classList.add(show);
+        sliderItem2.classList.remove(show);
+        sliderItem3.classList.remove(show);
     });
 
     nextSlideItem3.addEventListener('click', function (event) {
         event.preventDefault();
-        sliderItem1.classList.add('my-work__item--show');
-        sliderItem2.classList.remove('my-work__item--show');
-        sliderItem3.classList.remove('my-work__item--show');
+        sliderItem1.classList.add(show);
+        sliderItem2.classList.remove(show);
+        sliderItem3.classList.remove(show);
     });
 
     backSlideItem3.addEventListener('click', function (event) {
         event.preventDefault();
-        sliderItem1.classList.remove('my-work__item--show');
-        sliderItem2.classList.add('my-work__item--show');
-        sliderItem3.classList.remove('my-work__item--show');
+        sliderItem1.classList.remove(show);
+        sliderItem2.classList.add(show);
+        sliderItem3.classList.remove(show);
     });
 
 }
@@ -117,7 +118,6 @@ if (pageClosed) {
         pageToggle.classList.toggle('page-nav__toggle--opened');
         pageClosed.classList.toggle('page-nav__wrap--opened');
     });
-
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -127,9 +127,8 @@ var formElemen = document.querySelector(".feedback__form");
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  Визуализация пред загрузки страницы  ////////////////////
+//////////////  Визуализация пред загрузки страницы  ///////////////////
 $(document).ready(function () {
-    // console.log('ready');
 
     $(function () {
         var imgs = []; // выводим адрес изображений в виде массива
@@ -139,8 +138,6 @@ $(document).ready(function () {
                 background = $this.css('background-image'), // ищем в css фоны всех элементов (включая элементы у которых фон none)
                 img = $this.is('img'); // проверяем на соответствия элемента тегу img
 
-                // console.log(background);
-                // console.log(img);
             if (background !='none') { // если фон не равен none то
                 var path = background.replace('url("', ''). replace('")', ''); // убираем лишние символы
 
@@ -155,8 +152,6 @@ $(document).ready(function () {
                 }
             }
         });
-
-        // console.log(imgs);
 
         var percent = 1;
 
@@ -193,29 +188,29 @@ $(document).ready(function () {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Приклеенное боковое меню  //////////////////////////////
-// $(window).scroll(function() {
+$(window).scroll(function() {
 
-//     if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
+    if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
 
-//         var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
-//         var menu = $('.page__static .page-nav__list');
-//         var sidebar = $('.page__static .page-nav__wrap');
-//         var stickyStart = sidebar.offset().top; // отслеживаем положение меню от верха страницы
-//         var cloneMenu = sidebar.clone();
-//         var fixedSidebar = $('.page__fixed .page-nav');
+        var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
+        var menu = $('.page__static .page-nav__list');
+        var sidebar = $('.page__static .page-nav__wrap');
+        var stickyStart = sidebar.offset().top; // отслеживаем положение меню от верха страницы
+        var cloneMenu = sidebar.clone();
+        var fixedSidebar = $('.page__fixed .page-nav');
 
 
-//         if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+        if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
 
-//             if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
-//                 fixedSidebar.append(cloneMenu);  // то вставляем копию меню
-//                 menu.hide(); // и прячем статичное меню
-//             }
-//         }
+            if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
+                fixedSidebar.append(cloneMenu);  // то вставляем копию меню
+                menu.hide(); // и прячем статичное меню
+            }
+        }
 
-//         else {            
-//             fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
-//             menu.show(); // и показываем статичное меню
-//         }
-//     }
-// });
+        else {            
+            fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
+            menu.show(); // и показываем статичное меню
+        }
+    }
+});
