@@ -193,29 +193,29 @@ $(document).ready(function () {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Приклеенное боковое меню  //////////////////////////////
-$(window).scroll(function() {
+// $(window).scroll(function() {
 
-    if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
+//     if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
 
-        var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
-        var menu = $('.page__static .page-nav__list');
-        var sidebar = $('.page__static .page-nav__wrap');
-        var stickyStart = sidebar.offset().top; // отслеживаем положение меню от верха страницы
-        var cloneMenu = sidebar.clone();
-        var fixedSidebar = $('.page__fixed .page-nav');
+//         var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
+//         var menu = $('.page__static .page-nav__list');
+//         var sidebar = $('.page__static .page-nav__wrap');
+//         var stickyStart = sidebar.offset().top; // отслеживаем положение меню от верха страницы
+//         var cloneMenu = sidebar.clone();
+//         var fixedSidebar = $('.page__fixed .page-nav');
 
 
-        if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+//         if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
 
-            if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
-                fixedSidebar.append(cloneMenu);  // то вставляем копию меню
-                menu.hide(); // и прячем статичное меню
-            }
-        }
+//             if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
+//                 fixedSidebar.append(cloneMenu);  // то вставляем копию меню
+//                 menu.hide(); // и прячем статичное меню
+//             }
+//         }
 
-        else {            
-            fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
-            menu.show(); // и показываем статичное меню
-        }
-    }
-});
+//         else {            
+//             fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
+//             menu.show(); // и показываем статичное меню
+//         }
+//     }
+// });
