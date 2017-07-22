@@ -35,6 +35,9 @@
   }
   
   &__list {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
     padding-right: 20px;
     list-style: none;
     text-align: right;
@@ -84,7 +87,8 @@
     }
 
     &__list {
-      padding: 0;
+      padding-top: 10px;
+      padding-right: 0;
     }
 
     &__item {
@@ -96,6 +100,16 @@
       &:hover {
         color: @green;          
       }
+    }
+  }
+}
+
+
+@media @desktop {
+  .page-nav {
+    
+    &__list {
+      padding-top: 40px;
     }
   }
 }

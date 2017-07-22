@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  localstorage для SVG  //////////////////////////////////
+//////////////  local storage для SVG  //////////////////////////////////
 var request = new XMLHttpRequest();
 
 request.open('GET', './svg/symbol_sprite.html', true);
@@ -15,7 +15,6 @@ request.onload = function() {
 
         localStorage.setItem( 'inlineSVGdata',  request.responseText );
     }
-
 };
 
 request.send();
@@ -96,6 +95,7 @@ if (nextSlideItem1) {
         sliderItem2.classList.add('my-work__item--show');
         sliderItem3.classList.remove('my-work__item--show');
     });
+
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -117,6 +117,7 @@ if (pageClosed) {
         pageToggle.classList.toggle('page-nav__toggle--opened');
         pageClosed.classList.toggle('page-nav__wrap--opened');
     });
+
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -126,7 +127,7 @@ var formElemen = document.querySelector(".feedback__form");
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  Визуализация предзагрузки страницы  ////////////////////
+//////////////  Визуализация пред загрузки страницы  ////////////////////
 $(document).ready(function () {
     // console.log('ready');
 
@@ -135,8 +136,8 @@ $(document).ready(function () {
 
         $.each($('*'), function () { // цикл поиска всех элементов на странице
             var $this = $(this),
-                background = $this.css('background-image'), // ищем в css фоны всх элементов (включая элементы у которых фон none)
-                img = $this.is('img'); // проверяем на соотвествия элемента тегу img
+                background = $this.css('background-image'), // ищем в css фоны всех элементов (включая элементы у которых фон none)
+                img = $this.is('img'); // проверяем на соответствия элемента тегу img
 
                 // console.log(background);
                 // console.log(img);
@@ -147,16 +148,15 @@ $(document).ready(function () {
             }
 
             if (img) { 
-                var path = $this.attr('src'); // если элемент изображение, сохраемем его отрибут src
+                var path = $this.attr('src'); // если элемент изображение, сохраняем его отрибут src
 
                 if (path) {
                     imgs.push(path); // если scr не пустой, сохраняем в массив
                 }
             }
-
         });
 
-        console.log(imgs);
+        // console.log(imgs);
 
         var percent = 1;
 
@@ -168,7 +168,7 @@ $(document).ready(function () {
             });
 
             image.on('load', function() { // обработчик, будет увеличивать ширину элемента по результатам загрузки
-                setPercent(imgs.length, percent); // изменяем ширину в соотвестстви с %
+                setPercent(imgs.length, percent); // изменяем ширину в соответствии с %
                 percent++; // запускаем цикл
             });
         }
@@ -181,30 +181,41 @@ $(document).ready(function () {
                 $('.page__main').css('display', 'flex');
                 $('.page__footer').css('display', 'flex');
                 $('.preloader').hide();
-
             }
 
-            $('.preloader__bar').css({ // выбираем элемет прелодер
+            $('.preloader__bar').css({ // выбираем элемент прелодер
                 // 'width' : percent + '%' // меняем значение шири на получившийся %
             }).text(percent + '%'); // выводим % в тексте
         }
-
     });
-
 });
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Приклеенное боковое меню  //////////////////////////////
 $(window).scroll(function() {
-    var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
-    var menu = $('.page__static .page-nav__wrap');
-    var sidebar = $('.page__static .page-nav');
-    var stickyStart = sidebar.offset().top; // отслеживаем положение меню от верха страницы
 
-    if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
-        menu.css({
-            top : wScroll - stickyStart + 'px' // опускаем меню на разницу px
-        });
+    if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
+
+        var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
+        var menu = $('.page__static .page-nav__list');
+        var sidebar = $('.page__static .page-nav__wrap');
+        var stickyStart = sidebar.offset().top; // отслеживаем положение меню от верха страницы
+        var cloneMenu = sidebar.clone();
+        var fixedSidebar = $('.page__fixed .page-nav');
+
+
+        if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+
+            if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
+                fixedSidebar.append(cloneMenu);  // то вставляем копию меню
+                menu.hide(); // и прячем статичное меню
+            }
+        }
+
+        else {            
+            fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
+            menu.show(); // и показываем статичное меню
+        }
     }
 });

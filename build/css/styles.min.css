@@ -1198,6 +1198,19 @@ input[type="radio"]:checked + .radio::before {
   background-color: #fff;
 }
 
+.page__fixed {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 160;
+}
+
 .page__footer {
   display: none;
   -webkit-box-orient: vertical;
@@ -1529,7 +1542,7 @@ input[type="radio"]:checked + .radio::before {
   height: 48px;
   top: 0px;
   right: 5px;
-  z-index: 110;
+  z-index: 180;
   font-size: 0;
   border: none;
   background: none;
@@ -1653,7 +1666,7 @@ input[type="radio"]:checked + .radio::before {
   height: 100%;
   color: #fff;
   background-color: rgba(0, 191, 165, 0.8);
-  z-index: 100;
+  z-index: 170;
 }
 
 .main-nav__list--footer {
@@ -2536,6 +2549,7 @@ input[type="radio"]:checked + .radio::before {
 .blog {
   position: relative;
   padding: 0 10px;
+  border-top: 1px solid #fff;
   background-color: #fff;
 }
 
@@ -2612,6 +2626,9 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page-nav__list {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
   padding-right: 20px;
   list-style: none;
   text-align: right;
@@ -3543,7 +3560,8 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .page-nav__list {
-    padding: 0;
+    padding-top: 10px;
+    padding-right: 0;
   }
 
   .page-nav__link {
@@ -3629,8 +3647,13 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .blog {
-    padding: 0 300px;
     padding-top: 30px;
+    padding-right: 20%;
+    padding-left: 100px;
+  }
+
+  .page-nav__list {
+    padding-top: 40px;
   }
 
   .admin-page__main {
