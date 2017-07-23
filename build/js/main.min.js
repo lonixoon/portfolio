@@ -128,89 +128,101 @@ var formElemen = document.querySelector(".feedback__form");
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Визуализация пред загрузки страницы  ///////////////////
-$(document).ready(function () {
+// $(document).ready(function () {
 
-    $(function () {
-        var imgs = []; // выводим адрес изображений в виде массива
+//     $(function () {
+//         var imgs = []; // выводим адрес изображений в виде массива
 
-        $.each($('*'), function () { // цикл поиска всех элементов на странице
-            var $this = $(this),
-                background = $this.css('background-image'), // ищем в css фоны всех элементов (включая элементы у которых фон none)
-                img = $this.is('img'); // проверяем на соответствия элемента тегу img
+//         $.each($('*'), function () { // цикл поиска всех элементов на странице
+//             var $this = $(this),
+//                 background = $this.css('background-image'), // ищем в css фоны всех элементов (включая элементы у которых фон none)
+//                 img = $this.is('img'); // проверяем на соответствия элемента тегу img
 
-            if (background !='none') { // если фон не равен none то
-                var path = background.replace('url("', ''). replace('")', ''); // убираем лишние символы
+//             if (background !='none') { // если фон не равен none то
+//                 var path = background.replace('url("', ''). replace('")', ''); // убираем лишние символы
 
-                imgs.push(path); // и сохраняем в массив
-            }
+//                 imgs.push(path); // и сохраняем в массив
+//             }
 
-            if (img) { 
-                var path = $this.attr('src'); // если элемент изображение, сохраняем его отрибут src
+//             if (img) { 
+//                 var path = $this.attr('src'); // если элемент изображение, сохраняем его отрибут src
 
-                if (path) {
-                    imgs.push(path); // если scr не пустой, сохраняем в массив
-                }
-            }
-        });
+//                 if (path) {
+//                     imgs.push(path); // если scr не пустой, сохраняем в массив
+//                 }
+//             }
+//         });
 
-        var percent = 1;
+//         var percent = 1;
 
-        for (var i = 0; i < imgs.length; i++) { // цикл для который проходит по массиву imgs
-            var image = $('<img>', { // создаём картинку
-                attr: { // передаём атрибуты
-                    src : imgs[i]
-                }
-            });
+//         for (var i = 0; i < imgs.length; i++) { // цикл для который проходит по массиву imgs
+//             var image = $('<img>', { // создаём картинку
+//                 attr: { // передаём атрибуты
+//                     src : imgs[i]
+//                 }
+//             });
 
-            image.on('load', function() { // обработчик, будет увеличивать ширину элемента по результатам загрузки
-                setPercent(imgs.length, percent); // изменяем ширину в соответствии с %
-                percent++; // запускаем цикл
-            });
-        }
+//             image.on('load', function() { // обработчик загрузки
+//                 setPercent(imgs.length, percent); // изменяем ширину в соответствии с %
+//                 percent++; // запускаем цикл
+//             });
+//         }
 
-        function setPercent(total, curent) { // считаем проценты загрузки
-            var percent = Math.ceil(curent / total * 100); // формула для расчёта процентов(Math.ceil округляет до целого в большую сторону)
+//         function setPercent(total, curent) { // считаем проценты загрузки
+//             var percent = Math.ceil(curent / total * 100); // формула для расчёта процентов(Math.ceil округляет до целого в большую сторону)
 
-            if (percent >=100) {
-                $('.page__header').css('display', 'flex');
-                $('.page__main').css('display', 'flex');
-                $('.page__footer').css('display', 'flex');
-                $('.preloader').hide();
-            }
+//             if (percent >=100) {
+//                 $('.page__header').css('display', 'flex');
+//                 $('.page__main').css('display', 'flex');
+//                 $('.page__footer').css('display', 'flex');
+//                 $('.preloader').hide();
+//             }
 
-            $('.preloader__bar').css({ // выбираем элемент прелодер
-                // 'width' : percent + '%' // меняем значение шири на получившийся %
-            }).text(percent + '%'); // выводим % в тексте
-        }
-    });
-});
-
+//             $('.preloader__bar').css({ // выбираем элемент прелодер
+//                 // 'width' : percent + '%' // меняем значение шири на получившийся %
+//             }).text(percent + '%'); // выводим % в тексте
+//         }
+//     });
+// });
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Приклеенное боковое меню  //////////////////////////////
-$(window).scroll(function() {
+if (window.location.toString().indexOf('blog.htm')>0) {
 
-    if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
+    if ($(window).width() >= 1200) {
 
-        var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
-        var menu = $('.page__static .page-nav__list');
-        var sidebar = $('.page__static .page-nav__wrap');
-        var stickyStart = sidebar.offset().top; // отслеживаем положение меню от верха страницы
-        var cloneMenu = sidebar.clone();
-        var fixedSidebar = $('.page__fixed .page-nav');
+        $(window).scroll(function() { // разрешение экрана должно быть больше 1200px
+
+            var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
+            var menu = $('.page__static .page-nav__list');
+            var sidebar = $('.page__static .page-nav__wrap');
+            var stickyStart = sidebar.offset().top;  // отслеживаем положение меню от верха страницы
+            var cloneMenu = sidebar.clone();
+            var fixedSidebar = $('.page__fixed .page-nav');
 
 
-        if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+            if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
 
-            if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
-                fixedSidebar.append(cloneMenu);  // то вставляем копию меню
-                menu.hide(); // и прячем статичное меню
+                if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
+                    fixedSidebar.append(cloneMenu);  // то вставляем копию меню
+                    menu.hide(); // и прячем статичное меню
+                }
             }
-        }
 
-        else {            
-            fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
-            menu.show(); // и показываем статичное меню
-        }
+            else {            
+                fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
+                menu.show(); // и показываем статичное меню
+            }
+        });
     }
+}
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////  Визуализация пред загрузки страницы  ///////////////////
+
+window.addEventListener('load', function() {
+    // console.log("Cтраница полностью готова");
+    $('.page__header, .page__main, .page__footer').css('display', 'flex');
+    $('.preloader').hide();
 });
