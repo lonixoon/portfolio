@@ -123,11 +123,22 @@ if (pageClosed) {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Валидация формы  ///////////////////////////////////////
-var formElemen = document.querySelector(".feedback__form");
+// var formElemen = document.querySelector(".feedback__form");
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Визуализация пред загрузки страницы  ///////////////////
+
+// window.addEventListener('load', function() {
+//     // console.log("Cтраница полностью готова");
+//     $('.page__header, .page__main, .page__footer').css('display', 'flex');
+//     $('.preloader').hide();
+// });
+
+////////////////////////////////////////////////////////////////////////
+////////////// Визуализация пред загрузки страницы /////////////////////
+////////////// с отслеживаеним объектов ////////////////////////////////
+
 // $(document).ready(function () {
 
 //     $(function () {
@@ -187,11 +198,40 @@ var formElemen = document.querySelector(".feedback__form");
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Приклеенное боковое меню  //////////////////////////////
-if (window.location.toString().indexOf('blog.htm')>0) {
+// if (window.location.toString().indexOf('blog.htm')>0) {
 
-    if ($(window).width() >= 1200) {
+//     if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
 
-        $(window).scroll(function() { // разрешение экрана должно быть больше 1200px
+//         $(window).scroll(function() {
+
+//             var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
+//             var menu = $('.page__static .page-nav__list');
+//             var sidebar = $('.page__static .page-nav__wrap');
+//             var stickyStart = sidebar.offset().top;  // отслеживаем положение меню от верха страницы
+//             var cloneMenu = sidebar.clone();
+//             var fixedSidebar = $('.page__fixed .page-nav');
+
+
+//             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+
+//                 if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
+//                     fixedSidebar.append(cloneMenu);  // то вставляем копию меню
+//                     menu.hide(); // и прячем статичное меню
+//                 }
+//             }
+
+//             else {            
+//                 fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
+//                 menu.show(); // и показываем статичное меню
+//             }
+//         });
+//     }
+// }
+$(window).scroll(function() { // функция отслеживания скрола
+
+    if (window.location.toString().indexOf('blog.htm')>0) { // находимся на странице Блог
+
+        if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
 
             var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
             var menu = $('.page__static .page-nav__list');
@@ -213,16 +253,38 @@ if (window.location.toString().indexOf('blog.htm')>0) {
                 fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
                 menu.show(); // и показываем статичное меню
             }
-        });
+        }
     }
-}
+});
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  Визуализация пред загрузки страницы  ///////////////////
+//////////////  Отрисовка SVG по скролу  ///////////////////////////////
+$(window).scroll(function(){
 
-window.addEventListener('load', function() {
-    // console.log("Cтраница полностью готова");
-    $('.page__header, .page__main, .page__footer').css('display', 'flex');
-    $('.preloader').hide();
+    if (window.location.toString().indexOf('about.htm')>0) {
+
+        var
+            wScroll = $(window).scrollTop(),
+            svg = $('.who-am-i__icon-autor-photo'),
+            svgPos = svg.offset().top, // отслеживаем положение svg от верха страницы
+            windowMargin = $(window).height(), // задаём запас что бы анимация начаналась заранее, когда останится пол окна
+            startAnimate = wScroll - svgPos + windowMargin, //выставляем точку начала анимации - от общего скрола отнимем позицию картинки и прибавим пол страницы
+            pixelsElapsed = svgPos - wScroll - 100, // осталось до svg картинки
+            percentsElapsed =  100 - Math.ceil(pixelsElapsed / (svgPos - (svgPos - windowMargin)) * 100), // сколько мы прошли в %
+            percentDraw = 1200 / 100 * percentsElapsed - 1200; // на сколько мы нарисовали изображение в %
+
+        if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места и ниже
+            svg.css({
+                'stroke-dashoffset' : percentDraw
+            });
+
+            if (percentDraw >= 0) { // отменяем исчезание картинки при дальнейшим скроле
+                svg.css({
+                    'stroke-dashoffset' : 0
+                });
+            }
+        }
+    }
 });

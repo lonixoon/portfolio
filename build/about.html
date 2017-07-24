@@ -7,9 +7,6 @@
     <script src="lib/jquery-3.2.1.js"></script>
     <title>Портфолио</title>
   </head>
-  <div class="preloader">
-    <div class="preloader__bar">Идёт загрузка страницы</div>
-  </div>
   <body class="page">
     <header class="page__header page__header--inner-page" id="header">
       <div class="social">
@@ -59,7 +56,11 @@
     <main class="page__main" id="main">
       <section class="about">
         <article class="who-am-i">
-          <div class="who-am-i__autor-photo"><img src="img/my_photo.jpg" alt="Сойнов Алексей"/></div>
+          <div class="who-am-i__autor-photo">
+            <svg class="who-am-i__icon-autor-photo">
+              <use xlink:href="#icon-heisenberg"></use>
+            </svg>
+          </div>
           <div class="who-am-i__title-wrap">
             <h3 class="who-am-i__title">Кто я</h3>
           </div>

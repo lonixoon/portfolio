@@ -298,14 +298,6 @@ select {
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
 
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-}
-
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -1072,7 +1064,11 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page__header {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1175,7 +1171,11 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page__main {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1213,7 +1213,11 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page__footer {
-  display: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -2237,10 +2241,16 @@ input[type="radio"]:checked + .radio::before {
 
 .who-am-i__autor-photo {
   text-align: center;
+  padding-top: 15px;
 }
 
-.who-am-i__autor-photo img {
-  width: 400px;
+.who-am-i__icon-autor-photo {
+  fill: none;
+  height: 200px;
+  stroke: #555555;
+  stroke-width: 4px;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
 }
 
 .who-am-i__title-wrap {
@@ -3106,6 +3116,10 @@ input[type="radio"]:checked + .radio::before {
     font-size: 30px;
   }
 
+  .who-am-i__icon-autor-photo {
+    height: 300px;
+  }
+
   .who-am-i__text {
     padding: 0 80px;
   }
@@ -3346,6 +3360,7 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .my-work__img img {
+    width: 700px;
     -o-object-fit: contain;
        object-fit: contain;
   }
@@ -3472,6 +3487,10 @@ input[type="radio"]:checked + .radio::before {
 
   .who-am-i__autor-photo {
     padding-top: 25px;
+  }
+
+  .who-am-i__icon-autor-photo {
+    height: 400px;
   }
 
   .who-am-i__title {

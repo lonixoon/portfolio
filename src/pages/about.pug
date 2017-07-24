@@ -12,7 +12,9 @@ block content
   section.about
     article.who-am-i
       div.who-am-i__autor-photo
-        img(src="img/my_photo.jpg", alt="Сойнов Алексей")
+        //- img(src="img/my_photo.jpg", alt="Сойнов Алексей")
+        svg.who-am-i__icon-autor-photo
+          use(xlink:href="#icon-heisenberg")
       div.who-am-i__title-wrap
         h3.who-am-i__title Кто я
       p.who-am-i__text
