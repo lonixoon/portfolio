@@ -1022,6 +1022,11 @@ input[type="radio"]:checked + .radio::before {
   display: none;
 }
 
+.icon-heisenberg__body {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+
 .preloader {
   position: fixed;
   display: -webkit-box;
@@ -2249,8 +2254,6 @@ input[type="radio"]:checked + .radio::before {
   height: 200px;
   stroke: #555555;
   stroke-width: 4px;
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
 }
 
 .who-am-i__title-wrap {
