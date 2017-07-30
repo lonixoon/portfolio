@@ -268,7 +268,7 @@ $(window).scroll(function() {
         var
             wScroll = $(window).scrollTop(), // слежение скрола от верха документа
             svg = $('.who-am-i__icon-autor-photo'), // ищем изображение
-            svgPath = $('.who-am-i__icon-autor-photo-body'), // ищем группы в нашем изображении
+            svgPath = $(svg).find('.who-am-i__icon-autor-photo-body'), // ищем группы в нашем изображении
             svgPos = svg.offset().top, // отслеживаем положение svg от верха страницы
             windowMargin = $(window).height() / 1.5, // задаём запас что бы анимация начаналась заранее, когда останится пол окна
             startAnimate = Math.ceil(wScroll - svgPos + windowMargin), //выставляем точку начала анимации - от общего скрола отнимем позицию картинки и прибавим пол страницы
@@ -298,10 +298,10 @@ $(window).scroll(function() {
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  parallax  ///////////////////////////////////////////////
+//////////////  mouse parallax  ////////////////////////////////////////
 $(document).ready(function () {
     
-    var layer = $('.parallax').find('.parallax__layer'); // Выбираем все дивы parallax__layers в parallax
+    var layer = $('.parallax').find('.parallax__layer--mouse'); // Выбираем все дивы parallax__layers в parallax
 
     $(window).on('mousemove', function (e) {
         var 
@@ -324,5 +324,28 @@ $(document).ready(function () {
                     'transform': 'translate3d(' + widthPosition + 'px, ' + heightPosition + 'px, 0)', // Используем translate3d для более лучшего рендеринга на странице
                 });
         });
+    });
+});
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////  scroll parallax  ///////////////////////////////////////
+$(window).scroll(function() {
+    var wScroll = $(window).scrollTop(), // вычисляем растояние от верха страницы
+        layer = $('.parallax').find('.parallax__layer--scroll'); // Выбираем все дивы parallax__layers в parallax
+
+    layer.map(function (key, value) { // Проходимся по всем элементам объекта (дивам .parallax__layers)
+        var 
+            scrollPosition = -wScroll * (key / 18); // Вычисляем коофицент смешения по Y
+
+            $(value).css({
+                'transform': 'translate3d(0, ' + scrollPosition + 'px, 0)', // Используем translate3d для более лучшего рендеринга на странице
+            });
+
+            if (scrollPosition < -150) { // если картинка заканчивается
+                $(value).css({
+                    'transform': 'translate3d(0, -150px, 0)', // ограничим прокрутку, что не улетал фот и ненагружался проц
+                });
+            }
     });
 });

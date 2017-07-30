@@ -1240,6 +1240,7 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .author {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1253,7 +1254,6 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .author__wrap {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -3271,6 +3271,8 @@ input[type="radio"]:checked + .radio::before {
 
   .page {
     background-image: url(../img/bg-desktop.jpg);
+    background-size: cover;
+    background-position: 0 -130px;
   }
 
   .page__icon-corner {
