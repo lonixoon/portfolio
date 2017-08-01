@@ -298,6 +298,14 @@ select {
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
 
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -596,10 +604,6 @@ a {
   color: inherit;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 .checkbox {
   position: relative;
   cursor: pointer;
@@ -685,12 +689,16 @@ input[type="radio"]:checked + .radio::before {
   cursor: pointer;
 }
 
-.btn:hover {
-  text-decoration: underline;
-}
-
 .btn--green {
   background: #00bfa5;
+  -webkit-transition-duration: 800ms;
+     -moz-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  -moz-transition-property: background-color;
+  transition-property: background-color;
 }
 
 .btn--green:hover {
@@ -875,6 +883,14 @@ input[type="radio"]:checked + .radio::before {
   background-size: contain;
   opacity: 0.6;
   cursor: pointer;
+  -webkit-transition-duration: 800ms;
+     -moz-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  -moz-transition-property: opacity;
+  transition-property: opacity;
 }
 
 .slider__next:hover,
@@ -901,6 +917,14 @@ input[type="radio"]:checked + .radio::before {
 .slider__icon-portf_arrow_up {
   fill: #00bfa5;
   width: 43px;
+  -webkit-transition-duration: 800ms;
+     -moz-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-property: fill;
+  -o-transition-property: fill;
+  -moz-transition-property: fill;
+  transition-property: fill;
 }
 
 .slider__next:hover .slider__icon-portf_arrow_down,
@@ -1610,6 +1634,10 @@ input[type="radio"]:checked + .radio::before {
   transition-property: transform, bottom, -webkit-transform, -moz-transform;
 }
 
+.main-nav__toggle--active {
+  position: fixed;
+}
+
 .main-nav__toggle--active span {
   background: none;
 }
@@ -1663,7 +1691,8 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .main-nav__list--full-screen {
-  display: none;
+  position: absolute;
+  visibility: hidden;
   -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
@@ -1676,8 +1705,22 @@ input[type="radio"]:checked + .radio::before {
   width: 100%;
   height: 100%;
   color: #fff;
-  background-color: rgba(0, 191, 165, 0.8);
+  background-color: rgba(0, 191, 165, 0.85);
   z-index: 170;
+  opacity: 0;
+  -webkit-transition-duration: 800ms;
+     -moz-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  -moz-transition-property: all;
+  transition-property: all;
+}
+
+.main-nav__list--opened {
+  visibility: visible;
+  opacity: 1;
 }
 
 .main-nav__list--footer {
@@ -1689,14 +1732,6 @@ input[type="radio"]:checked + .radio::before {
      -moz-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-.main-nav__list--opened {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .main-nav__list--index-page {
@@ -1779,8 +1814,16 @@ input[type="radio"]:checked + .radio::before {
   margin-top: -2.5px;
   width: 22px;
   height: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0);
   z-index: 40;
+  -webkit-transition-duration: 450ms;
+     -moz-transition-duration: 450ms;
+       -o-transition-duration: 450ms;
+          transition-duration: 450ms;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  -moz-transition-property: background-color;
+  transition-property: background-color;
 }
 
 .main-nav__item--inner-page a::before {
@@ -1798,6 +1841,10 @@ input[type="radio"]:checked + .radio::before {
 
 .main-nav--inner-page {
   width: auto;
+}
+
+.social {
+  position: relative;
 }
 
 .social__list {
@@ -1851,6 +1898,14 @@ input[type="radio"]:checked + .radio::before {
   fill: #fff;
   width: 25px;
   height: 20px;
+  -webkit-transition-duration: 800ms;
+     -moz-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  -moz-transition-property: opacity;
+  transition-property: opacity;
 }
 
 .social__icon--green {
@@ -3270,9 +3325,7 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .page {
-    background-image: url(../img/bg-desktop.jpg);
-    background-size: cover;
-    background-position: 0 -130px;
+    background-image: none;
   }
 
   .page__icon-corner {

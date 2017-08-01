@@ -1,3 +1,4 @@
+doc = document;
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  local storage для SVG  /////////////////////////////////
@@ -8,10 +9,10 @@ request.open('GET', './svg/symbol_sprite.html', true);
 request.onload = function() {
 
     if (request.status >= 200 && request.status < 400 ) {
-        var node = document.createElement("div");
+        var node = doc.createElement("div");
 
         node.innerHTML = request.responseText;
-        document.body.insertBefore(node, document.body.firstChild);
+        doc.body.insertBefore(node, doc.body.firstChild);
 
         localStorage.setItem( 'inlineSVGdata',  request.responseText );
     }
@@ -22,8 +23,8 @@ request.send();
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Открывашка для главного меню  //////////////////////////
-var menuToggle = document.querySelector('.main-nav__toggle');
-var menuClosed = document.querySelector('.main-nav__list');
+var menuToggle = doc.querySelector('.main-nav__toggle');
+var menuClosed = doc.querySelector('.main-nav__list');
 
 if (menuToggle) {
     menuToggle.addEventListener('click', function (event) {
@@ -43,16 +44,16 @@ window.addEventListener('keydown', function(event) {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Слайдер  ///////////////////////////////////////////////
-var sliderItem1 = document.querySelector('.my-work__item1');
-var sliderItem2 = document.querySelector('.my-work__item2');
-var sliderItem3 = document.querySelector('.my-work__item3');
-var nextSlideItem1 = document.querySelector('.slider__next--barbershop');
-var backSlideItem1 = document.querySelector('.slider__back--nerds');
-var nextSlideItem2 = document.querySelector('.slider__next--nerds');
-var backSlideItem2 = document.querySelector('.slider__back--sedona');
-var nextSlideItem3 = document.querySelector('.slider__next--sedona');
-var backSlideItem3 = document.querySelector('.slider__back--barbershop');
-var show = ('my-work__item--show');
+var sliderItem1 = doc.querySelector('.my-work__item1'),
+    sliderItem2 = doc.querySelector('.my-work__item2'),
+    sliderItem3 = doc.querySelector('.my-work__item3'),
+    nextSlideItem1 = doc.querySelector('.slider__next--barbershop'),
+    backSlideItem1 = doc.querySelector('.slider__back--nerds'),
+    nextSlideItem2 = doc.querySelector('.slider__next--nerds'),
+    backSlideItem2 = doc.querySelector('.slider__back--sedona'),
+    nextSlideItem3 = doc.querySelector('.slider__next--sedona'),
+    backSlideItem3 = doc.querySelector('.slider__back--barbershop'),
+    show = ('my-work__item--show');
 
 if (nextSlideItem1) {
     nextSlideItem1.addEventListener('click', function (event) {
@@ -96,14 +97,32 @@ if (nextSlideItem1) {
         sliderItem2.classList.add(show);
         sliderItem3.classList.remove(show);
     });
-
 }
+
+// var sliderItem = doc.querySelectorAll('.my-work__item');
+// var nextSlideItem = doc.querySelectorAll('.slider__next');
+// var backSlideItem = doc.querySelectorAll('.slider__back');
+// var show = ('my-work__item--show');
+
+// slider = function () {
+//     nextSlideItem.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem.classList.remove(show);
+//     });
+
+//     backSlideItem.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem.classList.remove(show);
+//     });
+// };
+
+// slider();
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Открывашка для навигации по станицы  ///////////////////
-var pageToggle = document.querySelector('.page-nav__toggle');
-var pageClosed = document.querySelector('.page-nav__wrap');
+var pageToggle = doc.querySelector('.page-nav__toggle');
+var pageClosed = doc.querySelector('.page-nav__wrap');
 
 if (pageToggle) {
     pageToggle.addEventListener('click', function (event) {
@@ -123,7 +142,7 @@ if (pageClosed) {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Валидация формы  ///////////////////////////////////////
-// var formElemen = document.querySelector(".feedback__form");
+// var formElemen = doc.querySelector(".feedback__form");
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -139,7 +158,7 @@ if (pageClosed) {
 ////////////// Визуализация пред загрузки страницы /////////////////////
 ////////////// с отслеживаеним объектов ////////////////////////////////
 
-// $(document).ready(function () {
+// $(doc).ready(function () {
 
 //     $(function () {
 //         var imgs = []; // выводим адрес изображений в виде массива
@@ -276,7 +295,7 @@ $(window).scroll(function() {
             percentsElapsed =  Math.ceil(pixelsElapsed / (svgPos - (svgPos - windowMargin)) * 100), // сколько мы прошли в %
             percentDraw = 600 / 100 * percentsElapsed; // на сколько мы нарисовали изображение в %
 
-        if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места и ниже
+        if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места
             svgPath.css({
                 'stroke-dashoffset' : percentDraw
             });
@@ -288,7 +307,7 @@ $(window).scroll(function() {
             }
         }
 
-        if (startAnimate < 0) { // если анимация не началась очищаем значищаем лицо
+        if (startAnimate < 0) { // полностью очищаем при обратной прокрутки (оставались баги)
             svgPath.css({
                 'stroke-dashoffset' : 600
             });
@@ -299,7 +318,7 @@ $(window).scroll(function() {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  mouse parallax  ////////////////////////////////////////
-$(document).ready(function () {
+$(doc).ready(function () {
     
     var layer = $('.parallax').find('.parallax__layer--mouse'); // Выбираем все дивы parallax__layers в parallax
 
@@ -336,15 +355,17 @@ $(window).scroll(function() {
 
     layer.map(function (key, value) { // Проходимся по всем элементам объекта (дивам .parallax__layers)
         var 
-            scrollPosition = -wScroll * (key / 18); // Вычисляем коофицент смешения по Y
+            // bottomPosition = (key / 14), // Вычисляем на сколько нам надо опустить вниз наш слой что бы при перемещении по Y не видно было краев
+            scrollPosition = wScroll * (key / 14); // Вычисляем коофицент смешения по Y
 
             $(value).css({
                 'transform': 'translate3d(0, ' + scrollPosition + 'px, 0)', // Используем translate3d для более лучшего рендеринга на странице
             });
 
-            if (scrollPosition < -150) { // если картинка заканчивается
+            if (scrollPosition > 400) { // если картинка заканчивается
                 $(value).css({
-                    'transform': 'translate3d(0, -150px, 0)', // ограничим прокрутку, что не улетал фот и ненагружался проц
+                    // 'bottom': '-' + bottomPosition + 'px', // выставляем bottom (т.к. картинка с запасом по низу выравнивание не требуется)
+                    'transform': 'translate3d(0, 400px, 0)', // ограничим прокрутку
                 });
             }
     });
