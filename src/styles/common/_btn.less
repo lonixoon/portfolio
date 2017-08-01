@@ -19,6 +19,9 @@
   text-decoration: none;
   cursor: pointer;
 
+  transition-duration: 800ms;
+  transition-property: background-color, color;
+
   // &:hover {
   //   text-decoration: underline;
   // }
@@ -26,9 +29,6 @@
 
   &--green {
     background: @green;
-    
-    transition-duration: 800ms;
-    transition-property: background-color;
 
     &:hover {
       background: @green-dark;

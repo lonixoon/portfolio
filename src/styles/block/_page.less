@@ -1,7 +1,9 @@
 .page {
   position: relative;
-  background: url(../img/bg-tablet.jpg) no-repeat 50% -50px;
+  background: url(../img/bg-mobile.jpg) no-repeat 50% -50px;
+  background: url(../img/bg-mobile.jpg) no-repeat;
   background-size: 1200px;
+  background-size: cover;
   height: 100vh;
 
   &__header {
@@ -96,6 +98,7 @@
     height: auto;
     &__header {
       height: auto;
+      min-height: 500px;
     }
   }
 }
@@ -111,8 +114,9 @@
 
 @media @tablet {
   .page {
-    background-image: url(../img/bg-desktop.jpg);
-    background-size: auto;
+    background-image: url(../img/bg-tablet.jpg);
+    background-position: 0 50%;
+    // background-size: auto;
 
     &__icon-corner {
       height: 65px;

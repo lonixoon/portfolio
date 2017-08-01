@@ -298,14 +298,6 @@ select {
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
 
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-}
-
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -687,18 +679,18 @@ input[type="radio"]:checked + .radio::before {
   color: #FFF;
   text-decoration: none;
   cursor: pointer;
-}
-
-.btn--green {
-  background: #00bfa5;
   -webkit-transition-duration: 800ms;
      -moz-transition-duration: 800ms;
        -o-transition-duration: 800ms;
           transition-duration: 800ms;
-  -webkit-transition-property: background-color;
-  -o-transition-property: background-color;
-  -moz-transition-property: background-color;
-  transition-property: background-color;
+  -webkit-transition-property: background-color, color;
+  -o-transition-property: background-color, color;
+  -moz-transition-property: background-color, color;
+  transition-property: background-color, color;
+}
+
+.btn--green {
+  background: #00bfa5;
 }
 
 .btn--green:hover {
@@ -1086,8 +1078,10 @@ input[type="radio"]:checked + .radio::before {
 
 .page {
   position: relative;
-  background: url(../img/bg-tablet.jpg) no-repeat 50% -50px;
+  background: url(../img/bg-mobile.jpg) no-repeat 50% -50px;
+  background: url(../img/bg-mobile.jpg) no-repeat;
   background-size: 1200px;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -2982,8 +2976,8 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .page {
-    background-image: url(../img/bg-desktop.jpg);
-    background-size: auto;
+    background-image: url(../img/bg-tablet.jpg);
+    background-position: 0 50%;
   }
 
   .page__icon-corner {
@@ -3796,6 +3790,7 @@ input[type="radio"]:checked + .radio::before {
 
   .page__header {
     height: auto;
+    min-height: 500px;
   }
 }
 
