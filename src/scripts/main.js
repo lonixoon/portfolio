@@ -44,79 +44,104 @@ window.addEventListener('keydown', function(event) {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Слайдер  ///////////////////////////////////////////////
-var sliderItem1 = doc.querySelector('.my-work__item1'),
-    sliderItem2 = doc.querySelector('.my-work__item2'),
-    sliderItem3 = doc.querySelector('.my-work__item3'),
-    nextSlideItem1 = doc.querySelector('.slider__next--barbershop'),
-    backSlideItem1 = doc.querySelector('.slider__back--nerds'),
-    nextSlideItem2 = doc.querySelector('.slider__next--nerds'),
-    backSlideItem2 = doc.querySelector('.slider__back--sedona'),
-    nextSlideItem3 = doc.querySelector('.slider__next--sedona'),
-    backSlideItem3 = doc.querySelector('.slider__back--barbershop'),
-    show = ('my-work__item--show');
+// var sliderItem1 = doc.querySelector('.my-work__item1'),
+//     sliderItem2 = doc.querySelector('.my-work__item2'),
+//     sliderItem3 = doc.querySelector('.my-work__item3'),
+//     nextSlideItem1 = doc.querySelector('.slider__next--barbershop'),
+//     backSlideItem1 = doc.querySelector('.slider__back--nerds'),
+//     nextSlideItem2 = doc.querySelector('.slider__next--nerds'),
+//     backSlideItem2 = doc.querySelector('.slider__back--sedona'),
+//     nextSlideItem3 = doc.querySelector('.slider__next--sedona'),
+//     backSlideItem3 = doc.querySelector('.slider__back--barbershop'),
+//     show = ('my-work__item--show');
 
-if (nextSlideItem1) {
-    nextSlideItem1.addEventListener('click', function (event) {
-        event.preventDefault();
-        sliderItem1.classList.remove(show);
-        sliderItem2.classList.add(show);
-        sliderItem3.classList.remove(show);
-    });
+// if (nextSlideItem1) {
+//     nextSlideItem1.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem1.classList.remove(show);
+//         sliderItem2.classList.add(show);
+//         sliderItem3.classList.remove(show);
+//     });
 
-    backSlideItem1.addEventListener('click', function (event) {
-        event.preventDefault();
-        sliderItem1.classList.remove(show);
-        sliderItem2.classList.remove(show);
-        sliderItem3.classList.add(show);
-    });
+//     backSlideItem1.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem1.classList.remove(show);
+//         sliderItem2.classList.remove(show);
+//         sliderItem3.classList.add(show);
+//     });
 
-    nextSlideItem2.addEventListener('click', function (event) {
-        event.preventDefault();
-        sliderItem1.classList.remove(show);
-        sliderItem2.classList.remove(show);
-        sliderItem3.classList.add(show);
-    });
+//     nextSlideItem2.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem1.classList.remove(show);
+//         sliderItem2.classList.remove(show);
+//         sliderItem3.classList.add(show);
+//     });
 
-    backSlideItem2.addEventListener('click', function (event) {
-        event.preventDefault();
-        sliderItem1.classList.add(show);
-        sliderItem2.classList.remove(show);
-        sliderItem3.classList.remove(show);
-    });
+//     backSlideItem2.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem1.classList.add(show);
+//         sliderItem2.classList.remove(show);
+//         sliderItem3.classList.remove(show);
+//     });
 
-    nextSlideItem3.addEventListener('click', function (event) {
-        event.preventDefault();
-        sliderItem1.classList.add(show);
-        sliderItem2.classList.remove(show);
-        sliderItem3.classList.remove(show);
-    });
+//     nextSlideItem3.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem1.classList.add(show);
+//         sliderItem2.classList.remove(show);
+//         sliderItem3.classList.remove(show);
+//     });
 
-    backSlideItem3.addEventListener('click', function (event) {
-        event.preventDefault();
-        sliderItem1.classList.remove(show);
-        sliderItem2.classList.add(show);
-        sliderItem3.classList.remove(show);
-    });
+//     backSlideItem3.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem1.classList.remove(show);
+//         sliderItem2.classList.add(show);
+//         sliderItem3.classList.remove(show);
+//     });
+// }
+
+var 
+    slides = doc.querySelectorAll('.my-work__list .my-work__item'),
+    currentSlide = 0,
+    // slideInterval = setInterval(nextSlide,3000),
+    next = doc.querySelectorAll('.slider__next'),
+    back = doc.querySelectorAll('.slider__back');
+
+
+function nextSlide () {
+    goToSlide(currentSlide+1);
 }
 
-// var sliderItem = doc.querySelectorAll('.my-work__item');
-// var nextSlideItem = doc.querySelectorAll('.slider__next');
-// var backSlideItem = doc.querySelectorAll('.slider__back');
-// var show = ('my-work__item--show');
+function backSlide() {
+    goToSlide(currentSlide-1);
+}
 
-// slider = function () {
-//     nextSlideItem.addEventListener('click', function (event) {
-//         event.preventDefault();
-//         sliderItem.classList.remove(show);
-//     });
+function goToSlide(n) {
+    slides[currentSlide].className = 'my-work__item';
+    currentSlide = (n+slides.length)%slides.length;
+    slides[currentSlide].className = 'my-work__item my-work__item--show';
+}
 
-//     backSlideItem.addEventListener('click', function (event) {
-//         event.preventDefault();
-//         sliderItem.classList.remove(show);
-//     });
-// };
+next[0].onclick = function() {
+    nextSlide();
+};
+back[0].onclick = function() {
+    backSlide();
+};
 
-// slider();
+next[1].onclick = function() {
+    nextSlide();
+};
+back[1].onclick = function() {
+    backSlide();
+};
+
+next[2].onclick = function() {
+    nextSlide();
+};
+back[2].onclick = function() {
+    backSlide();
+};
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
