@@ -99,49 +99,37 @@ window.addEventListener('keydown', function(event) {
 //     });
 // }
 
-var 
-    slides = doc.querySelectorAll('.my-work__list .my-work__item'),
+var
+    slides = doc.querySelectorAll('.my-work__list .my-work__item'), // ищем все слайды
     currentSlide = 0,
-    // slideInterval = setInterval(nextSlide,3000),
-    next = doc.querySelectorAll('.slider__next'),
-    back = doc.querySelectorAll('.slider__back');
+    // slideInterval = setInterval(nextSlide,5000), // делаем слайд шоу (если требуется)
+    next = doc.querySelectorAll('.slider__next'), // ищем кнопки next на всех слайдах
+    back = doc.querySelectorAll('.slider__back'); // ищем кнопки back на всех слайдах
 
 
-function nextSlide () {
+function nextSlide() { // перелистываение сладера вперед
     goToSlide(currentSlide+1);
 }
 
-function backSlide() {
+function backSlide() { // перелистываение сладера назад
     goToSlide(currentSlide-1);
 }
 
-function goToSlide(n) {
-    slides[currentSlide].className = 'my-work__item';
-    currentSlide = (n+slides.length)%slides.length;
-    slides[currentSlide].className = 'my-work__item my-work__item--show';
+function goToSlide(n) { // функция перехода на другйо слайд
+    slides[currentSlide].className = 'my-work__item'; // убераем первому слайду класс "my-work__item--show"
+    currentSlide = (n+slides.length)%slides.length; // вычисляем номер следующего элемента массива
+    slides[currentSlide].className = 'my-work__item my-work__item--show'; // добавляем ему класс "my-work__item--show"
 }
 
-next[0].onclick = function() {
-    nextSlide();
-};
-back[0].onclick = function() {
-    backSlide();
-};
+$(next).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда вперед
+        nextSlide();
+});
 
-next[1].onclick = function() {
-    nextSlide();
-};
-back[1].onclick = function() {
-    backSlide();
-};
-
-next[2].onclick = function() {
-    nextSlide();
-};
-back[2].onclick = function() {
-    backSlide();
-};
-
+$(back).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда назад
+    // for(var i = 0; i < back.length -1; i++) {
+        backSlide();
+    // };
+});
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
