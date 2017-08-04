@@ -298,6 +298,14 @@ select {
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
 
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -868,6 +876,11 @@ input[type="radio"]:checked + .radio::before {
      -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
   height: 100%;
   background-repeat: no-repeat;
@@ -904,6 +917,7 @@ input[type="radio"]:checked + .radio::before {
 .slider__icon-portf_arrow_down,
 .slider__icon-portf_arrow_up {
   fill: #00bfa5;
+  height: 40px;
   width: 43px;
   -webkit-transition-duration: 800ms;
      -moz-transition-duration: 800ms;
@@ -913,11 +927,27 @@ input[type="radio"]:checked + .radio::before {
   -o-transition-property: fill;
   -moz-transition-property: fill;
   transition-property: fill;
+  -webkit-transition: margin 100ms;
+  -o-transition: margin 100ms;
+  -moz-transition: margin 100ms;
+  transition: margin 100ms;
 }
 
 .slider__next:hover .slider__icon-portf_arrow_down,
 .slider__back:hover .slider__icon-portf_arrow_up {
   fill: #009688;
+  -webkit-transition: margin 400ms;
+  -o-transition: margin 400ms;
+  -moz-transition: margin 400ms;
+  transition: margin 400ms;
+}
+
+.slider__next:hover .slider__icon-portf_arrow_down {
+  margin-top: 30px;
+}
+
+.slider__back:hover .slider__icon-portf_arrow_up {
+  margin-bottom: 30px;
 }
 
 .admin-navbar {
@@ -1021,6 +1051,10 @@ input[type="radio"]:checked + .radio::before {
   width: 30px;
   height: 20px;
   fill: #ccc;
+  -webkit-transition: margin 320ms;
+  -o-transition: margin 320ms;
+  -moz-transition: margin 320ms;
+  transition: margin 320ms;
 }
 
 .arrow-down__icon--up {
@@ -1032,6 +1066,21 @@ input[type="radio"]:checked + .radio::before {
 
 .arrow-down__icon--right {
   display: none;
+}
+
+.arrow-down:hover .arrow-down__icon {
+  -webkit-transition: margin 400ms;
+  -o-transition: margin 400ms;
+  -moz-transition: margin 400ms;
+  transition: margin 400ms;
+}
+
+.arrow-down:hover .arrow-down__icon--down {
+  margin-top: 32px;
+}
+
+.arrow-down:hover .arrow-down__icon--up {
+  margin-bottom: 32px;
 }
 
 .parallax {

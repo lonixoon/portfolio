@@ -9,6 +9,7 @@
   &__back {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 50%;
     height: 100%;
     background-repeat: no-repeat;
@@ -35,17 +36,29 @@
     }
   }
 
+
   &__icon-portf_arrow_down,
   &__icon-portf_arrow_up {
     fill: @green;
+    height: 40px;
     width: 43px;
     transition-duration: 800ms;
     transition-property: fill;
+    transition: margin 100ms
   }
 
   &__next:hover &__icon-portf_arrow_down,
   &__back:hover &__icon-portf_arrow_up {
     fill: @green-dark;
+    transition: margin 400ms;
+  }
+
+  &__next:hover &__icon-portf_arrow_down {
+    margin-top: 30px;
+  }
+
+  &__back:hover &__icon-portf_arrow_up {    
+    margin-bottom: 30px;
   }
 }
 

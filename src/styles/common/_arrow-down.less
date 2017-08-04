@@ -10,10 +10,16 @@
   cursor: pointer;
   z-index: 40;
 
+
+
   &__icon {
     width: 30px;
     height: 20px;
     fill: #ccc;
+    transition: margin 320ms;
+
+    &--down {
+    }
 
     &--up {
       transform: rotate(180deg);
@@ -21,6 +27,18 @@
 
     &--right {
       display: none;
+    }
+  }
+
+  &:hover &__icon {
+    transition: margin 400ms;
+
+    &--down {
+      margin-top: 32px;
+    }
+
+    &--up {
+      margin-bottom: 32px;
     }
   }
 }
