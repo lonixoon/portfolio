@@ -987,6 +987,7 @@ input[type="radio"]:checked + .radio::before {
   display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  margin-bottom: 10px;
 }
 
 .admin-nav {
@@ -1123,9 +1124,7 @@ input[type="radio"]:checked + .radio::before {
 
 .page {
   position: relative;
-  background: url(../img/bg-mobile.jpg) no-repeat 50% -50px;
   background: url(../img/bg-mobile.jpg) no-repeat;
-  background-size: 1200px;
   background-size: cover;
   height: 100vh;
 }
@@ -2927,10 +2926,18 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .admin-my-work__attachment {
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding-left: 40px;
+  margin: 15px auto 25px 35px;
+  padding: 5px;
   color: #00bfa5;
+  cursor: pointer;
+  -webkit-transition: color 400ms;
+  -o-transition: color 400ms;
+  -moz-transition: color 400ms;
+  transition: color 400ms;
+}
+
+.admin-my-work__attachment:hover {
+  color: #009688;
 }
 
 .admin-my-work__btn {
@@ -3870,6 +3877,7 @@ input[type="radio"]:checked + .radio::before {
 
 @media (max-width: 767px) and (orientation: landscape) {
   .page {
+    background: url(../img/bg-mobile.jpg) no-repeat 0 -15%;
     height: auto;
   }
 

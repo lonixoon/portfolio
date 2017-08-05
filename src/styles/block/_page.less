@@ -1,8 +1,8 @@
 .page {
   position: relative;
-  background: url(../img/bg-mobile.jpg) no-repeat 50% -50px;
+  // background: url(../img/bg-mobile.jpg) no-repeat 50% -50px;
   background: url(../img/bg-mobile.jpg) no-repeat;
-  background-size: 1200px;
+  // background-size: 1200px;
   background-size: cover;
   height: 100vh;
 
@@ -95,7 +95,9 @@
 
 @media @mobile-only and (orientation:landscape) {
   .page {
+    background: url(../img/bg-mobile.jpg) no-repeat 0 -15%;
     height: auto;
+    
     &__header {
       height: auto;
       min-height: 500px;

@@ -23,10 +23,15 @@
   }
 
   &__attachment {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    padding-left: 40px;
+    margin: 15px auto 25px 35px;
+    padding: 5px;
     color: @green;
+    cursor: pointer;
+    transition: color 400ms;
+
+    &:hover {
+      color: @green-dark;
+    }
   }
 
   &__btn {
