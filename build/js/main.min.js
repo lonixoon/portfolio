@@ -134,8 +134,10 @@ $(back).click(function() { // добавляем в дейсвие по клик
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Открывашка для навигации по станицы  ///////////////////
-var pageToggle = doc.querySelector('.page-nav__toggle');
-var pageClosed = doc.querySelector('.page-nav__wrap');
+var pageToggle = doc.querySelector('.page-nav__toggle'),
+    pageClosed = doc.querySelector('.page-nav__wrap'),
+    blog = doc.querySelector('.blog');
+
 
 if (pageToggle) {
     pageToggle.addEventListener('click', function (event) {
@@ -145,10 +147,30 @@ if (pageToggle) {
     });
 }
 
+// if (pageToggle) {
+//     blog.addEventListener('touchmove', function (event) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//         initialPoint = event.changedTouches[0];
+//     }, false);
+
+//     blog.addEventListener('touchmove', function (event) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//         finalPoint = event.changedTouches[0];
+//         var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+        
+//         if (finalPoint.pageX < initialPoint.pageX) {
+//             pageToggle.classList.toggle('page-nav__toggle--opened');
+//             pageClosed.classList.toggle('page-nav__wrap--opened');
+//         }
+//     });
+// }
+
 if (pageClosed) {
     pageClosed.addEventListener('click', function (event) {
-        pageToggle.classList.toggle('page-nav__toggle--opened');
-        pageClosed.classList.toggle('page-nav__wrap--opened');
+        pageToggle.classList.remove('page-nav__toggle--opened');
+        pageClosed.classList.remove('page-nav__wrap--opened');
     });
 }
 

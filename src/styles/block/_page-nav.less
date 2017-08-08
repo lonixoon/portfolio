@@ -11,6 +11,7 @@
     border-radius: 50%;
     background-color: @green;
     z-index: 50;
+    transition: all 800ms;
 
     &--opened {
       left: 275px;
@@ -18,19 +19,20 @@
   }
 
   &__wrap {
-    display: none;
     position: fixed;
     top: 0;
-    bottom: 0;
-    left: 0;
-    width: 275px;  
+    left: -275px;
+    bottom: 0;    
+    width: 275px;
+
     color: #fff;
     font-size: 16px;
     background-color: @green;
     z-index: 120;
+    transition: all 800ms;
 
     &--opened {
-      display: block;
+      left: 0;
     }
   }
   

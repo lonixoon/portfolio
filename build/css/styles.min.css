@@ -619,6 +619,10 @@ a {
   border: 1px solid #aaa;
   border-radius: 3px;
   background-color: #fff;
+  -webkit-transition: background-color 500ms;
+  -o-transition: background-color 500ms;
+  -moz-transition: background-color 500ms;
+  transition: background-color 500ms;
 }
 
 input[type="checkbox"]:checked + .checkbox::before {
@@ -656,6 +660,10 @@ input[type="checkbox"]:checked + .checkbox::after {
   border: 1px solid #aaa;
   border-radius: 50%;
   background-color: #fff;
+  -webkit-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
 }
 
 input[type="radio"]:checked + .radio::before {
@@ -687,14 +695,10 @@ input[type="radio"]:checked + .radio::before {
   color: #FFF;
   text-decoration: none;
   cursor: pointer;
-  -webkit-transition-duration: 800ms;
-     -moz-transition-duration: 800ms;
-       -o-transition-duration: 800ms;
-          transition-duration: 800ms;
-  -webkit-transition-property: background-color, color;
-  -o-transition-property: background-color, color;
-  -moz-transition-property: background-color, color;
-  transition-property: background-color, color;
+  -webkit-transition: background-color, color 800ms;
+  -o-transition: background-color, color 800ms;
+  -moz-transition: background-color, color 800ms;
+  transition: background-color, color 800ms;
 }
 
 .btn--green {
@@ -2747,6 +2751,10 @@ input[type="radio"]:checked + .radio::before {
   border-radius: 50%;
   background-color: #00bfa5;
   z-index: 50;
+  -webkit-transition: all 800ms;
+  -o-transition: all 800ms;
+  -moz-transition: all 800ms;
+  transition: all 800ms;
 }
 
 .page-nav__toggle--opened {
@@ -2754,20 +2762,23 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page-nav__wrap {
-  display: none;
   position: fixed;
   top: 0;
+  left: -275px;
   bottom: 0;
-  left: 0;
   width: 275px;
   color: #fff;
   font-size: 16px;
   background-color: #00bfa5;
   z-index: 120;
+  -webkit-transition: all 800ms;
+  -o-transition: all 800ms;
+  -moz-transition: all 800ms;
+  transition: all 800ms;
 }
 
 .page-nav__wrap--opened {
-  display: block;
+  left: 0;
 }
 
 .page-nav__list {
