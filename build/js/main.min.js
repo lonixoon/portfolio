@@ -102,7 +102,7 @@ window.addEventListener('keydown', function(event) {
 var
     slides = doc.querySelectorAll('.my-work__list .my-work__item'), // ищем все слайды
     currentSlide = 0,
-    // slideInterval = setInterval(nextSlide,5000), // делаем слайд шоу (если требуется)
+    slideInterval = setInterval(backSlide,5000), // делаем слайд шоу (если требуется)
     next = doc.querySelectorAll('.slider__next'), // ищем кнопки next на всех слайдах
     back = doc.querySelectorAll('.slider__back'); // ищем кнопки back на всех слайдах
 
@@ -122,12 +122,12 @@ function goToSlide(n) { // функция перехода на другйо с�
 }
 
 $(next).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда вперед
-        nextSlide();
+    nextSlide();
 });
 
 $(back).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда назад
     // for(var i = 0; i < back.length -1; i++) {
-        backSlide();
+    backSlide();
     // };
 });
 
@@ -146,26 +146,6 @@ if (pageToggle) {
         pageClosed.classList.toggle('page-nav__wrap--opened');
     });
 }
-
-// if (pageToggle) {
-//     blog.addEventListener('touchmove', function (event) {
-//         event.preventDefault();
-//         event.stopPropagation();
-//         initialPoint = event.changedTouches[0];
-//     }, false);
-
-//     blog.addEventListener('touchmove', function (event) {
-//         event.preventDefault();
-//         event.stopPropagation();
-//         finalPoint = event.changedTouches[0];
-//         var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
-        
-//         if (finalPoint.pageX < initialPoint.pageX) {
-//             pageToggle.classList.toggle('page-nav__toggle--opened');
-//             pageClosed.classList.toggle('page-nav__wrap--opened');
-//         }
-//     });
-// }
 
 if (pageClosed) {
     pageClosed.addEventListener('click', function (event) {

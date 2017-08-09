@@ -888,14 +888,13 @@ input[type="radio"]:checked + .radio::before {
   width: 50%;
   height: 100%;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
   background-size: contain;
   opacity: 0.6;
   cursor: pointer;
-  -webkit-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
-  -moz-transition: opacity 500ms;
-  transition: opacity 500ms;
+  -webkit-transition: opacity 500ms, background-position 600ms;
+  -o-transition: opacity 500ms, background-position 600ms;
+  -moz-transition: opacity 500ms, background-position 600ms;
+  transition: opacity 500ms, background-position 600ms;
 }
 
 .slider__next:hover,
@@ -916,6 +915,14 @@ input[type="radio"]:checked + .radio::before {
 .slider__next--nerds,
 .slider__back--nerds {
   background-image: url(../img/nerds.png);
+}
+
+.slider__next {
+  background-position: 50% -250px;
+}
+
+.slider__back {
+  background-position: 50% 250px;
 }
 
 .slider__icon-portf_arrow_down,
@@ -2077,6 +2084,11 @@ input[type="radio"]:checked + .radio::before {
   -o-transition: font-size 800ms ease;
   -moz-transition: font-size 800ms ease;
   transition: font-size 800ms ease;
+}
+
+.my-work__item--show .slider__next,
+.my-work__item--show .slider__back {
+  background-position: 50% 50%;
 }
 
 .my-work__img {

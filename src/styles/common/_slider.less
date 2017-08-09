@@ -13,11 +13,10 @@
     width: 50%;
     height: 100%;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
     background-size: contain;
     opacity: 0.6;
     cursor: pointer;
-    transition: opacity 500ms;
+    transition: opacity 500ms, background-position 600ms;
 
     &:hover {
       opacity: 1;
@@ -34,6 +33,12 @@
     &--nerds {
       background-image: url(../img/nerds.png);
     }
+  }
+  &__next {
+    background-position: 50% -250px;
+  }
+  &__back {
+    background-position: 50% 250px;
   }
 
 
