@@ -108,28 +108,41 @@ var
 
 
 function nextSlide() { // перелистываение сладера вперед
-    goToSlide(currentSlide+1);
+    goToSlide(currentSlide + 1);
 }
 
 function backSlide() { // перелистываение сладера назад
-    goToSlide(currentSlide-1);
+    goToSlide(currentSlide - 1);
 }
 
 function goToSlide(n) { // функция перехода на другйо слайд
     slides[currentSlide].className = 'my-work__item'; // убераем первому слайду класс "my-work__item--show"
-    currentSlide = (n+slides.length)%slides.length; // вычисляем номер следующего элемента массива
+    currentSlide = (n + slides.length) % slides.length; // вычисляем номер следующего элемента массива
     slides[currentSlide].className = 'my-work__item my-work__item--show'; // добавляем ему класс "my-work__item--show"
 }
 
-$(next).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда вперед
-    nextSlide();
-});
+for (var i = 0; i < next.length; i++) {
+    next[i].addEventListener('click', function (event) {
+        nextSlide();
+    });
+}
 
-$(back).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда назад
-    // for(var i = 0; i < back.length -1; i++) {
-    backSlide();
-    // };
-});
+for (var i = 0; i < back.length; i++) {
+    back[i].addEventListener('click', function (event) {
+        backSlide();
+    });
+}
+
+// Финкция клика  через JQuery
+// $(next).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда вперед
+//     nextSlide();
+// });
+
+// $(back).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда назад
+//     // for(var i = 0; i < back.length -1; i++) {
+//     backSlide();
+//     // };
+// });
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
