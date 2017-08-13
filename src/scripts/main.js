@@ -98,13 +98,16 @@ window.addEventListener('keydown', function(event) {
 //         sliderItem3.classList.remove(show);
 //     });
 // }
-
+// Новый варинт сладера:
 var
     slides = doc.querySelectorAll('.my-work__list .my-work__item'), // ищем все слайды
     currentSlide = 0,
-    slideInterval = setInterval(backSlide,5000), // делаем слайд шоу (если требуется)
     next = doc.querySelectorAll('.slider__next'), // ищем кнопки next на всех слайдах
     back = doc.querySelectorAll('.slider__back'); // ищем кнопки back на всех слайдах
+
+if (slides.length > 0) {
+   var slideInterval = setInterval(backSlide, 5000); // делаем слайд шоу (если требуется)
+}
 
 
 function nextSlide() { // перелистываение сладера вперед
@@ -122,13 +125,13 @@ function goToSlide(n) { // функция перехода на другйо с�
 }
 
 for (var i = 0; i < next.length; i++) {
-    next[i].addEventListener('click', function (event) {
+    next[i].addEventListener('click', function() {
         nextSlide();
     });
 }
 
 for (var i = 0; i < back.length; i++) {
-    back[i].addEventListener('click', function (event) {
+    back[i].addEventListener('click', function() {
         backSlide();
     });
 }
@@ -139,9 +142,7 @@ for (var i = 0; i < back.length; i++) {
 // });
 
 // $(back).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда назад
-//     // for(var i = 0; i < back.length -1; i++) {
 //     backSlide();
-//     // };
 // });
 
 ////////////////////////////////////////////////////////////////////////
@@ -425,4 +426,24 @@ $('a[href^="#"]').bind('click.smoothscroll', function(e) {  // ищем все �
 
     );
 
+});
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////  Залисвка скилов  ///////////////////////////////////////
+
+$(window).scroll(function() {
+    var wScroll = $(window).scrollTop(),
+        skills = $('.skills__circle'),
+        skillsPos = skills.offset().top,
+        // console.log(skillsPos);
+        skillsMargin = $(window).height() / 1.5,
+        startAnimate = Math.ceil(wScroll - skillsPos + skillsMargin);
+        console.log(startAnimate);
+
+    if (startAnimate > 0) {
+        skills.css ({
+            // 'stroke' : 0
+        });
+    }
 });

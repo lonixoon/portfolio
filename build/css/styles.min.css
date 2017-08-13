@@ -298,6 +298,14 @@ select {
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
 
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -2584,6 +2592,10 @@ input[type="radio"]:checked + .radio::before {
 
 .skills__circle circle:last-child {
   stroke: #00bfa5;
+  -webkit-transition: stroke 500ms;
+  -o-transition: stroke 500ms;
+  -moz-transition: stroke 500ms;
+  transition: stroke 500ms;
 }
 
 .skills__circle circle:first-child {
@@ -2591,43 +2603,43 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .skills__circle--html circle:last-child {
-  stroke-dasharray: 180px 282.7px;
+  stroke-dasharray: 197.92033718px 282.74333882px;
 }
 
 .skills__circle--css circle:last-child {
-  stroke-dasharray: 150px 282.7px;
+  stroke-dasharray: 183.78317024px 282.74333882px;
 }
 
 .skills__circle--js circle:last-child {
-  stroke-dasharray: 20px 282.7px;
+  stroke-dasharray: 70.68583471px 282.74333882px;
 }
 
 .skills__circle--php circle:last-child {
-  stroke-dasharray: 0px 282.7px;
+  stroke-dasharray: 0px 282.74333882px;
 }
 
 .skills__circle--sql circle:last-child {
-  stroke-dasharray: 0px 282.7px;
+  stroke-dasharray: 0px 282.74333882px;
 }
 
 .skills__circle--node circle:last-child {
-  stroke-dasharray: 10px 282.7px;
+  stroke-dasharray: 0px 282.74333882px;
 }
 
 .skills__circle--mongo circle:last-child {
-  stroke-dasharray: 0px 282.7px;
+  stroke-dasharray: 0px 282.74333882px;
 }
 
 .skills__circle--git circle:last-child {
-  stroke-dasharray: 60px 282.7px;
+  stroke-dasharray: 70.68583471px 282.74333882px;
 }
 
 .skills__circle--gulp circle:last-child {
-  stroke-dasharray: 40px 282.7px;
+  stroke-dasharray: 42.41150082px 282.74333882px;
 }
 
 .skills__circle--bower circle:last-child {
-  stroke-dasharray: 0px 282.7px;
+  stroke-dasharray: 0px 282.74333882px;
 }
 
 .contacts {

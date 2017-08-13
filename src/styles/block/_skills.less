@@ -63,84 +63,72 @@
     fill: none;
     stroke-width: 20px;
 
-    // circle {
-      // r: 45px;
-      // cx: 55px;
-      // cy: 55px;
-      // fill: none;
-      // stroke-width: 20px;
-    // }
     circle:last-child {      
       stroke: @green;
-      // transition: all 500ms;
-      // stroke: #fff;
-
-      // &:hover {
-
-      // }
-      
+      transition: stroke 500ms;
     }
+    
     circle:first-child {
       stroke: #ccc;
     }
 
     &--html {
       circle:last-child {
-        stroke-dasharray: 180px 282.7px;
+        stroke-dasharray: @skill-fill*70 @skill;
       }
     }
 
     &--css {
       circle:last-child {
-        stroke-dasharray: 150px 282.7px;
+        stroke-dasharray: @skill-fill*65 @skill;
       }
     }
 
     &--js {
       circle:last-child {
-        stroke-dasharray: 20px 282.7px;
+        stroke-dasharray: @skill-fill*25 @skill;
       }
     }
 
     &--php {
       circle:last-child {
-        stroke-dasharray: 0px 282.7px;
+        stroke-dasharray: @skill-fill*0 @skill;
       }
     }
 
     &--sql {
       circle:last-child {
-        stroke-dasharray: 0px 282.7px;
+        stroke-dasharray: @skill-fill*0 @skill;
       }
     }
 
     &--node {
       circle:last-child {
-        stroke-dasharray: 10px 282.7px;
+        stroke-dasharray: @skill-fill*0 @skill;
       }
     }
 
     &--mongo {
       circle:last-child {
-        stroke-dasharray: 0px 282.7px;
+        stroke-dasharray: @skill-fill*0 @skill;
       }
     }
 
     &--git {
       circle:last-child {
-        stroke-dasharray: 60px 282.7px;
+        stroke-dasharray: @skill-fill*25 @skill;
       }
     }
 
     &--gulp {
       circle:last-child {
-        stroke-dasharray: 40px 282.7px;
+        stroke-dasharray: @skill-fill*15 @skill;
       }
     }
 
     &--bower {
       circle:last-child {
-        stroke-dasharray: 0px 282.7px;
+        stroke-dasharray: @skill-fill*0 @skill;
       }
     }
   }
