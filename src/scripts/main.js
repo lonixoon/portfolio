@@ -277,7 +277,7 @@ if (pageClosed) {
 // }
 $(window).scroll(function() { // функция отслеживания скрола
 
-    if (window.location.toString().indexOf('blog.htm')>0) { // находимся на странице Блог
+    if (window.location.toString().indexOf('blog.htm') > 0) { // находимся на странице Блог
 
         if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
 
@@ -336,7 +336,7 @@ $(window).scroll(function() {
             }
         }
 
-        if (startAnimate < 0) { // полностью очищаем при обратной прокрутки (оставались баги)
+        else { // полностью очищаем при обратной прокрутки (оставались баги)
             svgPath.css({
                 'stroke-dashoffset' : 600
             });
@@ -413,37 +413,39 @@ $('a[href^="#"]').bind('click.smoothscroll', function(e) {  // ищем все �
     $('html, body').stop().animate(
 
         {
-            'scrollTop': $target.offset().top 
+            'scrollTop': $target.offset().top // позиция элемента от верха страницы
         },
 
         500, // время анимации
 
         'swing',
 
-        function () {
+        function() {
             window.location.hash = target;
         }
-
     );
-
 });
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Залисвка скилов  ///////////////////////////////////////
 
-$(window).scroll(function() {
-    var wScroll = $(window).scrollTop(),
+$(window).scroll(function() { // отслеживаем скролл
+    var wScroll = $(window).scrollTop(), // измеряем срок от верха страницы
         skills = $('.skills__circle'),
-        skillsPos = skills.offset().top,
-        // console.log(skillsPos);
-        skillsMargin = $(window).height() / 1.5,
-        startAnimate = Math.ceil(wScroll - skillsPos + skillsMargin);
-        console.log(startAnimate);
+        skillsPos = skills.offset().top, // ищем позицию элемента от верха страницы
+        skillsMargin = $(window).height() / 1.8,  // вводим коэффиицент что бы зарисовка начиналась заранее
+        startAnimate = Math.ceil(wScroll - skillsPos + skillsMargin); // находим точку начала анимации
 
-    if (startAnimate > 0) {
-        skills.css ({
-            // 'stroke' : 0
+    if (startAnimate > 0) { // условие которое дожно выполнятся для старта анимации
+        skills.css ({ // изменяем css свойство
+            'stroke' : '#00bfa5'
+        });
+    }
+
+    else {  // пока условие на старт анимации не выпоняется
+        skills.css ({ // изменяем css свойство
+            'stroke' : 'ccc'
         });
     }
 });

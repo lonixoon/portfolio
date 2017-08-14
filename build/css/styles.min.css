@@ -2591,11 +2591,10 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .skills__circle circle:last-child {
-  stroke: #00bfa5;
-  -webkit-transition: stroke 500ms;
-  -o-transition: stroke 500ms;
-  -moz-transition: stroke 500ms;
-  transition: stroke 500ms;
+  -webkit-transition: stroke 2000ms;
+  -o-transition: stroke 2000ms;
+  -moz-transition: stroke 2000ms;
+  transition: stroke 2000ms;
 }
 
 .skills__circle circle:first-child {
