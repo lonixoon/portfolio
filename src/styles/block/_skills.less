@@ -43,17 +43,18 @@
   &__inner-item {
     position: relative;
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     margin: 0 16px 15px 16px;
     font-size: 14px;
     color: @green;
-    // background-color: @gray-lighter;
   }
 
   &__name {
+    display: inline-flex;
     position: absolute;
-    // top: 0;
   }
 
   &__circle {
@@ -65,16 +66,18 @@
 
     &--gray {
       stroke: #ccc;
-      circle {        
+      circle {
         stroke-dasharray: @skill;
-      }      
+      }
     }
 
     &--green {
       stroke: @green;
       transition: stroke-dasharray 2000ms;
       position: absolute;
-    }    
+      top: 0;
+      left: 0;
+    }
 
     // circle:last-child {      
     //   stroke: @green;

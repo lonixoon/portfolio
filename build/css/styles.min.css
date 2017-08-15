@@ -2581,6 +2581,11 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .skills__name {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   position: absolute;
 }
 
@@ -2610,6 +2615,8 @@ input[type="radio"]:checked + .radio::before {
   -moz-transition: stroke-dasharray 2000ms;
   transition: stroke-dasharray 2000ms;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .skills__circle--html {
