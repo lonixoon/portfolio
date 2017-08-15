@@ -62,75 +62,72 @@
     height: 110px;
     fill: none;
     stroke-width: 20px;
-    
 
-    circle:last-child {      
-      // stroke: @green;
-      transition: stroke 2000ms;
-    }
-    
-    circle:first-child {
+    &--gray {
       stroke: #ccc;
+      circle {        
+        stroke-dasharray: @skill;
+      }      
     }
+
+    &--green {
+      stroke: @green;
+      transition: stroke-dasharray 2000ms;
+      position: absolute;
+    }    
+
+    // circle:last-child {      
+    //   stroke: @green;
+    //   transition: stroke 2000ms;
+    // }
+    
+    // circle:first-child {
+    //   stroke: #ccc;
+    // }
 
     &--html {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*70 @skill;
-      }
+      stroke-dasharray: @skill-fill*70 @skill;
+      // transition: stroke-dasharray 1000ms;
+      // circle:last-child {
+        // stroke-dasharray: @skill-fill*70 @skill;
+        // stroke-dasharray: 0px 282.743338824px;
+      // }
     }
 
     &--css {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*65 @skill;
-      }
+      stroke-dasharray: @skill-fill*65 @skill;
     }
 
     &--js {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*25 @skill;
-      }
+      stroke-dasharray: @skill-fill*25 @skill;
     }
 
     &--php {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*0 @skill;
-      }
+      stroke-dasharray: @skill-fill*78 @skill;
     }
 
     &--sql {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*0 @skill;
-      }
+      stroke-dasharray: @skill-fill*45 @skill;
     }
 
     &--node {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*0 @skill;
-      }
+      stroke-dasharray: @skill-fill*23 @skill;
     }
 
     &--mongo {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*0 @skill;
-      }
+      stroke-dasharray: @skill-fill*87 @skill;
     }
 
     &--git {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*25 @skill;
-      }
+      stroke-dasharray: @skill-fill*25 @skill;
     }
 
     &--gulp {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*15 @skill;
-      }
+      stroke-dasharray: @skill-fill*15 @skill;
     }
 
     &--bower {
-      circle:last-child {
-        stroke-dasharray: @skill-fill*0 @skill;
-      }
+      stroke-dasharray: @skill-fill*64 @skill;
     }
   }
 }

@@ -2406,6 +2406,11 @@ input[type="radio"]:checked + .radio::before {
 
 .who-am-i__icon-autor-photo-body {
   stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  -webkit-transition: all 3000ms ease-in-out;
+  -o-transition: all 3000ms ease-in-out;
+  -moz-transition: all 3000ms ease-in-out;
+  transition: all 3000ms ease-in-out;
 }
 
 .who-am-i__title-wrap {
@@ -2590,55 +2595,61 @@ input[type="radio"]:checked + .radio::before {
   stroke-width: 20px;
 }
 
-.skills__circle circle:last-child {
-  -webkit-transition: stroke 2000ms;
-  -o-transition: stroke 2000ms;
-  -moz-transition: stroke 2000ms;
-  transition: stroke 2000ms;
-}
-
-.skills__circle circle:first-child {
+.skills__circle--gray {
   stroke: #ccc;
 }
 
-.skills__circle--html circle:last-child {
+.skills__circle--gray circle {
+  stroke-dasharray: 282.74333882px;
+}
+
+.skills__circle--green {
+  stroke: #00bfa5;
+  -webkit-transition: stroke-dasharray 2000ms;
+  -o-transition: stroke-dasharray 2000ms;
+  -moz-transition: stroke-dasharray 2000ms;
+  transition: stroke-dasharray 2000ms;
+  position: absolute;
+}
+
+.skills__circle--html {
   stroke-dasharray: 197.92033718px 282.74333882px;
 }
 
-.skills__circle--css circle:last-child {
+.skills__circle--css {
   stroke-dasharray: 183.78317024px 282.74333882px;
 }
 
-.skills__circle--js circle:last-child {
+.skills__circle--js {
   stroke-dasharray: 70.68583471px 282.74333882px;
 }
 
-.skills__circle--php circle:last-child {
-  stroke-dasharray: 0px 282.74333882px;
+.skills__circle--php {
+  stroke-dasharray: 220.53980428px 282.74333882px;
 }
 
-.skills__circle--sql circle:last-child {
-  stroke-dasharray: 0px 282.74333882px;
+.skills__circle--sql {
+  stroke-dasharray: 127.23450247px 282.74333882px;
 }
 
-.skills__circle--node circle:last-child {
-  stroke-dasharray: 0px 282.74333882px;
+.skills__circle--node {
+  stroke-dasharray: 65.03096793px 282.74333882px;
 }
 
-.skills__circle--mongo circle:last-child {
-  stroke-dasharray: 0px 282.74333882px;
+.skills__circle--mongo {
+  stroke-dasharray: 245.98670478px 282.74333882px;
 }
 
-.skills__circle--git circle:last-child {
+.skills__circle--git {
   stroke-dasharray: 70.68583471px 282.74333882px;
 }
 
-.skills__circle--gulp circle:last-child {
+.skills__circle--gulp {
   stroke-dasharray: 42.41150082px 282.74333882px;
 }
 
-.skills__circle--bower circle:last-child {
-  stroke-dasharray: 0px 282.74333882px;
+.skills__circle--bower {
+  stroke-dasharray: 180.95573685px 282.74333882px;
 }
 
 .contacts {
