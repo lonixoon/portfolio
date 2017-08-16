@@ -1,0 +1,71 @@
+.flip {
+  perspective: 1000;
+
+  &__wrap,
+  &__front,
+  &__back {
+    height: 379px;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  &__wrap {
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  &__front,
+  &__back {
+    transition: transform 900ms;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__front {
+    z-index: 20;
+  }
+
+  &__back {
+    z-index: 10;
+  }
+
+  &__flipper {
+    transform: rotateY(180deg);
+  }
+}
+
+@media @tablet {
+  .flip {
+    &__wrap,
+    &__front,
+    &__back {
+      height: 419px;
+      width: 348px;
+    }
+  }
+}
+
+
+@media @laptop {
+  .flip {
+    &__wrap,
+    &__front,
+    &__back {
+      height: 419px;
+      width: 380px;
+    }
+  }
+}
+
+
+@media @desktop {
+  .flip {
+    &__wrap,
+    &__front,
+    &__back {
+      height: 432px; 
+    }
+  }
+}

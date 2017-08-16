@@ -469,7 +469,7 @@ $(window).scroll(function() {
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  Залисвка скилов skill fill  ///////////////////////////////////////
+//////////////  Залисвка скилов skill fill  ////////////////////////////
 
 // $(window).scroll(function() { // отслеживаем скролл
 //     var wScroll = $(window).scrollTop(), // измеряем срок от верха страницы
@@ -508,3 +508,39 @@ $(window).scroll(function() { // отслеживаем скролл
         });
     }
 });
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////  Флип flip блока  ///////////////////////////////////////
+
+var
+    loginBtn = doc.querySelector('.btn--login'),
+    // loginBtn = $('.btn--login'),
+    indexBtn = doc.querySelector('.btn--authorization'),
+    autorBlock = doc.querySelector('.flip__front'),
+    loginForm = doc.querySelector('.flip__back');
+    flipper = doc.querySelector('.flip__flipper');
+
+if (loginBtn) {
+    loginBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        autorBlock.classList.add('flip__flipper');
+        loginForm.classList.remove('flip__flipper');
+        $('.btn--login').hide();
+    });
+
+    indexBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        autorBlock.classList.remove('flip__flipper');
+        loginForm.classList.add('flip__flipper');
+        $('.btn--login').show();
+    });
+}
+
+// if (nextSlideItem1) {
+//     nextSlideItem1.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         sliderItem1.classList.remove(show);
+//         sliderItem2.classList.add(show);
+//         sliderItem3.classList.remove(show);
+//     });
