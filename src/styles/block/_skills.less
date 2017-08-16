@@ -43,10 +43,6 @@
   &__inner-item {
     position: relative;
     display: flex;
-
-    justify-content: center;
-    align-items: center;
-
     margin: 0 16px 15px 16px;
     font-size: 14px;
     color: @green;
@@ -55,6 +51,9 @@
   &__name {
     display: inline-flex;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__circle {
@@ -102,23 +101,23 @@
     }
 
     &--js {
-      stroke-dasharray: @skill-fill*25 @skill;
+      stroke-dasharray: @skill-fill*35 @skill;
     }
 
     &--php {
-      stroke-dasharray: @skill-fill*78 @skill;
+      stroke-dasharray: @skill-fill*20 @skill;
     }
 
     &--sql {
-      stroke-dasharray: @skill-fill*45 @skill;
+      stroke-dasharray: @skill-fill*15 @skill;
     }
 
     &--node {
-      stroke-dasharray: @skill-fill*23 @skill;
+      stroke-dasharray: @skill-fill*15 @skill;
     }
 
     &--mongo {
-      stroke-dasharray: @skill-fill*87 @skill;
+      stroke-dasharray: @skill-fill*15 @skill;
     }
 
     &--git {
@@ -130,7 +129,7 @@
     }
 
     &--bower {
-      stroke-dasharray: @skill-fill*64 @skill;
+      stroke-dasharray: @skill-fill*15 @skill;
     }
   }
 }
