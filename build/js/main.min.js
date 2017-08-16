@@ -23,23 +23,27 @@ request.send();
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Открывашка для главного меню  //////////////////////////
-var menuToggle = doc.querySelector('.main-nav__toggle');
-var menuClosed = doc.querySelector('.main-nav__list');
 
-if (menuToggle) {
-    menuToggle.addEventListener('click', function (event) {
-        event.preventDefault();
-        menuClosed.classList.toggle('main-nav__list--opened');
-        menuToggle.classList.toggle('main-nav__toggle--active');
-    });
-}
+$(function() {
+    var menuToggle = doc.querySelector('.main-nav__toggle'),
+        menuClosed = doc.querySelector('.main-nav__list');
 
-window.addEventListener('keydown', function(event) {
-    if (event.keyCode === 27) {
-        menuClosed.classList.remove('main-nav__list--opened');
-        menuToggle.classList.toggle('main-nav__toggle--active');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            menuClosed.classList.toggle('main-nav__list--opened');
+            menuToggle.classList.toggle('main-nav__toggle--active');
+        });
     }
+
+    window.addEventListener('keydown', function(event) {
+        if (event.keyCode === 27) {
+            menuClosed.classList.remove('main-nav__list--opened');
+            menuToggle.classList.toggle('main-nav__toggle--active');
+        }
+    });
 });
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -512,30 +516,31 @@ $(window).scroll(function() { // отслеживаем скролл
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Флип flip блока  ///////////////////////////////////////
+$(function() {
+    var
+        loginBtn = doc.querySelector('.btn--login'),
+        indexBtn = doc.querySelector('.btn--authorization'),
+        autorBlock = doc.querySelector('.flip__front'),
+        loginForm = doc.querySelector('.flip__back');
+        flipper = ('flip__flipper');
 
-var
-    loginBtn = doc.querySelector('.btn--login'),
-    // loginBtn = $('.btn--login'),
-    indexBtn = doc.querySelector('.btn--authorization'),
-    autorBlock = doc.querySelector('.flip__front'),
-    loginForm = doc.querySelector('.flip__back');
-    flipper = doc.querySelector('.flip__flipper');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            autorBlock.classList.add(flipper);
+            loginForm.classList.remove(flipper);
+            $(loginBtn).hide();
+        });
 
-if (loginBtn) {
-    loginBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-        autorBlock.classList.add('flip__flipper');
-        loginForm.classList.remove('flip__flipper');
-        $('.btn--login').hide();
-    });
+        indexBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            autorBlock.classList.remove(flipper);
+            loginForm.classList.add(flipper);
+            $(loginBtn).show();
+        });
+    }
+});
 
-    indexBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-        autorBlock.classList.remove('flip__flipper');
-        loginForm.classList.add('flip__flipper');
-        $('.btn--login').show();
-    });
-}
 
 // if (nextSlideItem1) {
 //     nextSlideItem1.addEventListener('click', function (event) {
