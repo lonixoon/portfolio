@@ -3892,14 +3892,10 @@ input[type="radio"]:checked + .radio::before {
 
   .page-nav__link {
     font-weight: 500;
-    -webkit-transition-duration: 500ms;
-       -moz-transition-duration: 500ms;
-         -o-transition-duration: 500ms;
-            transition-duration: 500ms;
-    -webkit-transition-property: color;
-    -o-transition-property: color;
-    -moz-transition-property: color;
-    transition-property: color;
+    -webkit-transition: color 500ms;
+    -o-transition: color 500ms;
+    -moz-transition: color 500ms;
+    transition: color 500ms;
   }
 
   .page-nav__link:hover {
