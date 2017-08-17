@@ -1059,6 +1059,11 @@ input[type="radio"]:checked + .radio::before {
   z-index: 40;
 }
 
+.arrow-down--up {
+  position: absolute;
+  bottom: 0;
+}
+
 .arrow-down__icon {
   width: 30px;
   height: 20px;
@@ -1248,6 +1253,7 @@ input[type="radio"]:checked + .radio::before {
 }
 
 .page__main {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1265,6 +1271,7 @@ input[type="radio"]:checked + .radio::before {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #fff;
 }
 
 .page__static {
@@ -2176,6 +2183,7 @@ input[type="radio"]:checked + .radio::before {
           flex-direction: column;
   background: #fff url(../img/bg2-mobile.jpg) no-repeat 50% 100%;
   width: 100%;
+  padding-bottom: 60px;
 }
 
 .feedback__title-wrap {
@@ -2657,6 +2665,7 @@ input[type="radio"]:checked + .radio::before {
   position: relative;
   background-color: #fff;
   width: 100%;
+  padding-bottom: 80px;
 }
 
 .contacts__title-wrap {
@@ -2725,6 +2734,7 @@ input[type="radio"]:checked + .radio::before {
 .blog {
   position: relative;
   padding: 0 10px;
+  padding-bottom: 60px;
   border-top: 1px solid #fff;
   background-color: #fff;
 }
@@ -3321,7 +3331,8 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .feedback {
-    background: #fff url(../img/bg2-tablet.jpg) no-repeat 50% 35%;
+    background: #fff url(../img/bg2-tablet.jpg) no-repeat 50% 100%;
+    padding-bottom: 90px;
   }
 
   .feedback__icon-about_header {
@@ -3390,6 +3401,7 @@ input[type="radio"]:checked + .radio::before {
     display: flex;
     height: 650px;
     background: url(../img/map-desktop.jpg) no-repeat;
+    padding-bottom: 0;
   }
 
   .contacts__wrap {
@@ -3412,6 +3424,7 @@ input[type="radio"]:checked + .radio::before {
 
   .blog {
     padding: 0 20px;
+    padding-bottom: 80px;
   }
 
   .blog__icon-corner {
@@ -3434,6 +3447,11 @@ input[type="radio"]:checked + .radio::before {
 
   .page-nav__wrap {
     width: 310px;
+    left: -310px;
+  }
+
+  .page-nav__wrap--opened {
+    left: 0;
   }
 
   .about-footer {
@@ -3716,6 +3734,7 @@ input[type="radio"]:checked + .radio::before {
 
   .feedback {
     background: #fff url(../img/bg2-desktop.jpg) no-repeat 50% 35%;
+    padding-bottom: 80px;
   }
 
   .feedback__icon-about_header {
@@ -3840,6 +3859,7 @@ input[type="radio"]:checked + .radio::before {
 
   .blog {
     padding: 0 80px;
+    padding-bottom: 60px;
   }
 
   .blog__icon-corner {
@@ -3967,14 +3987,23 @@ input[type="radio"]:checked + .radio::before {
     margin-bottom: 100px;
   }
 
+  .feedback {
+    padding-bottom: 120px;
+  }
+
   .skills__inner-item {
     margin: 0 16px 15px 16px;
+  }
+
+  .contacts {
+    padding-bottom: 80px;
   }
 
   .blog {
     padding-top: 30px;
     padding-right: 20%;
     padding-left: 100px;
+    padding-bottom: 120px;
   }
 
   .page-nav__list {

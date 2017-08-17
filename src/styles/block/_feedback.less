@@ -3,6 +3,7 @@
   flex-direction: column;
   background: #fff url(../img/bg2-mobile.jpg) no-repeat 50% 100%;
   width: 100%;
+  padding-bottom: 60px;
 
   &__title-wrap {
     position: relative;
@@ -86,8 +87,9 @@
 
 @media @tablet {
   .feedback {
-    background: #fff url(../img/bg2-tablet.jpg) no-repeat 50% 35%;
-
+    background: #fff url(../img/bg2-tablet.jpg) no-repeat 50% 100%;
+    padding-bottom: 90px;
+    
     &__icon-about_header {
       width: 400px;
       margin-top: -70px;
@@ -124,6 +126,7 @@
 @media @laptop {
   .feedback {
     background: #fff url(../img/bg2-desktop.jpg) no-repeat 50% 35%;
+    padding-bottom: 80px;
 
     &__icon-about_header {
       width: 600px;
@@ -155,6 +158,12 @@
         margin-left: 0;
       }
     }
+  }
+}
 
+
+@media @desktop {
+  .feedback {
+    padding-bottom: 120px;
   }
 }

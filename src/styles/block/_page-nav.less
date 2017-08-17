@@ -65,6 +65,11 @@
 
     &__wrap {
       width: 310px;
+      left: -310px;
+
+      &--opened {
+        left: 0;
+      }
     }
   }
 }
@@ -103,7 +108,7 @@
       transition-property: color;
 
       &:hover {
-        color: @green;          
+        color: @green;
       }
     }
   }
