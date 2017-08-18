@@ -6,13 +6,17 @@
   align-self: center;
   width: 65px;
   height: 50px;
-  margin: auto auto 20px auto;
+  margin: auto 0 20px 0;
   cursor: pointer;
   z-index: 40;
 
   &--up {
+    align-self: flex-start;
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    
   }
 
 
@@ -65,7 +69,7 @@
 
 @media @laptop {
   .arrow-down {
-    margin: auto auto 25px auto;
+    margin: auto 0 25px 0;
 
     &__icon {
       
@@ -86,6 +90,6 @@
 
 @media @desktop {
   .arrow-down {
-    margin: auto auto 45px auto;
+    margin: auto 0 45px 0;
   }
 }
