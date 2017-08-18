@@ -298,14 +298,6 @@ select {
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
 
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-}
-
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -695,10 +687,10 @@ input[type="radio"]:checked + .radio::before {
   color: #FFF;
   text-decoration: none;
   cursor: pointer;
-  -webkit-transition: background-color, color 800ms;
-  -o-transition: background-color, color 800ms;
-  -moz-transition: background-color, color 800ms;
-  transition: background-color, color 800ms;
+  -webkit-transition: background-color 800ms, color 800ms;
+  -o-transition: background-color 800ms, color 800ms;
+  -moz-transition: background-color 800ms, color 800ms;
+  transition: background-color 800ms, color 800ms;
 }
 
 .btn--green {
@@ -1054,7 +1046,7 @@ input[type="radio"]:checked + .radio::before {
           align-self: center;
   width: 65px;
   height: 50px;
-  margin: auto 0 20px 0;
+  margin: auto auto 20px auto;
   cursor: pointer;
   z-index: 40;
 }
@@ -3498,7 +3490,7 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .arrow-down {
-    margin: auto 0 25px 0;
+    margin: auto auto 25px auto;
   }
 
   .arrow-down__icon--right {
@@ -3960,7 +3952,7 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .arrow-down {
-    margin: auto 0 45px 0;
+    margin: auto auto 45px auto;
   }
 
   .author__photo {
