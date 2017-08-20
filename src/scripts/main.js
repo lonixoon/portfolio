@@ -2,29 +2,32 @@ doc = document;
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  local storage для SVG  /////////////////////////////////
-var request = new XMLHttpRequest();
+(function () {
+    var request = new XMLHttpRequest();
 
-request.open('GET', './svg/symbol_sprite.html', true);
+    request.open('GET', './svg/symbol_sprite.html', true);
 
-request.onload = function() {
+    request.onload = function() {
 
-    if (request.status >= 200 && request.status < 400 ) {
-        var node = doc.createElement("div");
+        if (request.status >= 200 && request.status < 400 ) {
+            var node = doc.createElement("div");
 
-        node.innerHTML = request.responseText;
-        doc.body.insertBefore(node, doc.body.firstChild);
+            node.innerHTML = request.responseText;
+            doc.body.insertBefore(node, doc.body.firstChild);
 
-        localStorage.setItem( 'inlineSVGdata',  request.responseText );
-    }
-};
+            localStorage.setItem( 'inlineSVGdata',  request.responseText );
+        }
+    };
 
-request.send();
+    request.send();
+})();
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Открывашка для главного меню  //////////////////////////
 
-$(function() {
+(function() {
     var menuToggle = doc.querySelector('.main-nav__toggle'),
         menuClosed = doc.querySelector('.main-nav__list');
 
@@ -42,7 +45,7 @@ $(function() {
             menuToggle.classList.toggle('main-nav__toggle--active');
         }
     });
-});
+})();
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -103,42 +106,44 @@ $(function() {
 //     });
 // }
 // Новый варинт сладера:
-var
-    slides = doc.querySelectorAll('.my-work__list .my-work__item'), // ищем все слайды
-    currentSlide = 0,
-    next = doc.querySelectorAll('.slider__next'), // ищем кнопки next на всех слайдах
-    back = doc.querySelectorAll('.slider__back'); // ищем кнопки back на всех слайдах
+(function() {
+    var
+        slides = doc.querySelectorAll('.my-work__list .my-work__item'), // ищем все слайды
+        currentSlide = 0,
+        next = doc.querySelectorAll('.slider__next'), // ищем кнопки next на всех слайдах
+        back = doc.querySelectorAll('.slider__back'); // ищем кнопки back на всех слайдах
 
-if (slides.length > 0) {
-   var slideInterval = setInterval(backSlide, 5000); // делаем слайд шоу (если требуется)
-}
+    if (slides.length > 0) {
+       var slideInterval = setInterval(backSlide, 5000); // делаем слайд шоу (если требуется)
+    }
 
 
-function nextSlide() { // перелистываение сладера вперед
-    goToSlide(currentSlide + 1);
-}
+    function nextSlide() { // перелистываение сладера вперед
+        goToSlide(currentSlide + 1);
+    }
 
-function backSlide() { // перелистываение сладера назад
-    goToSlide(currentSlide - 1);
-}
+    function backSlide() { // перелистываение сладера назад
+        goToSlide(currentSlide - 1);
+    }
 
-function goToSlide(n) { // функция перехода на другйо слайд
-    slides[currentSlide].className = 'my-work__item'; // убераем первому слайду класс "my-work__item--show"
-    currentSlide = (n + slides.length) % slides.length; // вычисляем номер следующего элемента массива
-    slides[currentSlide].className = 'my-work__item my-work__item--show'; // добавляем ему класс "my-work__item--show"
-}
+    function goToSlide(n) { // функция перехода на другйо слайд
+        slides[currentSlide].className = 'my-work__item'; // убераем первому слайду класс "my-work__item--show"
+        currentSlide = (n + slides.length) % slides.length; // вычисляем номер следующего элемента массива
+        slides[currentSlide].className = 'my-work__item my-work__item--show'; // добавляем ему класс "my-work__item--show"
+    }
 
-for (var i = 0; i < next.length; i++) {
-    next[i].addEventListener('click', function() {
-        nextSlide();
-    });
-}
+    for (var i = 0; i < next.length; i++) {
+        next[i].addEventListener('click', function() {
+            nextSlide();
+        });
+    }
 
-for (var i = 0; i < back.length; i++) {
-    back[i].addEventListener('click', function() {
-        backSlide();
-    });
-}
+    for (var i = 0; i < back.length; i++) {
+        back[i].addEventListener('click', function() {
+            backSlide();
+        });
+    }
+})();
 
 // Финкция клика  через JQuery
 // $(next).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда вперед
@@ -152,25 +157,28 @@ for (var i = 0; i < back.length; i++) {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Открывашка для навигации по станицы  ///////////////////
-var pageToggle = doc.querySelector('.page-nav__toggle'),
-    pageClosed = doc.querySelector('.page-nav__wrap'),
-    blog = doc.querySelector('.blog');
+(function () {
+    var pageToggle = doc.querySelector('.page-nav__toggle'),
+        pageClosed = doc.querySelector('.page-nav__wrap'),
+        blog = doc.querySelector('.blog');
 
 
-if (pageToggle) {
-    pageToggle.addEventListener('click', function (event) {
-        event.preventDefault();
-        pageToggle.classList.toggle('page-nav__toggle--opened');
-        pageClosed.classList.toggle('page-nav__wrap--opened');
-    });
-}
+    if (pageToggle) {
+        pageToggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            pageToggle.classList.toggle('page-nav__toggle--opened');
+            pageClosed.classList.toggle('page-nav__wrap--opened');
+        });
+    }
 
-if (pageClosed) {
-    pageClosed.addEventListener('click', function (event) {
-        pageToggle.classList.remove('page-nav__toggle--opened');
-        pageClosed.classList.remove('page-nav__wrap--opened');
-    });
-}
+    if (pageClosed) {
+        pageClosed.addEventListener('click', function (event) {
+            pageToggle.classList.remove('page-nav__toggle--opened');
+            pageClosed.classList.remove('page-nav__wrap--opened');
+        });
+    }
+})();
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -247,6 +255,8 @@ if (pageClosed) {
 //         }
 //     });
 // });
+
+
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Приклеенное боковое меню  //////////////////////////////
@@ -279,18 +289,18 @@ if (pageClosed) {
 //         });
 //     }
 // }
-$(window).scroll(function() { // функция отслеживания скрола
+(function() {
 
-    if (window.location.toString().indexOf('blog.htm') > 0) { // находимся на странице Блог
+    $(window).scroll(function() { // функция отслеживания скрола
 
-        if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
+        if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
 
-            var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
-            var menu = $('.page__static .page-nav__list');
-            var sidebar = $('.page__static .page-nav__wrap');
-            var stickyStart = sidebar.offset().top;  // отслеживаем положение меню от верха страницы
-            var cloneMenu = sidebar.clone();
-            var fixedSidebar = $('.page__fixed .page-nav');
+            var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
+                menu = $('.page__static .page-nav__list'),
+                sidebar = $('.page__static .page-nav__wrap'),
+                stickyStart = sidebar.offset().top,  // отслеживаем положение меню от верха страницы
+                cloneMenu = sidebar.clone(), // делаем копию разметки
+                fixedSidebar = $('.page__fixed .page-nav');
 
 
             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
@@ -306,39 +316,43 @@ $(window).scroll(function() { // функция отслеживания скр�
                 menu.show(); // и показываем статичное меню
             }
         }
-    }
-});
+    });
+})();
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  mouse parallax  ////////////////////////////////////////
-$(doc).ready(function () {
+(function () {
+    $(doc).ready(function () {
     
-    var layer = $('.parallax').find('.parallax__layer--mouse'); // Выбираем все дивы parallax__layers в parallax
+        var layer = $('.parallax').find('.parallax__layer--mouse'); // Выбираем все дивы parallax__layers в parallax
 
-    $(window).on('mousemove', function (e) {
-        var 
-            mouse_dx = (e.pageX), // Узнаём положение мышки по Х
-            mouse_dy = (e.pageY), // Узнаём положение мышки по У
-            // Т.к. мы делим экран на четыре части что бы в центре оказалась точка координат 0, то нам надо знать когда у нас будет -Х и +Х, -Y и +Y
-            w05 = (window.innerWidth / 2), // делим экран по х
-            h05 = (window.innerHeight / 2), // делим экран по y
-            w = w05 - mouse_dx, // Вычисляем для x перемещения
-            h = h05 - mouse_dy; // Вычисляем для y перемещения
-
-        layer.map(function (key, value) { // Проходимся по всем элементам объекта (дивам .parallax__layers)
+        $(window).on('mousemove', function (e) {
             var 
-                // bottomPosition = (h05 * (key / 100)), // Вычисляем на сколько нам надо опустить вниз наш слой что бы при перемещении по Y не видно было краев
-                widthPosition = w * (key / 100), // Вычисляем коофицент смешения по X
-                heightPosition = h * (key / 100); // Вычисляем коофицент смешения по Y
+                mouse_dx = (e.pageX), // Узнаём положение мышки по Х
+                mouse_dy = (e.pageY), // Узнаём положение мышки по У
+                // Т.к. мы делим экран на четыре части что бы в центре оказалась точка координат 0, то нам надо знать когда у нас будет -Х и +Х, -Y и +Y
+                w05 = (window.innerWidth / 2), // делим экран по х
+                h05 = (window.innerHeight / 2), // делим экран по y
+                w = w05 - mouse_dx, // Вычисляем для x перемещения
+                h = h05 - mouse_dy; // Вычисляем для y перемещения
 
-                $(value).css({
-                    // 'bottom': '-' + bottomPosition + 'px', // выставляем bottom (т.к. картинка с запасом по низу выравнивание не требуется)
-                    'transform': 'translate3d(' + widthPosition + 'px, ' + heightPosition + 'px, 0)', // Используем translate3d для более лучшего рендеринга на странице
-                });
+            layer.map(function (key, value) { // Проходимся по всем элементам объекта (дивам .parallax__layers)
+                var 
+                    // bottomPosition = (h05 * (key / 100)), // Вычисляем на сколько нам надо опустить вниз наш слой что бы при перемещении по Y не видно было краев
+                    widthPosition = w * (key / 100), // Вычисляем коофицент смешения по X
+                    heightPosition = h * (key / 100); // Вычисляем коофицент смешения по Y
+
+                    $(value).css({
+                        // 'bottom': '-' + bottomPosition + 'px', // выставляем bottom (т.к. картинка с запасом по низу выравнивание не требуется)
+                        'transform': 'translate3d(' + widthPosition + 'px, ' + heightPosition + 'px, 0)', // Используем translate3d для более лучшего рендеринга на странице
+                    });
+            });
         });
     });
-});
+})();
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -368,28 +382,31 @@ $(doc).ready(function () {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Плавный скролл scroll до элемента страницы  ///////////////////
-$('a[href^="#"]').bind('click.smoothscroll', function(e) {  // ищем все ссылки с адресом # 
-                                                            // и вешаем обработчик события которое срабатывает при клике мышкой
-    e.preventDefault(); // отменяем переход по умолчанию
+(function () {
+    $('a[href^="#"]').bind('click.smoothscroll', function(e) {  // ищем все ссылки с адресом # 
+                                                                // и вешаем обработчик события которое срабатывает при клике мышкой
+        e.preventDefault(); // отменяем переход по умолчанию
 
-    var target = this.hash,
-        $target = $(target);
+        var target = this.hash,
+            $target = $(target);
 
-    $('html, body').stop().animate(
+        $('html, body').stop().animate(
 
-        {
-            'scrollTop': $target.offset().top // позиция элемента от верха страницы
-        },
+            {
+                'scrollTop': $target.offset().top // позиция элемента от верха страницы
+            },
 
-        500, // время анимации
+            500, // время анимации
 
-        'swing',
+            'swing',
 
-        function() {
-            window.location.hash = target;
-        }
-    );
-});
+            function() {
+                window.location.hash = target;
+            }
+        );
+    });
+})();
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -428,48 +445,50 @@ $('a[href^="#"]').bind('click.smoothscroll', function(e) {  // ищем все �
 //         }
 //     }
 // });
+(function () {
+    $(window).scroll(function() {
 
-$(window).scroll(function() {
+        if (window.location.toString().indexOf('about.htm') > 0) {
 
-    if (window.location.toString().indexOf('about.htm') > 0) {
+            var
+                wScroll = $(window).scrollTop(), // слежение скрола от верха документа
+                svg = $('.who-am-i__icon-autor-photo'), // ищем изображение
+                svgPath = $(svg).find('.who-am-i__icon-autor-photo-body'), // ищем группы в нашем изображении
+                svgPos = svg.offset().top, // отслеживаем положение svg от верха страницы
+                windowMargin = $(window).height() / 2, // задаём запас что бы анимация начаналась заранее, когда останится пол окна
+                startAnimate = Math.ceil(wScroll - svgPos + windowMargin); //выставляем точку начала анимации - от общего скрола отнимем позицию картинки и прибавим пол страницы
 
-        var
-            wScroll = $(window).scrollTop(), // слежение скрола от верха документа
-            svg = $('.who-am-i__icon-autor-photo'), // ищем изображение
-            svgPath = $(svg).find('.who-am-i__icon-autor-photo-body'), // ищем группы в нашем изображении
-            svgPos = svg.offset().top, // отслеживаем положение svg от верха страницы
-            windowMargin = $(window).height() / 2, // задаём запас что бы анимация начаналась заранее, когда останится пол окна
-            startAnimate = Math.ceil(wScroll - svgPos + windowMargin); //выставляем точку начала анимации - от общего скрола отнимем позицию картинки и прибавим пол страницы
+                
 
-            
+            // if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места
+            //     // console.log('start', startAnimate);
+            //     svgPath.stop().animate(
+            //         {
+            //             'stroke-dashoffset' : '0'
+            //         },
 
-        // if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места
-        //     // console.log('start', startAnimate);
-        //     svgPath.stop().animate(
-        //         {
-        //             'stroke-dashoffset' : '0'
-        //         },
+            //         3500,
 
-        //         3500,
+            //         'linear',
 
-        //         'linear',
+            //         function () {
+            //             console.log('Конец анимации');
+            //         }
+            //     );
+            if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места
+                svgPath.css({
+                    'stroke-dashoffset' : '0'
+                });
 
-        //         function () {
-        //             console.log('Конец анимации');
-        //         }
-        //     );
-        if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места
-            svgPath.css({
-                'stroke-dashoffset' : '0'
-            });
-
-        } else {
-            svgPath.css({
-                'stroke-dashoffset' : '600'
-            });
+            } else {
+                svgPath.css({
+                    'stroke-dashoffset' : '600'
+                });
+            }
         }
-    }
-});
+    });
+})();
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -494,29 +513,33 @@ $(window).scroll(function() {
 //         });
 //     }
 // });
-
-$(window).scroll(function() { // отслеживаем скролл
-    var wScroll = $(window).scrollTop(), // измеряем срок от верха страницы
-        skills = $('.skills__circle'),
-        skillsPos = skills.offset().top, // ищем позицию элемента от верха страницы
-        skillsMargin = $(window).height() / 1.8,  // вводим коэффиицент что бы зарисовка начиналась заранее
-        startAnimate = Math.ceil(wScroll - skillsPos + skillsMargin); // находим точку начала анимации
-    if (startAnimate < 0) { // условие которое дожно выполнятся для старта анимации
-        skills.css ({ // изменяем css свойство
-            'stroke-dasharray' : '0 282.743338824px',
-        });
-        
-    } else if (startAnimate > 0) {
-        skills.css ({ // изменяем css свойство
-            'stroke-dasharray' : '',
+(function () {
+    if (window.location.toString().indexOf('about.htm') > 0) {
+        $(window).scroll(function() { // отслеживаем скролл
+            var wScroll = $(window).scrollTop(), // измеряем срок от верха страницы
+                skills = $('.skills__circle'),
+                skillsPos = skills.offset().top, // ищем позицию элемента от верха страницы
+                skillsMargin = $(window).height() / 1.8,  // вводим коэффиицент что бы зарисовка начиналась заранее
+                startAnimate = Math.ceil(wScroll - skillsPos + skillsMargin); // находим точку начала анимации
+            if (startAnimate < 0) { // условие которое дожно выполнятся для старта анимации
+                skills.css ({ // изменяем css свойство
+                    'stroke-dasharray' : '0 282.743338824px',
+                });
+                
+            } else if (startAnimate > 0) {
+                skills.css ({ // изменяем css свойство
+                    'stroke-dasharray' : '',
+                });
+            }
         });
     }
-});
+})();
+
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Флип flip блока  ///////////////////////////////////////
-$(function() {
+(function() {
     var
         loginBtn = doc.querySelector('.btn--login'),
         indexBtn = doc.querySelector('.btn--authorization'),
@@ -539,13 +562,4 @@ $(function() {
             $(loginBtn).show();
         });
     }
-});
-
-
-// if (nextSlideItem1) {
-//     nextSlideItem1.addEventListener('click', function (event) {
-//         event.preventDefault();
-//         sliderItem1.classList.remove(show);
-//         sliderItem2.classList.add(show);
-//         sliderItem3.classList.remove(show);
-//     });
+})();
