@@ -47,6 +47,12 @@
 
   &__item {
     padding: 15px 0;
+    padding-right: 10px;
+
+    
+    &--active {          
+      border-right: 2px solid #fff;
+    }
   }
 }
 
@@ -99,6 +105,12 @@
     }
 
     &__item {
+      padding-right: 15px;
+
+      &--active {
+        border-right: 3px solid @green;
+        color: @green;
+      }
     }
 
     &__link {
@@ -106,7 +118,7 @@
       transition: color 500ms;
 
       &:hover {
-        color: @green;
+        color: @green-dark;
       }
     }
   }

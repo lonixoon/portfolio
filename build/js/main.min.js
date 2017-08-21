@@ -563,3 +563,39 @@ doc = document;
         });
     }
 })();
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////  Посветка пункта сайтбара на котором сейчас находимся ///
+var pageNavItems = $('.page-nav__item');
+
+(function () {
+    $(window).scroll(function() {
+
+        if (window.location.toString().indexOf('blog.html') > 0) {
+
+            var
+                wScroll = $(window).scrollTop(), // слежение скрола от верха документа
+                blogItems = $('.blog__item'), // ищем объект
+                pageNavItems = $('.page-nav__item');
+                // blogItemsPos = blogItems[1].offset().top; // отслеживаем положение объекта от верха страницы
+
+            if (blogItems[1]) {
+                pageNavItems.eq(1).addClass('page-nav__item--active');
+            }
+                // windowMargin = $(window).height() / 2, // задаём запас что бы анимация начаналась заранее, когда останится пол окна
+                // startAnimate = Math.ceil(wScroll - svgPos); //выставляем точку начала - от общего скрола отнимем позицию картинки
+
+            // if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места
+            //     svgPath.css({
+            //         'stroke-dashoffset' : '0'
+            //     });
+
+            // } else {
+            //     svgPath.css({
+            //         'stroke-dashoffset' : '600'
+            //     });
+            // }
+        }
+    });
+})();

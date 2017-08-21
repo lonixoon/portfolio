@@ -1284,7 +1284,6 @@ input[type="radio"]:checked + .radio::before {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 160;
 }
 
@@ -2821,6 +2820,11 @@ input[type="radio"]:checked + .radio::before {
 
 .page-nav__item {
   padding: 15px 0;
+  padding-right: 10px;
+}
+
+.page-nav__item--active {
+  border-right: 2px solid #fff;
 }
 
 .about-footer {
@@ -3877,6 +3881,15 @@ input[type="radio"]:checked + .radio::before {
     padding-right: 0;
   }
 
+  .page-nav__item {
+    padding-right: 15px;
+  }
+
+  .page-nav__item--active {
+    border-right: 3px solid #00bfa5;
+    color: #00bfa5;
+  }
+
   .page-nav__link {
     font-weight: 500;
     -webkit-transition: color 500ms;
@@ -3886,7 +3899,7 @@ input[type="radio"]:checked + .radio::before {
   }
 
   .page-nav__link:hover {
-    color: #00bfa5;
+    color: #009688;
   }
 
   .about-footer {
