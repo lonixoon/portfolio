@@ -567,22 +567,34 @@ doc = document;
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Посветка пункта сайтбара на котором сейчас находимся ///
-var pageNavItems = $('.page-nav__item');
+// var
+//      // слежение скрола от верха документа
 
-(function () {
-    $(window).scroll(function() {
+//     pageNav = $('.page-nav__list'), // ищем объект
+//     pageNavItems = pageNav.find('.page-nav__item'),
+//     pageNavLink = pageNav.find('.page-nav__link'),
+//     blogItems = $('.blog__item'), // ищем объект
 
-        if (window.location.toString().indexOf('blog.html') > 0) {
+//     // blogItemsPos = blogItems[1].offset().top; // отслеживаем положение объекта от верха страницы
 
-            var
-                wScroll = $(window).scrollTop(), // слежение скрола от верха документа
-                blogItems = $('.blog__item'), // ищем объект
-                pageNavItems = $('.page-nav__item');
+//     $(pageNavLink).on('click', function () {
+//         pageNavItems.removeClass('page-nav__item--active');
+//     });
+
+// (function () {
+//     $(window).scroll(function() {
+
+//         if (window.location.toString().indexOf('blog.html') > 0) {
+
+//             var
+//                 wScroll = $(window).scrollTop(), // слежение скрола от верха документа
+//                 blogItems = $('.blog__item'), // ищем объект
+//                 pageNavItems = $('.page-nav__item');
                 // blogItemsPos = blogItems[1].offset().top; // отслеживаем положение объекта от верха страницы
 
-            if (blogItems[1]) {
-                pageNavItems.eq(1).addClass('page-nav__item--active');
-            }
+            // if (blogItems[1]) {
+            //     pageNavItems.eq(1).addClass('page-nav__item--active');
+            // }
                 // windowMargin = $(window).height() / 2, // задаём запас что бы анимация начаналась заранее, когда останится пол окна
                 // startAnimate = Math.ceil(wScroll - svgPos); //выставляем точку начала - от общего скрола отнимем позицию картинки
 
@@ -596,6 +608,92 @@ var pageNavItems = $('.page-nav__item');
             //         'stroke-dashoffset' : '600'
             //     });
             // }
-        }
-    });
-})();
+//         }
+//     });
+// })();
+
+// var blogSidebar = (function () {
+
+//     var sidebar = $('.page-nav'),
+//         // buttonArrow = sidebar.find('.sidebar-toggle__arrow'),
+//         menu = $('.page-nav__list'),
+//         // menuTop = menu.offset().top + 50,
+//         menuItems1 = menu.find('.page-nav__link'),
+//         menuItems = menu.find('.page-nav__item'),
+//         titles = [],
+//         current = -1;
+
+//     $('.article__title').each(function(index, title) {
+//         titles.push($(title).offset().top);
+//     });
+
+//     menuItems.eq(0).addClass('page-nav__item--active');
+
+//     var init = function () {
+//         _setUpListeners();
+//         // то, что должно произойти сразу
+//     };
+
+//     var _setUpListeners = function () {
+//         // прослушка событий...
+//         $(window).on('scroll', _sticky);
+//         $('.page-nav__link').on('click', _activeMenuItem);
+//         // $('.sidebar-toggle').on('click', _toggleSidebar);
+//     };
+
+//     var _sticky = function () {
+//         var scrollToTop = $(window).scrollTop();
+
+//         // if (menuTop < scrollToTop) {
+//         //  menu.addClass('fixed');
+//         // } else {
+//         //  menu.removeClass('fixed');
+
+//         // }
+
+//         for (var i = 0; i < titles.length; i++) {
+//             var titleTop = titles[i] + 180;
+
+//             if (scrollToTop > titleTop && current !== i) {
+//                 menuItems.removeClass('page-nav__item--active');
+//                 menuItems.eq(i).addClass('page-nav__item--active');
+//                 current = i;
+//             }
+//         }
+//         // console.log('title: ' + titleTop + ', scroll: ' + scrollToTop);
+//     };
+
+//     var _activeMenuItem = function (e) {
+//         menuItems.removeClass('page-nav__item--active');
+//         menuItems.addClass('page-nav__item--active');
+//         // $(menuItems(this)).addClass('page-nav__item--active');
+
+//         // if (sidebar.hasClass('sidebar_active')) {
+//         //  sidebar.removeClass('sidebar_active');
+//         //  buttonArrow.removeClass('sidebar-toggle__arrow_left')
+//         //  .addClass('sidebar-toggle__arrow_right');
+//         // }
+        
+//     };
+
+//     // var _toggleSidebar = function (e) {
+//     //  e.preventDefault();
+
+//     //  if (sidebar.hasClass('sidebar_active')) {
+//     //      sidebar.removeClass('sidebar_active');
+//     //      buttonArrow.removeClass('sidebar-toggle__arrow_left')
+//     //      .addClass('sidebar-toggle__arrow_right');
+//     //  } else {
+//     //      sidebar.addClass('sidebar_active');
+//     //      buttonArrow.removeClass('sidebar-toggle__arrow_right')
+//     //      .addClass('sidebar-toggle__arrow_left');
+//     //  }
+//     // }
+
+//     return {
+//         init: init
+//     };
+
+// })();
+
+// blogSidebar.init();
