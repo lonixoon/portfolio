@@ -571,7 +571,13 @@ doc = document;
 
         if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
 
-            var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
+            // var 
+                $this = $(this),
+                wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
+                // skillsPos = skills.offset().top, // ищем позицию элемента от верха страницы
+                // topEdge = $this.offset().top - $(window).height(),
+                // topEdge = 0 - $(window).height(),
+                // bottomEdge = topEdge + $this.height(),
                 menu = $('.page__static .page-nav__list'),
                 sidebar = $('.page__static .page-nav__wrap'),
                 blog = $('.blog'),
@@ -579,6 +585,15 @@ doc = document;
                 fixedSidebar = $('.page__fixed .page-nav'),
                 fixedMenu = fixedSidebar.find('.page-nav__wrap'),
                 link = ('.page-nav__link');
+
+            // if (topEdge < wScroll && bottomEdge > wScroll) {
+            //     // var
+            //       currentId = $this.data('article'),
+            //       reqLink = $('.page-nav__link').removeClass('page-nav__link--active').filter('[href="#' + currentId + '"]');
+
+            //     reqLink.addClass('page-nav__link--active');
+            //     window.location.hash = currentId;
+            // }
 
 
             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
