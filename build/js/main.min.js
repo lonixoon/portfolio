@@ -259,69 +259,6 @@ doc = document;
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  Приклеенное боковое меню  //////////////////////////////
-// if (window.location.toString().indexOf('blog.htm')>0) {
-
-//     if ($(window).width() >= 1200) { // разрешение экрана должно быть больше 1200px
-
-//         $(window).scroll(function() {
-
-//             var wScroll = $(window).scrollTop();  // проверка на сколько px мы проскролили страницу
-//             var menu = $('.page__static .page-nav__list');
-//             var sidebar = $('.page__static .page-nav__wrap');
-//             var stickyStart = sidebar.offset().top;  // отслеживаем положение меню от верха страницы
-//             var cloneMenu = sidebar.clone();
-//             var fixedSidebar = $('.page__fixed .page-nav');
-
-
-//             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
-
-//                 if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
-//                     fixedSidebar.append(cloneMenu);  // то вставляем копию меню
-//                     menu.hide(); // и прячем статичное меню
-//                 }
-//             }
-
-//             else {            
-//                 fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
-//                 menu.show(); // и показываем статичное меню
-//             }
-//         });
-//     }
-// }
-(function() {
-
-    $(window).scroll(function() { // функция отслеживания скрола
-
-        if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
-
-            var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
-                menu = $('.page__static .page-nav__list'),
-                sidebar = $('.page__static .page-nav__wrap'),
-                stickyStart = sidebar.offset().top,  // отслеживаем положение меню от верха страницы
-                cloneMenu = sidebar.clone(), // делаем копию разметки
-                fixedSidebar = $('.page__fixed .page-nav');
-
-
-            if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
-
-                if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
-                    fixedSidebar.append(cloneMenu);  // то вставляем копию меню
-                    menu.hide(); // и прячем статичное меню
-                }
-            }
-
-            else {            
-                fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
-                menu.show(); // и показываем статичное меню
-            }
-        }
-    });
-})();
-
-
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
 //////////////  mouse parallax  ////////////////////////////////////////
 (function () {
     $(doc).ready(function () {
@@ -564,21 +501,145 @@ doc = document;
     }
 })();
 
+
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//////////////  Приклеенное боковое меню  //////////////////////////////
+// (function() {
+
+//     $(window).scroll(function() { // функция отслеживания скрола
+
+//         if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
+
+//             var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
+//                 menu = $('.page__static .page-nav__list'),
+//                 sidebar = $('.page__static .page-nav__wrap'),
+//                 stickyStart = sidebar.offset().top,  // отслеживаем положение меню от верха страницы
+//                 cloneMenu = sidebar.clone(), // делаем копию разметки
+//                 fixedSidebar = $('.page__fixed .page-nav');
+
+
+//             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+
+//                 if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
+//                     fixedSidebar.append(cloneMenu);  // то вставляем копию меню
+//                     menu.hide(); // и прячем статичное меню
+//                 }
+//             }
+
+//             else {            
+//                 fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
+//                 menu.show(); // и показываем статичное меню
+//             }
+//         }
+//     });
+// })();
+
+// (function() {
+//     $('.page__fixed .page-nav .page-nav__wrap').hide();
+
+//     $(window).scroll(function() { // функция отслеживания скрола
+
+//         if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
+
+//             var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
+//                 menu = $('.page__static .page-nav__list'),
+//                 sidebar = $('.page__static .page-nav__wrap'),
+//                 stickyStart = sidebar.offset().top,  // отслеживаем положение меню от верха страницы
+//                 // cloneMenu = sidebar.clone(), // делаем копию разметки
+//                 fixedSidebar = $('.page__fixed .page-nav'),
+//                 fixedMenu = fixedSidebar.find('.page-nav__wrap');
+
+
+//             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+//                 fixedMenu.show(); // когда скрол меньше чем блок, удаляем фиксированное меню
+//                 menu.hide(); // и показываем статичное меню
+//             }
+
+//             else {            
+//                 fixedMenu.hide(); // когда скрол меньше чем блок, удаляем фиксированное меню
+//                 menu.show(); // и показываем статичное меню
+//             }
+//         }
+//     });
+// })();
+
+(function() {
+    $('.page__fixed .page-nav .page-nav__wrap').hide();
+
+    $(window).scroll(function() { // функция отслеживания скрола
+
+        if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
+
+            var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
+                menu = $('.page__static .page-nav__list'),
+                sidebar = $('.page__static .page-nav__wrap'),
+                blog = $('.blog'),
+                stickyStart = blog.offset().top,  // отслеживаем положение меню от верха страницы
+                fixedSidebar = $('.page__fixed .page-nav'),
+                fixedMenu = fixedSidebar.find('.page-nav__wrap'),
+                link = ('.page-nav__link');
+
+
+            if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+                $('.page__static').addClass('page__fixed');
+                $('.page__static').removeClass('page__static');
+            }
+
+            else {
+                $('.page__fixed').addClass('page__static');
+                $('.page__fixed').removeClass('page__fixed');
+            }
+
+
+            $(link).on('click', function () {
+                $(link).removeClass('page-nav__link--active');
+                $(this).addClass('page-nav__link--active');
+            });
+        }
+    });
+})();
+
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Посветка пункта сайтбара на котором сейчас находимся ///
+// (function() {
+//     var fixed = $('.page__fixed');
+//     var sidebarLinkFixed = fixed.find('.page-nav__link');
+
+//     var static = $('.page__static');
+//     var sidebarLinkStatic = static.find('.page-nav__link');
+
+//     // var sidebar = $('.page__static .page-nav__wrap');    
+
+//     $(sidebarLinkFixed).on('click', function () {
+//         $(sidebarLinkFixed).removeClass('page-nav__link--active');
+//         $(this).addClass('page-nav__link--active');
+
+//         console.log(this);
+//     });
+// })();
+
+
+
+
+
+
+
+
 // var
 //      // слежение скрола от верха документа
 
-//     pageNav = $('.page-nav__list'), // ищем объект
-//     pageNavItems = pageNav.find('.page-nav__item'),
-//     pageNavLink = pageNav.find('.page-nav__link'),
-//     blogItems = $('.blog__item'), // ищем объект
+//     var pageNav = $('.page-nav__list') // ищем объект
+//     var pageNavItems = pageNav.find('.page-nav__item')
+// //     pageNavLink = pageNav.find('.page-nav__link'),
+// //     blogItems = $('.blog__item'), // ищем объект
 
-//     // blogItemsPos = blogItems[1].offset().top; // отслеживаем положение объекта от верха страницы
+// //     // blogItemsPos = blogItems[1].offset().top; // отслеживаем положение объекта от верха страницы
 
 //     $(pageNavLink).on('click', function () {
 //         pageNavItems.removeClass('page-nav__item--active');
+//         console.log*()
 //     });
 
 // (function () {

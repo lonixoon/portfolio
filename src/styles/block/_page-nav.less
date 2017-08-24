@@ -46,11 +46,20 @@
   }
 
   &__item {
-    padding: 15px 0;
-    padding-right: 10px;
+    // padding: 15px 0;
+    // padding-right: 10px;
 
     
-    &--active {          
+    // &--active {          
+    //   border-right: 2px solid #fff;
+    // }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 10px;
+
+    &--active {
       border-right: 2px solid #fff;
     }
   }
@@ -83,6 +92,7 @@
 
 @media @laptop {
   .page-nav {
+    position: absolute;
 
     &__toggle {
       display: none;
@@ -105,12 +115,12 @@
     }
 
     &__item {
-      padding-right: 15px;
+      // padding-right: 15px;
 
-      &--active {
-        border-right: 3px solid @green;
-        color: @green;
-      }
+      // &--active {
+      //   border-right: 3px solid @green;
+      //   color: @green;
+      // }
     }
 
     &__link {
@@ -120,6 +130,11 @@
       &:hover {
         color: @green-dark;
       }
+
+      &--active {
+        border-right: 3px solid @green;
+        color: @green;
+      }  
     }
   }
 }

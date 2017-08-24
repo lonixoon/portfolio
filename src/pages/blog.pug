@@ -10,20 +10,28 @@ block title
 
 
 block content
-  div.page__fixed
+  //- div.page__fixed
     aside.page-nav
-    //- section.blog
-  div.page__static
-    aside.page-nav
-      div.page-nav__toggle
       div.page-nav__wrap
         ul.page-nav__list
-          li.page-nav__item.page-nav__item--active
-            a(href="#fish-text").page-nav__link Рыбный текст
+          li.page-nav__item
+            a(href="#fish-text").page-nav__link.page-nav__link--active Рыбный текст
           li.page-nav__item
             a(href="#verter").page-nav__link Страдания юного Вертера
           li.page-nav__item
             a(href="#kafka").page-nav__link Кафка
+  div.page__blog
+    div.page__static
+      aside.page-nav
+        div.page-nav__toggle
+        div.page-nav__wrap
+          ul.page-nav__list
+            li.page-nav__item
+              a(href="#fish-text").page-nav__link.page-nav__link--active Рыбный текст
+            li.page-nav__item
+              a(href="#verter").page-nav__link Страдания юного Вертера
+            li.page-nav__item
+              a(href="#kafka").page-nav__link Кафка
     section.blog
       article.blog__item.article#fish-text
         h3.article__title Рыбный текст
