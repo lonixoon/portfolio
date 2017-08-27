@@ -569,48 +569,55 @@ doc = document;
 
     $(window).scroll(function() { // функция отслеживания скрола
 
-        if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
+        if ((window.location.toString().indexOf('blog.htm') > 0)) { // находимся на странице Блог
 
-            // var 
+            var
                 $this = $(this),
                 wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
-                // skillsPos = skills.offset().top, // ищем позицию элемента от верха страницы
-                // topEdge = $this.offset().top - $(window).height(),
-                // topEdge = 0 - $(window).height(),
-                // bottomEdge = topEdge + $this.height(),
                 menu = $('.page__static .page-nav__list'),
                 sidebar = $('.page__static .page-nav__wrap'),
                 blog = $('.blog'),
+                acticle = $('.article__title'),
+                article1 = acticle.eq(0).offset().top - 30,
+                article2 = acticle.eq(1).offset().top - 30,
+                article3 = acticle.eq(2).offset().top - 30,
                 stickyStart = blog.offset().top,  // отслеживаем положение меню от верха страницы
                 fixedSidebar = $('.page__fixed .page-nav'),
                 fixedMenu = fixedSidebar.find('.page-nav__wrap'),
-                link = ('.page-nav__link');
+                link = $('.page-nav__link');
 
-            // if (topEdge < wScroll && bottomEdge > wScroll) {
-            //     // var
-            //       currentId = $this.data('article'),
-            //       reqLink = $('.page-nav__link').removeClass('page-nav__link--active').filter('[href="#' + currentId + '"]');
+            if ($(window).width() >= 1200) {
 
-            //     reqLink.addClass('page-nav__link--active');
-            //     window.location.hash = currentId;
-            // }
-
-
-            if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
-                $('.page__static').addClass('page__fixed');
-                $('.page__static').removeClass('page__static');
-            }
-
-            else {
-                $('.page__fixed').addClass('page__static');
-                $('.page__fixed').removeClass('page__fixed');
+                if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
+                    $('.page__static').addClass('page__fixed');
+                    $('.page__static').removeClass('page__static');
+                
+                } else {
+                    $('.page__fixed').addClass('page__static');
+                    $('.page__fixed').removeClass('page__fixed');
+                }
             }
 
 
-            $(link).on('click', function () {
+            if (wScroll >= article1 && wScroll < article2) {
                 $(link).removeClass('page-nav__link--active');
-                $(this).addClass('page-nav__link--active');
-            });
+                $(link.eq(0)).addClass('page-nav__link--active');
+            
+            } else if (wScroll >= article2 && wScroll < article3) {
+                $(link).removeClass('page-nav__link--active');
+                $(link.eq(1)).addClass('page-nav__link--active');
+                console.log('article1', article2);
+            
+            } else if (wScroll >= article3) {
+                $(link).removeClass('page-nav__link--active');
+                $(link.eq(2)).addClass('page-nav__link--active');
+            }
+
+            ////// переход по клику
+            // $(link).on('click', function () {
+            //     $(link).removeClass('page-nav__link--active');
+            //     $(this).addClass('page-nav__link--active');
+            // });
         }
     });
 })();
