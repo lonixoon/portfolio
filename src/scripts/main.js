@@ -577,14 +577,16 @@ doc = document;
                 menu = $('.page__static .page-nav__list'),
                 sidebar = $('.page__static .page-nav__wrap'),
                 blog = $('.blog'),
-                acticle = $('.article__title'),
-                article1 = acticle.eq(0).offset().top - 30,
-                article2 = acticle.eq(1).offset().top - 30,
-                article3 = acticle.eq(2).offset().top - 30,
+                article = $('.article__title'),
+                // article1 = article.eq(0).offset().top - 30,
+                // article2 = article.eq(1).offset().top - 30,
+                // article3 = article.eq(2).offset().top - 30,
                 stickyStart = blog.offset().top,  // отслеживаем положение меню от верха страницы
                 fixedSidebar = $('.page__fixed .page-nav'),
                 fixedMenu = fixedSidebar.find('.page-nav__wrap'),
                 link = $('.page-nav__link');
+
+                // console.log(article[1]);
 
             if ($(window).width() >= 1200) {
 
@@ -598,20 +600,30 @@ doc = document;
                 }
             }
 
-
-            if (wScroll >= article1 && wScroll < article2) {
-                $(link).removeClass('page-nav__link--active');
-                $(link.eq(0)).addClass('page-nav__link--active');
-            
-            } else if (wScroll >= article2 && wScroll < article3) {
-                $(link).removeClass('page-nav__link--active');
-                $(link.eq(1)).addClass('page-nav__link--active');
-                console.log('article1', article2);
-            
-            } else if (wScroll >= article3) {
-                $(link).removeClass('page-nav__link--active');
-                $(link.eq(2)).addClass('page-nav__link--active');
+            for (var i = 0; i < article.length; i++) {
+                var articlePos = article.eq(i).offset().top - 30;
+                var linkNum = link.eq(i);
+                if (articlePos < wScroll) {
+                    $(link).removeClass('page-nav__link--active');
+                    $(linkNum).addClass('page-nav__link--active');
+                    // console.log('true');
+                }
+                // console.log(linkNum);
             }
+            
+
+            // if (wScroll < article2) {
+            //     $(link).removeClass('page-nav__link--active');
+            //     $(link.eq(0)).addClass('page-nav__link--active');
+            // }
+            // } else if (wScroll < article3) {
+            //     $(link).removeClass('page-nav__link--active');
+            //     $(link.eq(1)).addClass('page-nav__link--active');
+            
+            // } else if (wScroll >= article3) {
+            //     $(link).removeClass('page-nav__link--active');
+            //     $(link.eq(2)).addClass('page-nav__link--active');
+            // }
 
             ////// переход по клику
             // $(link).on('click', function () {
