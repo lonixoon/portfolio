@@ -72,7 +72,7 @@ var gulp         = require('gulp'),                         // gulp
     // Если gulp запущен с ключом production, включаем минификацию
     if (production) {
             cfg.compress = {
-                html: false,  // !!! Внимание для production html-минификация тоже отключена, включить если нужно !!!
+                html: true,  // !!! Внимание для production html-минификация тоже отключена, включить если нужно !!!
                 css: true,
                 js:  true,
                 img: true

@@ -26,7 +26,6 @@ doc = document;
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 //////////////  Открывашка для главного меню  //////////////////////////
-
 (function() {
     var menuToggle = doc.querySelector('.main-nav__toggle'),
         menuClosed = doc.querySelector('.main-nav__list');
@@ -145,7 +144,7 @@ doc = document;
     }
 })();
 
-// Финкция клика  через JQuery
+// Финкция клика  через JQuery без использования цикла
 // $(next).click(function() { // добавляем в дейсвие по клику вызов функции перелистывания слайда вперед
 //     nextSlide();
 // });
@@ -382,6 +381,11 @@ doc = document;
 //         }
 //     }
 // });
+
+
+////////////////////////////////////////////////////////////////////////
+//////////////  Отрисовка СВГ SVG по времени  //////////////////////////
+//////////////  (положение экрана отслеживается)  //////////////////////
 (function () {
     $(window).scroll(function() {
 
@@ -475,7 +479,7 @@ doc = document;
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  Флип flip блока  ///////////////////////////////////////
+///////////////////////  Флип flip блока  //////////////////////////////
 (function() {
     var
         loginBtn = doc.querySelector('.btn--login'),
@@ -504,66 +508,7 @@ doc = document;
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-//////////////  Приклеенное боковое меню  //////////////////////////////
-// (function() {
-
-//     $(window).scroll(function() { // функция отслеживания скрола
-
-//         if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
-
-//             var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
-//                 menu = $('.page__static .page-nav__list'),
-//                 sidebar = $('.page__static .page-nav__wrap'),
-//                 stickyStart = sidebar.offset().top,  // отслеживаем положение меню от верха страницы
-//                 cloneMenu = sidebar.clone(), // делаем копию разметки
-//                 fixedSidebar = $('.page__fixed .page-nav');
-
-
-//             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
-
-//                 if(!fixedSidebar.find('.page-nav__wrap').length) { // проверка есть ли клонированный элемент, если нет
-//                     fixedSidebar.append(cloneMenu);  // то вставляем копию меню
-//                     menu.hide(); // и прячем статичное меню
-//                 }
-//             }
-
-//             else {            
-//                 fixedSidebar.find('.page-nav__wrap').remove(); // когда скрол меньше чем блок, удаляем фиксированное меню
-//                 menu.show(); // и показываем статичное меню
-//             }
-//         }
-//     });
-// })();
-
-// (function() {
-//     $('.page__fixed .page-nav .page-nav__wrap').hide();
-
-//     $(window).scroll(function() { // функция отслеживания скрола
-
-//         if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() >= 1200)) { // находимся на странице Блог
-
-//             var wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
-//                 menu = $('.page__static .page-nav__list'),
-//                 sidebar = $('.page__static .page-nav__wrap'),
-//                 stickyStart = sidebar.offset().top,  // отслеживаем положение меню от верха страницы
-//                 // cloneMenu = sidebar.clone(), // делаем копию разметки
-//                 fixedSidebar = $('.page__fixed .page-nav'),
-//                 fixedMenu = fixedSidebar.find('.page-nav__wrap');
-
-
-//             if (wScroll >= stickyStart) { // если меню ниже чем верх страницы
-//                 fixedMenu.show(); // когда скрол меньше чем блок, удаляем фиксированное меню
-//                 menu.hide(); // и показываем статичное меню
-//             }
-
-//             else {            
-//                 fixedMenu.hide(); // когда скрол меньше чем блок, удаляем фиксированное меню
-//                 menu.show(); // и показываем статичное меню
-//             }
-//         }
-//     });
-// })();
-
+///////  Приклеенное боковое меню и анимация сайт бара (sitebar) ///////
 (function() {
     $('.page__fixed .page-nav .page-nav__wrap').hide();
 
@@ -574,19 +519,13 @@ doc = document;
             var
                 $this = $(this),
                 wScroll = $(window).scrollTop(),  // проверка на сколько px мы проскролили страницу
-                menu = $('.page__static .page-nav__list'),
                 sidebar = $('.page__static .page-nav__wrap'),
                 blog = $('.blog'),
                 article = $('.article__title'),
-                // article1 = article.eq(0).offset().top - 30,
-                // article2 = article.eq(1).offset().top - 30,
-                // article3 = article.eq(2).offset().top - 30,
                 stickyStart = blog.offset().top,  // отслеживаем положение меню от верха страницы
                 fixedSidebar = $('.page__fixed .page-nav'),
                 fixedMenu = fixedSidebar.find('.page-nav__wrap'),
                 link = $('.page-nav__link');
-
-                // console.log(article[1]);
 
             if ($(window).width() >= 1200) {
 
@@ -599,196 +538,16 @@ doc = document;
                     $('.page__fixed').removeClass('page__fixed');
                 }
             }
-
-            for (var i = 0; i < article.length; i++) {
-                var articlePos = article.eq(i).offset().top - 30;
-                var linkNum = link.eq(i);
-                if (articlePos < wScroll) {
-                    $(link).removeClass('page-nav__link--active');
-                    $(linkNum).addClass('page-nav__link--active');
-                    // console.log('true');
+            // делаем циклом проверку, на положение всех заголовков статей, относительно текущего положения экрана
+            // и добавляем класс актив ссылки на статью заголовок которой выше чем положение экрана
+            for (var i = 0; i < article.length; i++) {  
+                var articlePos = article.eq(i).offset().top - 30; // определяем местоположение на странице всех заголовков статей и отнимаем 30px для запаса
+                var linkNum = link.eq(i); // определяем все ссылки на статьи
+                if (articlePos < wScroll) { // делаем проверку на положения экрана и положения заголовков всех статей
+                    $(link).removeClass('page-nav__link--active'); // если занчение положения экрана больше (экран ниже) чем текущий заголовок
+                    $(linkNum).addClass('page-nav__link--active'); // добавляем ссылке клас актив которая совпадает с номером в массиве article на который находится экран
                 }
-                // console.log(linkNum);
             }
-            
-
-            // if (wScroll < article2) {
-            //     $(link).removeClass('page-nav__link--active');
-            //     $(link.eq(0)).addClass('page-nav__link--active');
-            // }
-            // } else if (wScroll < article3) {
-            //     $(link).removeClass('page-nav__link--active');
-            //     $(link.eq(1)).addClass('page-nav__link--active');
-            
-            // } else if (wScroll >= article3) {
-            //     $(link).removeClass('page-nav__link--active');
-            //     $(link.eq(2)).addClass('page-nav__link--active');
-            // }
-
-            ////// переход по клику
-            // $(link).on('click', function () {
-            //     $(link).removeClass('page-nav__link--active');
-            //     $(this).addClass('page-nav__link--active');
-            // });
         }
     });
 })();
-
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
-//////////////  Посветка пункта сайтбара на котором сейчас находимся ///
-// (function() {
-//     var fixed = $('.page__fixed');
-//     var sidebarLinkFixed = fixed.find('.page-nav__link');
-
-//     var static = $('.page__static');
-//     var sidebarLinkStatic = static.find('.page-nav__link');
-
-//     // var sidebar = $('.page__static .page-nav__wrap');    
-
-//     $(sidebarLinkFixed).on('click', function () {
-//         $(sidebarLinkFixed).removeClass('page-nav__link--active');
-//         $(this).addClass('page-nav__link--active');
-
-//         console.log(this);
-//     });
-// })();
-
-
-
-
-
-
-
-
-// var
-//      // слежение скрола от верха документа
-
-//     var pageNav = $('.page-nav__list') // ищем объект
-//     var pageNavItems = pageNav.find('.page-nav__item')
-// //     pageNavLink = pageNav.find('.page-nav__link'),
-// //     blogItems = $('.blog__item'), // ищем объект
-
-// //     // blogItemsPos = blogItems[1].offset().top; // отслеживаем положение объекта от верха страницы
-
-//     $(pageNavLink).on('click', function () {
-//         pageNavItems.removeClass('page-nav__item--active');
-//         console.log*()
-//     });
-
-// (function () {
-//     $(window).scroll(function() {
-
-//         if (window.location.toString().indexOf('blog.html') > 0) {
-
-//             var
-//                 wScroll = $(window).scrollTop(), // слежение скрола от верха документа
-//                 blogItems = $('.blog__item'), // ищем объект
-//                 pageNavItems = $('.page-nav__item');
-                // blogItemsPos = blogItems[1].offset().top; // отслеживаем положение объекта от верха страницы
-
-            // if (blogItems[1]) {
-            //     pageNavItems.eq(1).addClass('page-nav__item--active');
-            // }
-                // windowMargin = $(window).height() / 2, // задаём запас что бы анимация начаналась заранее, когда останится пол окна
-                // startAnimate = Math.ceil(wScroll - svgPos); //выставляем точку начала - от общего скрола отнимем позицию картинки
-
-            // if (startAnimate > 0) { // старт анимации если мы докрутили до нужного места
-            //     svgPath.css({
-            //         'stroke-dashoffset' : '0'
-            //     });
-
-            // } else {
-            //     svgPath.css({
-            //         'stroke-dashoffset' : '600'
-            //     });
-            // }
-//         }
-//     });
-// })();
-
-// var blogSidebar = (function () {
-
-//     var sidebar = $('.page-nav'),
-//         // buttonArrow = sidebar.find('.sidebar-toggle__arrow'),
-//         menu = $('.page-nav__list'),
-//         // menuTop = menu.offset().top + 50,
-//         menuItems1 = menu.find('.page-nav__link'),
-//         menuItems = menu.find('.page-nav__item'),
-//         titles = [],
-//         current = -1;
-
-//     $('.article__title').each(function(index, title) {
-//         titles.push($(title).offset().top);
-//     });
-
-//     menuItems.eq(0).addClass('page-nav__item--active');
-
-//     var init = function () {
-//         _setUpListeners();
-//         // то, что должно произойти сразу
-//     };
-
-//     var _setUpListeners = function () {
-//         // прослушка событий...
-//         $(window).on('scroll', _sticky);
-//         $('.page-nav__link').on('click', _activeMenuItem);
-//         // $('.sidebar-toggle').on('click', _toggleSidebar);
-//     };
-
-//     var _sticky = function () {
-//         var scrollToTop = $(window).scrollTop();
-
-//         // if (menuTop < scrollToTop) {
-//         //  menu.addClass('fixed');
-//         // } else {
-//         //  menu.removeClass('fixed');
-
-//         // }
-
-//         for (var i = 0; i < titles.length; i++) {
-//             var titleTop = titles[i] + 180;
-
-//             if (scrollToTop > titleTop && current !== i) {
-//                 menuItems.removeClass('page-nav__item--active');
-//                 menuItems.eq(i).addClass('page-nav__item--active');
-//                 current = i;
-//             }
-//         }
-//         // console.log('title: ' + titleTop + ', scroll: ' + scrollToTop);
-//     };
-
-//     var _activeMenuItem = function (e) {
-//         menuItems.removeClass('page-nav__item--active');
-//         menuItems.addClass('page-nav__item--active');
-//         // $(menuItems(this)).addClass('page-nav__item--active');
-
-//         // if (sidebar.hasClass('sidebar_active')) {
-//         //  sidebar.removeClass('sidebar_active');
-//         //  buttonArrow.removeClass('sidebar-toggle__arrow_left')
-//         //  .addClass('sidebar-toggle__arrow_right');
-//         // }
-        
-//     };
-
-//     // var _toggleSidebar = function (e) {
-//     //  e.preventDefault();
-
-//     //  if (sidebar.hasClass('sidebar_active')) {
-//     //      sidebar.removeClass('sidebar_active');
-//     //      buttonArrow.removeClass('sidebar-toggle__arrow_left')
-//     //      .addClass('sidebar-toggle__arrow_right');
-//     //  } else {
-//     //      sidebar.addClass('sidebar_active');
-//     //      buttonArrow.removeClass('sidebar-toggle__arrow_right')
-//     //      .addClass('sidebar-toggle__arrow_left');
-//     //  }
-//     // }
-
-//     return {
-//         init: init
-//     };
-
-// })();
-
-// blogSidebar.init();
