@@ -153,31 +153,6 @@ doc = document;
 //     backSlide();
 // });
 
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
-//////////////  Открывашка для навигации по станицы  ///////////////////
-(function () {
-    var pageToggle = doc.querySelector('.page-nav__toggle'),
-        pageClosed = doc.querySelector('.page-nav__wrap'),
-        blog = doc.querySelector('.blog');
-
-
-    if (pageToggle) {
-        pageToggle.addEventListener('click', function (event) {
-            event.preventDefault();
-            pageToggle.classList.toggle('page-nav__toggle--opened');
-            pageClosed.classList.toggle('page-nav__wrap--opened');
-        });
-    }
-
-    if (pageClosed) {
-        pageClosed.addEventListener('click', function (event) {
-            pageToggle.classList.remove('page-nav__toggle--opened');
-            pageClosed.classList.remove('page-nav__wrap--opened');
-        });
-    }
-})();
-
 
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -550,4 +525,61 @@ doc = document;
             }
         }
     });
+})();
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+///////  Выезд сайдбара по свайпу для моб версии  //////////////////////
+(function () {
+    if ((window.location.toString().indexOf('blog.htm') > 0) && ($(window).width() < 1200)) {
+
+        var
+            body = $('body'),
+            sidebar = $('.page-nav__wrap'),
+            toggle = $('.page-nav__toggle'),
+            blog = $('.blog'),
+            touchStartX = 0,
+            touchEndX = 0,
+            threshold = 50;
+
+        toggle.on('click', function (event) {
+
+            event.preventDefault();
+            toggle.toggleClass('page-nav__toggle--opened');
+            sidebar.toggleClass('page-nav__wrap--opened');
+
+        });
+
+        sidebar.on('click', function (event) {
+
+            toggle.removeClass('page-nav__toggle--opened');
+            sidebar.removeClass('page-nav__wrap--opened');
+
+        });
+
+
+
+        body.on('touchstart', function (event) {
+
+            var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
+            touchStartX = touch.pageX;
+
+        });
+
+
+        body.on('touchend', function (event) {
+
+            var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
+            touchEndX = touch.pageX;
+
+            if (touchEndX - touchStartX > threshold) {
+                sidebar.addClass('page-nav__wrap--opened');
+                toggle.addClass('page-nav__toggle--opened');        
+            } 
+
+            else if (touchEndX - touchStartX < -threshold) {
+                sidebar.removeClass('page-nav__wrap--opened');
+                toggle.removeClass('page-nav__toggle--opened');
+            }
+        });  
+    }
 })();
