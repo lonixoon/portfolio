@@ -431,6 +431,7 @@ doc = document;
 // });
 (function () {
     if (window.location.toString().indexOf('about.htm') > 0) {
+
         $(window).scroll(function() { // отслеживаем скролл
             var wScroll = $(window).scrollTop(), // измеряем срок от верха страницы
                 skills = $('.skills__circle'),
@@ -440,11 +441,12 @@ doc = document;
             if (startAnimate < 0) { // условие которое дожно выполнятся для старта анимации
                 skills.css ({ // изменяем css свойство
                     'stroke-dasharray' : '0 282.743338824px',
+
                 });
                 
             } else if (startAnimate > 0) {
                 skills.css ({ // изменяем css свойство
-                    'stroke-dasharray' : '',
+                    'stroke-dasharray' : '',           
                 });
             }
         });
